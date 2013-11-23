@@ -5,12 +5,14 @@ angular.module("budgetApp", [])
 				this.no = frameNo;
 				this.name = frameName;
 				this.chapters = [];
-				this.amount = 0;
+				this.cost = 0;
+				this.revenue = 0;
 				this.addChapter = function (chapter) {
 					this.chapters.push(chapter);
 				}
-				this.updateAmount = function (amount) {
-					this.amount += amount;
+				this.update = function (cost, revenue) {
+					this.cost += cost;
+					this.revenue += revenue;
 				}
 			}
 			var frameIsResolved = {};
@@ -38,12 +40,14 @@ angular.module("budgetApp", [])
 				this.frame = frame;
 				this.no = chapterNo;
 				this.name = chapterName;
-				this.amount = 0;
+				this.cost = 0;
+				this.revenue = 0;
 				this.posts = [];
 				this.addPost = function (post) {
 					this.posts.push(post);
-					this.amount += post.amount;
-					this.frame.updateAmount(post.amount);
+					this.cost += post.cost;
+					this.revenue += post.revenue;
+					this.frame.update(post.cost, post.revenue);
 				}
 			}
 			var chapterIsResolved = {};
@@ -74,13 +78,13 @@ angular.module("budgetApp", [])
 				this.chapter = chapter;
 				this.no = postNo;
 				this.text = text;
-				this.amount = amount;
+				this.cost = postNo <= 2800 ? amount : 0;
+				this.revenue = postNo > 3000 ? amount : 0;
 			}
 			var posts = [];
 			return {
 				add: function (chapterNo, postNo, text, amount) {
 					chapters.get(chapterNo).then(function (chapter) {
-						console.log("TEST");
 						var post = new Post(chapter, postNo, text, amount);
 						posts.push(post);
 						chapter.addPost(post);
@@ -118,6 +122,19 @@ angular.module("budgetApp", [])
 			rows.forEach(function (r) {
 				$scope.budget.addFrame(r.frameNo, r.frameName);
 				$scope.budget.addChapter(r.frameNo, r.chapterNo, r.chapterName);
+			});
+			$scope.$digest();
+		});
+		d3.csv("/data/posts.csv", function (d) {
+			return {
+				chapterNo: d.chapterNo,
+				postNo: d.postNo,
+				text: d.text,
+				amount: parseInt(+d.amount.replace(/\s/g, ""))
+			};
+		}, function (error, rows) {
+			rows.forEach(function (r) {
+				$scope.budget.addPost(r.chapterNo, r.postNo, r.text, r.amount);
 			});
 			$scope.$digest();
 		});

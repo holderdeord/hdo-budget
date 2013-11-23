@@ -49,15 +49,24 @@ describe("When using the budget-service", function () {
 		expect(b.chapters[0].posts.length).toBe(2);
 	}));
 
+	it("should add amount to post's cost", inject(function ($rootScope) {
+		b.addPost(11, 1, "test", 100);
+		$rootScope.$apply();
+		expect(b.posts[0].revenue).toBe(0);
+		expect(b.posts[0].cost).toBe(100);
+	}));
+
 	it("should add amount to chapter", inject(function ($rootScope) {
 		b.addPost(11, 1, "test", 100);
 		$rootScope.$apply();
-		expect(b.chapters[0].amount).toBe(200);
+		expect(b.chapters[0].revenue).toBe(0);
+		expect(b.chapters[0].cost).toBe(200);
 	}));
 
 	it("should add amount to frame", inject(function ($rootScope) {
 		b.addPost(11, 1, "test", 100);
 		$rootScope.$apply();
-		expect(b.frames[0].amount).toBe(200);
+		expect(b.frames[0].revenue).toBe(0);
+		expect(b.frames[0].cost).toBe(200);
 	}));
 });

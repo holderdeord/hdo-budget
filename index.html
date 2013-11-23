@@ -9,12 +9,12 @@
 		<h1>Statsbudsjett</h1>
 		<ul>
 			<li ng-repeat="frame in budget.frames">
-				{{frame.name}}
+				{{frame.name}} ({{frame.amount}})
 				<ul>
 					<li ng-repeat="chapter in frame.chapters">
-						{{chapter.name}}
+						{{chapter.name}} ({{chapter.amount}})
 						<ul>
-							<li ng-repeat="post in chapter.posts">{{post.text}}</li>
+							<li ng-repeat="post in chapter.posts">{{post.text}} ({{post.amount}})</li>
 						</ul>
 					</li>
 				</ul>
