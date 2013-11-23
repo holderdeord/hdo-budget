@@ -1,0 +1,17 @@
+{
+  "name": "hdo-budget",
+  "version": "0.0.0",
+  "description": "A small application to present the norwegian state budget",
+  "authors": [
+    "Arne Hassel"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

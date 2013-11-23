@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="nb" ng-app="budgetApp">
+	<head>
+		<script src="/bower_components/angular/angular.js"></script>
+		<script src="/src/budget.js"></script>
+	</head>
+	<body ng-controller="BudgetController">
+		<h1>Statsbudsjett</h1>
+		<ul>
+			<li ng-repeat="frame in budget.frames">
+				{{frame.name}}
+				<ul>
+					<li ng-repeat="chapter in frame.chapters">
+						{{chapter.name}}
+						<ul>
+							<li ng-repeat="post in chapter.posts">{{post.text}}</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</body>
+</html>
