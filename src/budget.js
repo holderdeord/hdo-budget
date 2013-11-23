@@ -1,19 +1,5 @@
 angular.module("budgetApp", [])
-	.constant("structure", [
-		{frameNo: 7, frameName: "Arbeid og sosial", chapterNo: 600, chapterName: "Arbeidsdepartementet"},
-		{frameNo: 7, frameName: "Arbeid og sosial", chapterNo: 601, chapterName: "Utredningsvirksomhet, forskning m.m."},
-		{frameNo: 12, frameName: "Olje og energi", chapterNo: 1800, chapterName: "Olje- og energidepartementet"},
-		{frameNo: 12, frameName: "Olje og energi", chapterNo: 1810, chapterName: "Oljedirektoratet"}
-	])
-	.constant("data", [
-		{chapterNo: 600, postNo: 1, text: "Driftsutgifter", amount: 180370000},
-		{chapterNo: 601, postNo: 21, text: "Spesielle driftsutgifter", amount: 62400000},
-		{chapterNo: 601, postNo: 50, text: "Norges forskningsråd", amount: 134120000},
-		{chapterNo: 601, postNo: 70, text: "Tilskudd", amount: 22860000},
-		{chapterNo: 1800, postNo: 21, text: "Spesielle driftsutgifter, kan overføres, kan nyttes under postene 70 og 72", amount: 30845000},
-		{chapterNo: 1810, postNo: 1, text: "Driftsutgifter", amount: 247100000}
-	])
-	.factory("budget", function () {
+	.factory("budget", ['$q', function ($q) {
 		function FrameFactory () {
 			function Frame(frameNo, frameName) {
 				this.no = frameNo;
@@ -27,17 +13,24 @@ angular.module("budgetApp", [])
 					this.amount += amount;
 				}
 			}
+			var frameIsResolved = {};
 			var frameMap = {};
 			var frames = [];
 			return {
 				add: function (frameNo, frameName) {
-					if (frameMap[frameNo]) return;
+					if (frameIsResolved[frameNo]) return;
+					frameMap[frameNo] = frameMap[frameNo] || $q.defer();
 					var frame = new Frame(frameNo, frameName);
-					frameMap[frameNo] = frame;
+					frameMap[frameNo].resolve(frame);
 					frames.push(frame);
+					frameIsResolved[frameNo] = true;
 				},
 				frameMap: frameMap,
-				frames: frames
+				frames: frames,
+				get: function (frameNo) {
+					frameMap[frameNo] = frameMap[frameNo] || $q.defer();
+					return frameMap[frameNo].promise;
+				}
 			}
 		}
 		function ChapterFactory(frames) {
@@ -53,19 +46,27 @@ angular.module("budgetApp", [])
 					this.frame.updateAmount(post.amount);
 				}
 			}
+			var chapterIsResolved = {};
 			var chapterMap = {};
 			var chapters =  [];
 			return {
 				add: function (frameNo, chapterNo, chapterName) {
-					if (chapterMap[chapterNo]) return;
-					var frame = frames.frameMap[frameNo];
-					var chapter = new Chapter(frame, chapterNo, chapterName);
-					chapterMap[chapterNo] = chapter;
-					chapters.push(chapter);
-					frame.addChapter(chapter);
+					if (chapterIsResolved[chapterNo]) return;
+					chapterMap[chapterNo] = chapterMap[chapterNo] || $q.defer();
+					frames.get(frameNo).then(function (frame) {
+						var chapter = new Chapter(frame, chapterNo, chapterName);
+						chapterMap[chapterNo].resolve(chapter);
+						chapters.push(chapter);
+						frame.addChapter(chapter);
+					});
+					chapterIsResolved[chapterNo] = true;
 				},
 				chapterMap: chapterMap,
-				chapters: chapters
+				chapters: chapters,
+				get: function (chapterNo) {
+					chapterMap[chapterNo] = chapterMap[chapterNo] || $q.defer();
+					return chapterMap[chapterNo].promise;
+				}
 			}
 		}
 		function PostFactory(chapters) {
@@ -78,10 +79,12 @@ angular.module("budgetApp", [])
 			var posts = [];
 			return {
 				add: function (chapterNo, postNo, text, amount) {
-					var chapter = chapters.chapterMap[chapterNo];
-					var post = new Post(chapter, postNo, text, amount);
-					posts.push(post);
-					chapter.addPost(post);
+					chapters.get(chapterNo).then(function (chapter) {
+						console.log("TEST");
+						var post = new Post(chapter, postNo, text, amount);
+						posts.push(post);
+						chapter.addPost(post);
+					});
 				},
 				posts: posts
 			}
@@ -101,9 +104,24 @@ angular.module("budgetApp", [])
 				}
 			}
 		}
-	})
-	.controller("BudgetController", ["$scope", "structure", "data", "budget", function ($scope, structure, posts, budget) {
+	}])
+	.controller("BudgetController", ["$scope", "budget", function ($scope, budget) {
 		$scope.budget = budget.$new();
+		d3.csv("/data/frames.csv", function (d){
+			return {
+				frameNo: d.frameNo,
+				frameName: d.frameName,
+				chapterNo: d.chapterNo,
+				chapterName: d.chapterName
+			};
+		}, function (error, rows) {
+			rows.forEach(function (r) {
+				$scope.budget.addFrame(r.frameNo, r.frameName);
+				$scope.budget.addChapter(r.frameNo, r.chapterNo, r.chapterName);
+			});
+			$scope.$digest();
+		});
+		/*
 		structure.forEach(function (line) {
 			$scope.budget.addFrame(line.frameNo, line.frameName);
 			$scope.budget.addChapter(line.frameNo, line.chapterNo, line.chapterName);
@@ -111,4 +129,5 @@ angular.module("budgetApp", [])
 		posts.forEach(function (post) {
 			$scope.budget.addPost(post.chapterNo, post.postNo, post.text, post.amount);
 		});
+*/
 	}]);

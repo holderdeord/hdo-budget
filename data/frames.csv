@@ -1,0 +1,612 @@
+frameNo,frameName,chapterNo,chapterName
+1,Statsforvaltning,20,Statsministerens kontor
+1,Statsforvaltning,21,Statsrådet
+1,Statsforvaltning,24,Regjeringsadvokaten
+1,Statsforvaltning,1500,"Fornyings-, administrasjons- og kirkedepartementet"
+1,Statsforvaltning,1503,Midler til opplæring og utvikling av tillitsvalgte
+1,Statsforvaltning,1510,Fylkesmannsembetene
+1,Statsforvaltning,1520,Departementenes servicesenter
+1,Statsforvaltning,1530,Tilskudd til de politiske partier
+1,Statsforvaltning,1560,Direktoratet for forvaltning og IKT
+1,Statsforvaltning,1570,Datatilsynet
+1,Statsforvaltning,1571,Personvernnemnda
+1,Statsforvaltning,1580,Byggeprosjekter utenfor husleieordningen
+1,Statsforvaltning,1581,Eiendommer til kongelige formål
+1,Statsforvaltning,1582,Utvikling av Fornebuområdet
+1,Statsforvaltning,1584,Eiendommer utenfor husleieordningen
+1,Statsforvaltning,1585,Erstatningslokaler for departementene
+1,Statsforvaltning,2445,Statsbygg
+1,Statsforvaltning,3021,Statsrådet
+1,Statsforvaltning,3024,Regjeringsadvokaten
+1,Statsforvaltning,4510,Fylkesmannsembetene
+1,Statsforvaltning,4520,Departementenes servicesenter
+1,Statsforvaltning,4560,Direktoratet for forvaltning og IKT
+1,Statsforvaltning,4581,Eiendommer til kongelige formål
+1,Statsforvaltning,4584,Eiendommer utenfor husleieordningen
+1,Statsforvaltning,5445,Statsbygg
+1,Statsforvaltning,5446,"Salg av eiendom, Fornebu"
+2,Familie og forbruker,231,Barnehager
+2,Familie og forbruker,800,"Barne-, likestillings- og inkluderingsdepartementet"
+2,Familie og forbruker,840,Krisetiltak
+2,Familie og forbruker,841,Samliv og konfliktløsning
+2,Familie og forbruker,842,Familievern
+2,Familie og forbruker,843,Likestillings- og diskrimineringsnemnda
+2,Familie og forbruker,844,Kontantstøtte
+2,Familie og forbruker,845,Barnetrygd
+2,Familie og forbruker,846,"Forsknings- og utredningsvirksomhet, tilskudd mv."
+2,Familie og forbruker,849,Likestillings- og diskrimineringsombudet
+2,Familie og forbruker,850,Barneombudet
+2,Familie og forbruker,852,Adopsjonsstøtte
+2,Familie og forbruker,853,Fylkesnemndene for barnevern og sosiale saker
+2,Familie og forbruker,854,Tiltak i barne- og ungdomsvernet
+2,Familie og forbruker,855,Statlig forvaltning av barnevernet
+2,Familie og forbruker,856,"Barnevernets omsorgssenter for enslige, mindreårige asylsøkere"
+2,Familie og forbruker,857,Barne- og ungdomstiltak
+2,Familie og forbruker,858,"Barne-, ungdoms- og familiedirektoratet"
+2,Familie og forbruker,859,EUs ungdomsprogram
+2,Familie og forbruker,860,Forbrukerrådet
+2,Familie og forbruker,862,Positiv miljømerking
+2,Familie og forbruker,865,Forbrukerpolitiske tiltak
+2,Familie og forbruker,866,Statens institutt for forbruksforskning
+2,Familie og forbruker,867,Sekretariatet for Markedsrådet og Forbrukertvistutvalget
+2,Familie og forbruker,868,Forbrukerombudet
+2,Familie og forbruker,2530,Foreldrepenger
+2,Familie og forbruker,3842,Familievern
+2,Familie og forbruker,3855,Statlig forvaltning av barnevernet
+2,Familie og forbruker,3856,"Barnevernets omsorgssenter for enslige, mindreårige asylsøkere"
+2,Familie og forbruker,3858,"Barne-, ungdoms- og familiedirektoratet"
+2,Familie og forbruker,3859,EUs ungdomsprogram
+3,Kultur,300,Kulturdepartementet
+3,Kultur,314,Kultur og samfunn
+3,Kultur,315,Frivillighetsformål
+3,Kultur,320,Allmenne kulturformål
+3,Kultur,321,Kunstnerformål
+3,Kultur,322,"Billedkunst, kunsthåndverk og offentlig rom"
+3,Kultur,323,Musikkformål
+3,Kultur,324,Scenekunstformål
+3,Kultur,326,"Språk-, litteratur- og bibliotekformål"
+3,Kultur,328,Museums- og andre kulturvernformål
+3,Kultur,329,Arkivformål
+3,Kultur,334,Film- og medieformål
+3,Kultur,335,Mediestøtte
+3,Kultur,337,Kompensasjon for kopiering til privat bruk
+3,Kultur,339,Lotteri- og stiftelsestilsynet
+3,Kultur,3300,Kulturdepartementet
+3,Kultur,3320,Allmenne kulturformål
+3,Kultur,3322,"Billedkunst, kunsthåndverk og offentlig rom"
+3,Kultur,3323,Musikkformål
+3,Kultur,3324,Scenekunstformål
+3,Kultur,3326,"Språk-, litteratur- og bibliotekformål"
+3,Kultur,3329,Arkivformål
+3,Kultur,3334,Film- og medieformål
+3,Kultur,3339,"Inntekter fra spill, lotterier og stiftelser"
+4,Utenriks,100,Utenriksdepartementet
+4,Utenriks,103,Regjeringens fellesbevilgning for representasjon
+4,Utenriks,104,Kongefamiliens offisielle reiser til utlandet
+4,Utenriks,115,"Kultur-, norgesfremme- og informasjonsformål"
+4,Utenriks,116,Deltaking i internasjonale organisasjoner
+4,Utenriks,117,EØS-finansieringsordningene
+4,Utenriks,118,Nordområdetiltak m.v.
+4,Utenriks,119,Globale sikkerhetstiltak
+4,Utenriks,140,Utenriksdepartementets administrasjon av utviklingshjelpen
+4,Utenriks,141,Direktoratet for utviklingssamarbeid (Norad)
+4,Utenriks,144,Fredskorpset
+4,Utenriks,150,Bistand til Afrika
+4,Utenriks,151,Bistand til Asia
+4,Utenriks,152,Bistand til Midtøsten og Nord-Afrika
+4,Utenriks,153,Bistand til Latin-Amerika
+4,Utenriks,160,Sivilt samfunn og demokratiutvikling
+4,Utenriks,161,Næringsutvikling
+4,Utenriks,162,Overgangsbistand (gap)
+4,Utenriks,163,"Nødhjelp, humanitær bistand og menneskerettigheter"
+4,Utenriks,164,"Fred, forsoning og demokrati"
+4,Utenriks,165,"Forskning, kompetanseheving og evaluering"
+4,Utenriks,166,Miljø og bærekraftig utvikling mv.
+4,Utenriks,167,"Flyktningtiltak i Norge, godkjent som utviklingshjelp (ODA)"
+4,Utenriks,168,Kvinner og likestilling
+4,Utenriks,169,Globale helse- og vaksineinitiativ
+4,Utenriks,170,FN-organisasjoner mv.
+4,Utenriks,171,Multilaterale finansinstitusjoner
+4,Utenriks,172,Gjeldslette og gjeldsrelaterte tiltak
+4,Utenriks,480,Svalbardbudsjettet
+4,Utenriks,3100,Utenriksdepartementet
+5,Justis,61,Høyesterett
+5,Justis,400,Justis- og beredskapsdepartementet
+5,Justis,410,Tingrettene og lagmannsrettene
+5,Justis,411,Domstoladministrasjonen
+5,Justis,413,Jordskiftedomstolene
+5,Justis,414,Forliksråd og andre domsutgifter
+5,Justis,430,Kriminalomsorgsdirektoratet
+5,Justis,432,Kriminalomsorgens utdanningssenter (KRUS)
+5,Justis,440,Politidirektoratet – politi- og lensmannsetaten
+5,Justis,442,Politihøgskolen
+5,Justis,444,Politiets sikkerhetstjeneste (PST)
+5,Justis,445,Den høyere påtalemyndighet
+5,Justis,446,Den militære påtalemyndighet
+5,Justis,448,Grensekommissæren
+5,Justis,451,Direktoratet for samfunnssikkerhet og beredskap
+5,Justis,452,Sentral krisehåndtering
+5,Justis,454,Redningshelikoptertjenesten
+5,Justis,455,Redningstjenesten
+5,Justis,460,Spesialenheten for politisaker
+5,Justis,466,Særskilte straffesaksutgifter m.m.
+5,Justis,467,Norsk Lovtidend
+5,Justis,468,Kommisjonen for gjenopptakelse av straffesaker
+5,Justis,469,Vergemålsordningen
+5,Justis,470,Fri rettshjelp
+5,Justis,471,Statens erstatningsansvar og Stortingets rettferdsvederlagsordning
+5,Justis,472,Voldsoffererstatning og rådgiving for kriminalitetsofre
+5,Justis,473,Statens sivilrettsforvaltning
+5,Justis,474,Konfliktråd
+5,Justis,475,Bobehandling
+5,Justis,3400,Justis- og beredskapsdepartementet
+5,Justis,3410,Rettsgebyr
+5,Justis,3413,Jordskiftedomstolene
+5,Justis,3430,Kriminalomsorgsdirektoratet
+5,Justis,3432,Kriminalomsorgens utdanningssenter (KRUS)
+5,Justis,3440,Politidirektoratet – politi- og lensmannsetaten
+5,Justis,3442,Politihøgskolen
+5,Justis,3444,Politiets sikkerhetstjeneste (PST)
+5,Justis,3451,Direktoratet for samfunnssikkerhet og beredskap
+5,Justis,3454,Redningshelikoptertjenesten
+5,Justis,3469,Vergemålsordningen
+5,Justis,3470,Fri rettshjelp
+5,Justis,3473,Statens sivilrettsforvaltning
+5,Justis,3474,Konfliktråd
+6,"Innvandring, regional utvikling og bolig",490,Utlendingsdirektoratet
+6,"Innvandring, regional utvikling og bolig",491,Utlendingsnemnda
+6,"Innvandring, regional utvikling og bolig",500,Kommunal- og regionaldepartementet
+6,"Innvandring, regional utvikling og bolig",551,Regional utvikling og nyskaping
+6,"Innvandring, regional utvikling og bolig",552,Nasjonalt samarbeid for regional utvikling
+6,"Innvandring, regional utvikling og bolig",554,Kompetansesenter for distriktsutvikling
+6,"Innvandring, regional utvikling og bolig",579,Valgutgifter
+6,"Innvandring, regional utvikling og bolig",580,Bostøtte
+6,"Innvandring, regional utvikling og bolig",581,Bolig- og bomiljøtiltak
+6,"Innvandring, regional utvikling og bolig",582,Rentekompensasjon for skole- og svømmeanlegg og kirkebygg
+6,"Innvandring, regional utvikling og bolig",585,Husleietvistutvalget
+6,"Innvandring, regional utvikling og bolig",586,Tilskudd til omsorgsboliger og sykehjemsplasser
+6,"Innvandring, regional utvikling og bolig",587,Direktoratet for byggkvalitet
+6,"Innvandring, regional utvikling og bolig",820,Integrerings- og mangfoldsdirektoratet
+6,"Innvandring, regional utvikling og bolig",821,Bosetting av flyktninger og tiltak for innvandrere
+6,"Innvandring, regional utvikling og bolig",822,Opplæring i norsk og samfunnskunnskap for voksne innvandrere
+6,"Innvandring, regional utvikling og bolig",823,Kontaktutvalget mellom innvandrerbefolkningen og myndighetene
+6,"Innvandring, regional utvikling og bolig",1533,Sametinget
+6,"Innvandring, regional utvikling og bolig",1534,Tilskudd til samiske formål
+6,"Innvandring, regional utvikling og bolig",1535,Galdu – Kompetansesenteret for urfolks rettigheter
+6,"Innvandring, regional utvikling og bolig",1536,Internasjonalt reindriftssenter
+6,"Innvandring, regional utvikling og bolig",1540,Nasjonale minoriteter
+6,"Innvandring, regional utvikling og bolig",2412,Husbanken
+6,"Innvandring, regional utvikling og bolig",2426,SIVA SF
+6,"Innvandring, regional utvikling og bolig",3490,Utlendingsdirektoratet
+6,"Innvandring, regional utvikling og bolig",3585,Husleietvistutvalget
+6,"Innvandring, regional utvikling og bolig",3587,Direktoratet for byggkvalitet
+6,"Innvandring, regional utvikling og bolig",3821,Bosetting av flyktninger og tiltak for innvandrere
+6,"Innvandring, regional utvikling og bolig",3822,Opplæring i norsk og samfunnskunnskap for voksne innvandrere
+6,"Innvandring, regional utvikling og bolig",4533,Sametinget
+6,"Innvandring, regional utvikling og bolig",4535,Galdu – Kompetansesenteret for urfolks rettigheter
+6,"Innvandring, regional utvikling og bolig",4536,Internasjonalt reindriftssenter
+6,"Innvandring, regional utvikling og bolig",4540,Nasjonale minoriteter
+6,"Innvandring, regional utvikling og bolig",5312,Husbanken
+6,"Innvandring, regional utvikling og bolig",5326,SIVA SF
+6,"Innvandring, regional utvikling og bolig",5613,Renter fra SIVA SF
+6,"Innvandring, regional utvikling og bolig",5615,Husbanken
+7,Arbeid og sosial,600,Arbeidsdepartementet
+7,Arbeid og sosial,601,"Utredningsvirksomhet, forskning m.m."
+7,Arbeid og sosial,604,Utviklingstiltak i arbeids- og velferdsforvaltningen
+7,Arbeid og sosial,605,Arbeids- og velferdsetaten
+7,Arbeid og sosial,606,Trygderetten
+7,Arbeid og sosial,611,Pensjoner av statskassen
+7,Arbeid og sosial,612,Tilskudd til Statens pensjonskasse
+7,Arbeid og sosial,613,Arbeidsgiveravgift til folketrygden
+7,Arbeid og sosial,614,Boliglånsordningen i Statens pensjonskasse
+7,Arbeid og sosial,615,Yrkesskadeforsikring
+7,Arbeid og sosial,616,Gruppelivsforsikring
+7,Arbeid og sosial,621,Tilskudd til sosiale tjenester og sosial inkludering
+7,Arbeid og sosial,634,Arbeidsmarkedstiltak
+7,Arbeid og sosial,635,Ventelønn
+7,Arbeid og sosial,640,Arbeidstilsynet
+7,Arbeid og sosial,642,Petroleumstilsynet
+7,Arbeid og sosial,643,Statens arbeidsmiljøinstitutt
+7,Arbeid og sosial,646,Pionerdykkere i Nordsjøen
+7,Arbeid og sosial,648,"Arbeidsretten, Riksmekleren m.m."
+7,Arbeid og sosial,649,Treparts bransjeprogrammer
+7,Arbeid og sosial,660,Krigspensjon
+7,Arbeid og sosial,664,Pensjonstrygden for sjømenn
+7,Arbeid og sosial,666,Avtalefestet pensjon (AFP)
+7,Arbeid og sosial,667,Supplerende stønad til personer over 67 år
+7,Arbeid og sosial,847,Tiltak for personer med nedsatt funksjonsevne
+7,Arbeid og sosial,2470,Statens pensjonskasse
+7,Arbeid og sosial,2540,Stønad under arbeidsledighet til fiskere og fangstmenn
+7,Arbeid og sosial,2541,Dagpenger
+7,Arbeid og sosial,2542,Statsgaranti for lønnskrav ved konkurs mv.
+7,Arbeid og sosial,2620,Stønad til enslig mor eller far
+7,Arbeid og sosial,2650,Sykepenger
+7,Arbeid og sosial,2651,Arbeidsavklaringspenger
+7,Arbeid og sosial,2655,Uførhet
+7,Arbeid og sosial,2661,"Grunn- og hjelpestønad, hjelpemidler mv."
+7,Arbeid og sosial,2670,Alderdom
+7,Arbeid og sosial,2680,Etterlatte
+7,Arbeid og sosial,2686,Gravferdsstønad
+7,Arbeid og sosial,3605,Arbeids- og velferdsetaten
+7,Arbeid og sosial,3614,Boliglånsordningen i Statens pensjonskasse
+7,Arbeid og sosial,3615,Yrkesskadeforsikring
+7,Arbeid og sosial,3616,Gruppelivsforsikring
+7,Arbeid og sosial,3634,Arbeidsmarkedstiltak
+7,Arbeid og sosial,3635,Ventelønn mv.
+7,Arbeid og sosial,3640,Arbeidstilsynet
+7,Arbeid og sosial,3642,Petroleumstilsynet
+7,Arbeid og sosial,5470,Statens pensjonskasse
+7,Arbeid og sosial,5607,Renter av boliglånsordningen i Statens pensjonskasse
+7,Arbeid og sosial,5701,Diverse inntekter
+7,Arbeid og sosial,5704,Statsgaranti for lønnskrav ved konkurs
+7,Arbeid og sosial,5705,Refusjon av dagpenger
+8,Forsvar,1700,Forsvarsdepartementet
+8,Forsvar,1710,Forsvarsbygg og nybygg og nyanlegg
+8,Forsvar,1716,Forsvarets forskningsinstitutt
+8,Forsvar,1719,Fellesutgifter og tilskudd til foretak under Forsvarsdepartementet
+8,Forsvar,1720,Felles ledelse og kommandoapparat
+8,Forsvar,1721,Felles ledelse av Forsvarets spesialstyrker
+8,Forsvar,1723,Nasjonal sikkerhetsmyndighet
+8,Forsvar,1725,Fellesinstitusjoner og -utgifter under Forsvarsstaben
+8,Forsvar,1731,Hæren
+8,Forsvar,1732,Sjøforsvaret
+8,Forsvar,1733,Luftforsvaret
+8,Forsvar,1734,Heimevernet
+8,Forsvar,1735,Etterretningstjenesten
+8,Forsvar,1740,Forsvarets logistikkorganisasjon
+8,Forsvar,1760,Nyanskaffelser av materiell og nybygg og nyanlegg
+8,Forsvar,1761,Nye kampfly med baseløsning
+8,Forsvar,1790,Kystvakten
+8,Forsvar,1791,Redningshelikoptertjenesten
+8,Forsvar,1792,Norske styrker i utlandet
+8,Forsvar,1795,Kulturelle og allmennyttige formål
+8,Forsvar,4700,Forsvarsdepartementet
+8,Forsvar,4710,Forsvarsbygg og nybygg og nyanlegg
+8,Forsvar,4719,Fellesinntekter til foretak under Forsvarsdepartementet
+8,Forsvar,4720,Felles ledelse og kommandoapparat
+8,Forsvar,4723,Nasjonal sikkerhetsmyndighet
+8,Forsvar,4725,Fellesinstitusjoner og -inntekter under Forsvarsstaben
+8,Forsvar,4731,Hæren
+8,Forsvar,4732,Sjøforsvaret
+8,Forsvar,4733,Luftforsvaret
+8,Forsvar,4734,Heimevernet
+8,Forsvar,4740,Forsvarets logistikkorganisasjon
+8,Forsvar,4760,Nyanskaffelser av materiell og nybygg og nyanlegg
+8,Forsvar,4790,Kystvakten
+8,Forsvar,4791,Redningshelikoptertjenesten
+8,Forsvar,4792,Norske styrker i utlandet
+8,Forsvar,4795,Kulturelle og allmennyttige formål
+8,Forsvar,4799,Militære bøter
+9,Næring,900,Nærings- og handelsdepartementet
+9,Næring,901,Patentstyret
+9,Næring,902,Justervesenet
+9,Næring,903,Norsk akkreditering
+9,Næring,904,Brønnøysundregistrene
+9,Næring,905,Norges geologiske undersøkelse
+9,Næring,906,Direktoratet for mineralforvaltning med Bergmesteren for Svalbard
+9,Næring,909,Tiltak for sysselsetting av sjøfolk
+9,Næring,910,Sjøfartsdirektoratet
+9,Næring,913,Standardisering
+9,Næring,914,Klagenemnda for industrielle rettigheter
+9,Næring,922,Romvirksomhet
+9,Næring,924,Internasjonalt samarbeid og utviklingsprogrammer
+9,Næring,930,Norsk Design- og Arkitektursenter
+9,Næring,934,Internasjonaliseringstiltak
+9,Næring,937,Svalbard Reiseliv AS
+9,Næring,950,Forvaltning av statlig eierskap
+9,Næring,953,Kings Bay AS
+9,Næring,960,Raufoss ASA
+9,Næring,1550,Konkurransetilsynet
+9,Næring,2421,Innovasjon Norge
+9,Næring,2429,Eksportkreditt Norge AS
+9,Næring,2460,Garanti-instituttet for eksportkreditt
+9,Næring,3900,Nærings- og handelsdepartementet
+9,Næring,3901,Patentstyret
+9,Næring,3902,Justervesenet
+9,Næring,3903,Norsk akkreditering
+9,Næring,3904,Brønnøysundregistrene
+9,Næring,3905,Norges geologiske undersøkelse
+9,Næring,3906,Direktoratet for mineralforvaltning med Bergmesteren for Svalbard
+9,Næring,3910,Sjøfartsdirektoratet
+9,Næring,3914,Klagenemnda for industrielle rettigheter
+9,Næring,3950,Forvaltning av statlig eierskap
+9,Næring,3961,Selskaper under NHDs forvaltning
+9,Næring,4550,Konkurransetilsynet
+9,Næring,5325,Innovasjon Norge
+9,Næring,5329,Eksportkreditt Norge AS
+9,Næring,5460,Garanti-instituttet for eksportkreditt
+9,Næring,5614,Renter fra Garanti-instituttet for eksportkreditt
+9,Næring,5629,Renter fra eksportkredittordningen
+9,Næring,5650,Renter på lån fra Nærings- og handelsdepartementet
+10,Fiskeri,1000,Fiskeri- og kystdepartementet
+10,Fiskeri,1001,Deltakelse i internasjonale organisasjoner
+10,Fiskeri,1030,Fiskeridirektoratet
+10,Fiskeri,1050,Diverse fiskeriformål
+10,Fiskeri,2415,"Innovasjon Norge, fiskeri- og andre regionalpolitiske tiltak"
+10,Fiskeri,4000,Fiskeri- og kystdepartementet
+10,Fiskeri,4030,Fiskeridirektoratet
+11,Landbruk,1100,Landbruks- og matdepartementet
+11,Landbruk,1112,Kunnskapsutvikling og beredskap m.m. på matområdet
+11,Landbruk,1115,Mattilsynet
+11,Landbruk,1138,Støtte til organisasjoner m.m.
+11,Landbruk,1139,"Genressurser, miljø- og ressursregistreringer"
+11,Landbruk,1141,Kunnskapsutvikling m.m. innen miljø- og næringstiltak i landbruket
+11,Landbruk,1143,Statens landbruksforvaltning
+11,Landbruk,1144,Regionale og lokale tiltak i landbruket
+11,Landbruk,1147,Statens reindriftsforvaltning
+11,Landbruk,1148,Naturskade – erstatninger
+11,Landbruk,1149,Verdiskapings- og utviklingstiltak i skogbruket
+11,Landbruk,1150,Til gjennomføring av jordbruksavtalen m.m.
+11,Landbruk,1151,Til gjennomføring av reindriftsavtalen
+11,Landbruk,1161,Myndighetsoppgaver og sektorpolitiske oppgaver på statsgrunn
+11,Landbruk,4100,Landbruks- og matdepartementet
+11,Landbruk,4112,Kunnskapsutvikling og beredskap m.m. på matområdet
+11,Landbruk,4115,Mattilsynet
+11,Landbruk,4143,Statens landbruksforvaltning
+11,Landbruk,4147,Statens reindriftsforvaltning
+11,Landbruk,4150,Til gjennomføring av jordbruksavtalen m.m.
+11,Landbruk,4162,Statskog SF – forvaltning av statlig eierskap
+12,Olje og energi,1800,Olje- og energidepartementet
+12,Olje og energi,1810,Oljedirektoratet
+12,Olje og energi,1815,Petoro AS
+12,Olje og energi,1820,Norges vassdrags- og energidirektorat
+12,Olje og energi,1825,"Energiomlegging, energi- og klimateknologi"
+12,Olje og energi,1826,Statnett SF
+12,Olje og energi,1830,Forskning og næringsutvikling
+12,Olje og energi,1840,CO2-håndtering
+12,Olje og energi,2440,Statens direkte økonomiske engasjement i petroleumsvirksomheten
+12,Olje og energi,2442,Disponering av innretninger på kontinentalsokkelen
+12,Olje og energi,2490,NVE Anlegg
+12,Olje og energi,4800,Olje- og energidepartementet
+12,Olje og energi,4810,Oljedirektoratet
+12,Olje og energi,4820,Norges vassdrags- og energidirektorat
+12,Olje og energi,4825,"Energiomlegging, energi- og klimateknologi"
+12,Olje og energi,4829,Konsesjonsavgiftsfondet
+12,Olje og energi,4840,CO2-håndtering
+12,Olje og energi,5440,Statens direkte økonomiske engasjement i petroleumsvirksomheten
+12,Olje og energi,5490,NVE Anlegg
+13,Miljø,1400,Miljøverndepartementet
+13,Miljø,1406,Miljøvennlig skipsfart
+13,Miljø,1407,Miljøhensyn i offentlige innkjøp
+13,Miljø,1408,Radioaktiv forurensning i det ytre miljø
+13,Miljø,1410,Miljøvernforskning og miljøovervåking
+13,Miljø,1420,Miljødirektoratet
+13,Miljø,1425,Vilt- og fisketiltak
+13,Miljø,1429,Riksantikvaren
+13,Miljø,1432,Norsk kulturminnefond
+13,Miljø,1465,"Statens kartverk, arbeid med tinglysing og nasjonal geografisk infrastruktur"
+13,Miljø,1471,Norsk Polarinstitutt
+13,Miljø,1472,Svalbard miljøvernfond
+13,Miljø,1474,Fram – Nordområdesenter for klima- og miljøforskning
+13,Miljø,2465,Statens kartverk
+13,Miljø,4400,Miljøverndepartementet
+13,Miljø,4420,Miljødirektoratet
+13,Miljø,4429,Riksantikvaren
+13,Miljø,4465,"Statens kartverk, arbeid med tinglysing og nasjonal geografisk infrastruktur"
+13,Miljø,4471,Norsk Polarinstitutt
+14,Konstitusjonelle institusjoner,1,H.M. Kongen og H.M. Dronningen
+14,Konstitusjonelle institusjoner,2,H.K.H. Kronprinsen og H.K.H. Kronprinsessen
+14,Konstitusjonelle institusjoner,41,Stortinget
+14,Konstitusjonelle institusjoner,42,Ombudsmannsnemnda for Forsvaret
+14,Konstitusjonelle institusjoner,43,Stortingets ombudsmann for forvaltningen
+14,Konstitusjonelle institusjoner,44,"Stortingets kontrollutvalg for etterretnings-, overvåkings- og sikkerhetstjeneste"
+14,Konstitusjonelle institusjoner,51,Riksrevisjonen
+14,Konstitusjonelle institusjoner,3041,Stortinget
+14,Konstitusjonelle institusjoner,3051,Riksrevisjonen
+15,Helse,700,Helse- og omsorgsdepartementet
+15,Helse,701,IKT i helse- og omsorgssektoren
+15,Helse,702,Beredskap
+15,Helse,703,Internasjonalt samarbeid
+15,Helse,710,Nasjonalt folkehelseinstitutt
+15,Helse,711,Ernæring og mattrygghet
+15,Helse,712,Bioteknologinemnda
+15,Helse,713,Vitenskapskomiteen for mattrygghet
+15,Helse,715,Statens strålevern
+15,Helse,716,Statens institutt for rusmiddelforskning
+15,Helse,718,Rusmiddelforebygging
+15,Helse,719,Annet folkehelsearbeid
+15,Helse,720,Helsedirektoratet
+15,Helse,721,Statens helsetilsyn
+15,Helse,722,Norsk pasientskadeerstatning
+15,Helse,723,Pasientskadenemnda
+15,Helse,724,Statens autorisasjonskontor for helsepersonell
+15,Helse,725,Nasjonalt kunnskapssenter for helsetjenesten
+15,Helse,726,Statens helsepersonellnemnd
+15,Helse,728,Klagenemnda for behandling i utlandet og Preimplantasjonsdiagnostikknemnda
+15,Helse,729,Pasient- og brukerombud
+15,Helse,732,Regionale helseforetak
+15,Helse,733,Habilitering og rehabilitering
+15,Helse,734,Særskilte tilskudd til psykisk helse- og rustiltak
+15,Helse,750,Statens legemiddelverk
+15,Helse,751,Legemiddeltiltak
+15,Helse,761,Omsorgstjeneste
+15,Helse,762,Primærhelsetjeneste
+15,Helse,763,Rustiltak
+15,Helse,764,Psykisk helse
+15,Helse,769,Utredningsvirksomhet mv.
+15,Helse,770,Tannhelsetjenester
+15,Helse,780,Forskning
+15,Helse,781,Forsøk og utvikling mv.
+15,Helse,782,Helseregistre
+15,Helse,783,Personell
+15,Helse,2711,Spesialisthelsetjeneste mv.
+15,Helse,2751,Legemidler mv.
+15,Helse,2752,Refusjon av egenbetaling
+15,Helse,2755,Helsetjenester i kommunene mv.
+15,Helse,2756,Andre helsetjenester
+15,Helse,2790,Andre helsetiltak
+15,Helse,3710,Nasjonalt folkehelseinstitutt
+15,Helse,3713,Vitenskapskomiteen for mattrygghet
+15,Helse,3715,Statens strålevern
+15,Helse,3716,Statens institutt for rusmiddelforskning
+15,Helse,3718,Rusmiddelforebygging
+15,Helse,3720,Helsedirektoratet
+15,Helse,3722,Norsk pasientskadeerstatning
+15,Helse,3723,Pasientskadenemnda
+15,Helse,3724,Statens autorisasjonskontor for helsepersonell
+15,Helse,3725,Nasjonalt kunnskapssenter for helsetjenesten
+15,Helse,3732,Regionale helseforetak
+15,Helse,3750,Statens legemiddelverk
+16,"Kirke, utdanning og forskning",200,Kunnskapsdepartementet
+16,"Kirke, utdanning og forskning",220,Utdanningsdirektoratet
+16,"Kirke, utdanning og forskning",221,Foreldreutvalgene for grunnopplæringen og barnehagene
+16,"Kirke, utdanning og forskning",222,Statlige grunn- og videregående skoler og grunnskoleinternat
+16,"Kirke, utdanning og forskning",223,Sametinget
+16,"Kirke, utdanning og forskning",224,Senter for IKT i utdanningen
+16,"Kirke, utdanning og forskning",225,Tiltak i grunnopplæringen
+16,"Kirke, utdanning og forskning",226,Kvalitetsutvikling i grunnopplæringen
+16,"Kirke, utdanning og forskning",227,Tilskudd til særskilte skoler
+16,"Kirke, utdanning og forskning",228,Tilskudd til private skoler mv.
+16,"Kirke, utdanning og forskning",229,Statens fagskole for gartnere og blomsterdekoratører
+16,"Kirke, utdanning og forskning",230,Statlig spesialpedagogisk støttesystem
+16,"Kirke, utdanning og forskning",252,EUs utdannings- og ungdomsprogram
+16,"Kirke, utdanning og forskning",253,Folkehøyskoler
+16,"Kirke, utdanning og forskning",254,Tilskudd til voksenopplæring
+16,"Kirke, utdanning og forskning",255,Tilskudd til freds- og menneskerettssentre
+16,"Kirke, utdanning og forskning",256,"Vox, nasjonalt fagorgan for kompetansepolitikk"
+16,"Kirke, utdanning og forskning",257,Program for basiskompetanse i arbeidslivet
+16,"Kirke, utdanning og forskning",258,Tiltak for livslang læring
+16,"Kirke, utdanning og forskning",260,Universiteter og høyskoler
+16,"Kirke, utdanning og forskning",270,Internasjonal mobilitet og sosiale formål for studenter
+16,"Kirke, utdanning og forskning",276,Fagskoleutdanning
+16,"Kirke, utdanning og forskning",280,Felles enheter
+16,"Kirke, utdanning og forskning",281,Felles tiltak for universiteter og høyskoler
+16,"Kirke, utdanning og forskning",283,Meteorologiformål
+16,"Kirke, utdanning og forskning",284,De nasjonale forskningsetiske komiteene
+16,"Kirke, utdanning og forskning",285,Norges forskningsråd
+16,"Kirke, utdanning og forskning",287,Forskningsinstitutter og andre tiltak
+16,"Kirke, utdanning og forskning",288,Internasjonale samarbeidstiltak
+16,"Kirke, utdanning og forskning",310,Tilskudd til trossamfunn m.m.
+16,"Kirke, utdanning og forskning",920,Norges forskningsråd
+16,"Kirke, utdanning og forskning",1020,Havforskningsinstituttet
+16,"Kirke, utdanning og forskning",1021,Drift av forskningsfartøyene
+16,"Kirke, utdanning og forskning",1022,NIFES
+16,"Kirke, utdanning og forskning",1023,"Fiskeri-, havbruks- og transportrettet FoU"
+16,"Kirke, utdanning og forskning",1137,Forskning og innovasjon
+16,"Kirke, utdanning og forskning",1590,Den norske kirke
+16,"Kirke, utdanning og forskning",1592,Kirkebygg og gravplasser
+16,"Kirke, utdanning og forskning",2410,Statens lånekasse for utdanning
+16,"Kirke, utdanning og forskning",3220,Utdanningsdirektoratet
+16,"Kirke, utdanning og forskning",3222,Statlige grunn- og videregående skoler og grunnskoleinternat
+16,"Kirke, utdanning og forskning",3224,Senter for IKT i utdanningen
+16,"Kirke, utdanning og forskning",3225,Tiltak i grunnopplæringen
+16,"Kirke, utdanning og forskning",3229,Statens fagskole for gartnere og blomsterdekoratører
+16,"Kirke, utdanning og forskning",3230,Statlig spesialpedagogisk støttesystem
+16,"Kirke, utdanning og forskning",3256,"Vox, nasjonalt fagorgan for kompetansepolitikk"
+16,"Kirke, utdanning og forskning",3280,Felles enheter
+16,"Kirke, utdanning og forskning",3281,Felles tiltak for universiteter og høyskoler
+16,"Kirke, utdanning og forskning",3287,Forskningsinstitutter og andre tiltak
+16,"Kirke, utdanning og forskning",3288,Internasjonale samarbeidstiltak
+16,"Kirke, utdanning og forskning",4020,Havforskningsinstituttet
+16,"Kirke, utdanning og forskning",4021,Drift av forskningsfartøyene
+16,"Kirke, utdanning og forskning",4022,NIFES
+16,"Kirke, utdanning og forskning",4023,"Fiskeri-, havbruks- og transportrettet FoU"
+16,"Kirke, utdanning og forskning",4590,Den norske kirke
+16,"Kirke, utdanning og forskning",4592,Kirkebygg og gravplasser
+16,"Kirke, utdanning og forskning",5310,Statens lånekasse for utdanning
+16,"Kirke, utdanning og forskning",5610,Renter av lån til Nofima AS
+16,"Kirke, utdanning og forskning",5617,Renter fra Statens lånekasse for utdanning
+17,Transport og kommunikasjon,456,Direktoratet for nødkommunikasjon
+17,Transport og kommunikasjon,1062,Kystverket
+17,Transport og kommunikasjon,1070,Samfunnet Jan Mayen og Loran-C
+17,Transport og kommunikasjon,1300,Samferdselsdepartementet
+17,Transport og kommunikasjon,1301,Forskning og utvikling mv.
+17,Transport og kommunikasjon,1310,Flytransport
+17,Transport og kommunikasjon,1311,Tilskudd til regionale flyplasser
+17,Transport og kommunikasjon,1313,Luftfartstilsynet
+17,Transport og kommunikasjon,1314,Statens havarikommisjon for transport
+17,Transport og kommunikasjon,1320,Statens vegvesen
+17,Transport og kommunikasjon,1330,Særskilte transporttiltak
+17,Transport og kommunikasjon,1350,Jernbaneverket
+17,Transport og kommunikasjon,1351,Persontransport med tog
+17,Transport og kommunikasjon,1354,Statens jernbanetilsyn
+17,Transport og kommunikasjon,1370,Posttjenester
+17,Transport og kommunikasjon,1380,Post- og teletilsynet
+17,Transport og kommunikasjon,1561,IKT-politikk
+17,Transport og kommunikasjon,1562,Internasjonalt IKT-samarbeid og utviklingsprogram
+17,Transport og kommunikasjon,3456,Direktoratet for nødkommunikasjon
+17,Transport og kommunikasjon,4062,Kystverket
+17,Transport og kommunikasjon,4070,Samfunnet Jan Mayen og Loran-C
+17,Transport og kommunikasjon,4300,Samferdselsdepartementet
+17,Transport og kommunikasjon,4312,Oslo Lufthavn AS
+17,Transport og kommunikasjon,4313,Luftfartstilsynet
+17,Transport og kommunikasjon,4320,Statens vegvesen
+17,Transport og kommunikasjon,4322,Svinesundsforbindelsen AS
+17,Transport og kommunikasjon,4350,Jernbaneverket
+17,Transport og kommunikasjon,4354,Statens jernbanetilsyn
+17,Transport og kommunikasjon,4380,Post- og teletilsynet
+17,Transport og kommunikasjon,5619,Renter av lån til Oslo Lufthavn AS
+17,Transport og kommunikasjon,5624,Renter av Svinesundsforbindelsen AS
+18,Rammeoverføringer til kommunesektoren mv.,571,Rammetilskudd til kommuner
+18,Rammeoverføringer til kommunesektoren mv.,572,Rammetilskudd til fylkeskommuner
+18,Rammeoverføringer til kommunesektoren mv.,575,Ressurskrevende tjenester
+19,Tilfeldige utgifter og inntekter,5309,Tilfeldige inntekter
+20,Finansadministrasjonen,1600,Finansdepartementet
+20,Finansadministrasjonen,1602,Finanstilsynet
+20,Finansadministrasjonen,1605,Direktoratet for økonomistyring
+20,Finansadministrasjonen,1608,Tiltak for å styrke statlig økonomi- og prosjektstyring
+20,Finansadministrasjonen,1610,Toll- og avgiftsetaten
+20,Finansadministrasjonen,1618,Skatteetaten
+20,Finansadministrasjonen,1620,Statistisk sentralbyrå
+20,Finansadministrasjonen,1632,Kompensasjon for merverdiavgift
+20,Finansadministrasjonen,1634,Statens innkrevingssentral
+20,Finansadministrasjonen,1638,Kjøp av klimakvoter
+20,Finansadministrasjonen,1645,Statens finansfond
+20,Finansadministrasjonen,1650,"Statsgjeld, renter mv."
+20,Finansadministrasjonen,4600,Finansdepartementet
+20,Finansadministrasjonen,4602,Finanstilsynet
+20,Finansadministrasjonen,4605,Direktoratet for økonomistyring
+20,Finansadministrasjonen,4610,Toll- og avgiftsetaten
+20,Finansadministrasjonen,4618,Skatteetaten
+20,Finansadministrasjonen,4620,Statistisk sentralbyrå
+20,Finansadministrasjonen,4634,Statens innkrevingssentral
+20,Finansadministrasjonen,4638,Salg av klimakvoter
+21,"Skatter, avgifter og toll",5501,Skatter på formue og inntekt
+21,"Skatter, avgifter og toll",5506,Avgift av arv og gaver
+21,"Skatter, avgifter og toll",5507,Skatt og avgift på utvinning av petroleum
+21,"Skatter, avgifter og toll",5508,Avgift på utslipp av CO2 i petroleumsvirksomhet på kontinentalsokkelen
+21,"Skatter, avgifter og toll",5509,Avgift på utslipp av NOx i petroleumsvirksomheten på kontinentalsokkelen
+21,"Skatter, avgifter og toll",5511,Tollinntekter
+21,"Skatter, avgifter og toll",5521,Merverdiavgift
+21,"Skatter, avgifter og toll",5526,Avgift på alkohol
+21,"Skatter, avgifter og toll",5531,Avgift på tobakkvarer mv.
+21,"Skatter, avgifter og toll",5536,Avgift på motorvogner mv.
+21,"Skatter, avgifter og toll",5537,Avgifter på båter mv.
+21,"Skatter, avgifter og toll",5538,Veibruksavgift på drivstoff
+21,"Skatter, avgifter og toll",5541,Avgift på elektrisk kraft
+21,"Skatter, avgifter og toll",5542,Avgift på mineralolje mv.
+21,"Skatter, avgifter og toll",5543,Miljøavgift på mineralske produkter mv.
+21,"Skatter, avgifter og toll",5546,Avgift på sluttbehandling av avfall
+21,"Skatter, avgifter og toll",5547,Avgift på helse- og miljøskadelige kjemikalier
+21,"Skatter, avgifter og toll",5548,Miljøavgift på visse klimagasser
+21,"Skatter, avgifter og toll",5549,Avgift på utslipp av NOx
+21,"Skatter, avgifter og toll",5550,Miljøavgift på plantevernmiddel
+21,"Skatter, avgifter og toll",5551,Avgift knyttet til mineralvirksomhet
+21,"Skatter, avgifter og toll",5555,Avgift på sjokolade- og sukkervarer mv.
+21,"Skatter, avgifter og toll",5556,Avgift på alkoholfrie drikkevarer mv.
+21,"Skatter, avgifter og toll",5557,Avgift på sukker mv.
+21,"Skatter, avgifter og toll",5559,Avgift på drikkevareemballasje
+21,"Skatter, avgifter og toll",5565,Dokumentavgift
+21,"Skatter, avgifter og toll",5568,Sektoravgifter under Kulturdepartementet
+21,"Skatter, avgifter og toll",5571,Sektoravgifter under Arbeidsdepartementet
+21,"Skatter, avgifter og toll",5572,Sektoravgifter under Helse- og omsorgsdepartementet
+21,"Skatter, avgifter og toll",5574,Sektoravgifter under Nærings- og handelsdepartementet
+21,"Skatter, avgifter og toll",5575,Sektoravgifter under Fiskeri- og kystdepartementet
+21,"Skatter, avgifter og toll",5576,Sektoravgifter under Landbruks- og matdepartementet
+21,"Skatter, avgifter og toll",5578,Sektoravgifter under Miljøverndepartementet
+21,"Skatter, avgifter og toll",5580,Sektoravgifter under Finansdepartementet
+21,"Skatter, avgifter og toll",5582,Sektoravgifter under Olje- og energidepartementet
+21,"Skatter, avgifter og toll",5583,Særskilte avgifter mv. i bruk av frekvenser
+21,"Skatter, avgifter og toll",5700,Folketrygdens inntekter
+22,Utbytte mv.,5611,Aksjer i NSB AS
+22,Utbytte mv.,5616,Kommunalbanken AS
+22,Utbytte mv.,5618,Aksjer i Posten Norge AS
+22,Utbytte mv.,5622,Aksjer i Avinor AS
+22,Utbytte mv.,5625,Renter og utbytte fra Innovasjon Norge
+22,Utbytte mv.,5631,Aksjer i AS Vinmonopolet
+22,Utbytte mv.,5651,Aksjer i selskaper under Landbruks- og matdepartementet
+22,Utbytte mv.,5652,Statskog SF – renter og utbytte
+22,Utbytte mv.,5656,Aksjer i selskaper under NHDs forvaltning
+22,Utbytte mv.,5685,Aksjer i Statoil ASA
+22,Utbytte mv.,5692,Utbytte av statens kapital i Den nordiske investeringsbank
+22,Utbytte mv.,5693,Utbytte av aksjer i diverse selskaper mv.

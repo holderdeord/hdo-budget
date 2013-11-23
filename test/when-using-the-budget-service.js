@@ -19,38 +19,45 @@ describe("When using the budget-service", function () {
 		expect(b.frames.length).toBe(1);
 	});
 
-	it("should be able to add chapter", function () {
+	it("should be able to add chapter", inject(function ($rootScope) {
 		b.addChapter(1, 12, "test");
+		$rootScope.$apply();
 		expect(b.chapters.length).toBe(2);
-	});
+	}));
 
-	it("should add chapter to frame", function () {
+	it("should add chapter to frame", inject(function ($rootScope) {
 		b.addChapter(1, 12, "test");
+		$rootScope.$apply();
 		expect(b.frames[0].chapters.length).toBe(2);
-	});
+	}));
 
-	it("should not add redundant chapters", function () {
+	it("should not add redundant chapters", inject(function ($rootScope) {
 		b.addChapter(1, 11, "test");
+		$rootScope.$apply();
 		expect(b.chapters.length).toBe(1);
-	});
+	}));
 
-	it("should be able to add post", function () {
+	it("should be able to add post", inject(function ($rootScope) {
 		b.addPost(11, 1, "test", 100);
+		$rootScope.$apply();
 		expect(b.posts.length).toBe(2);
-	});
+	}));
 
-	it("should add post to chapter", function () {
+	it("should add post to chapter", inject(function ($rootScope) {
 		b.addPost(11, 1, "test", 100);
+		$rootScope.$apply();
 		expect(b.chapters[0].posts.length).toBe(2);
-	});
+	}));
 
-	it("should add amount to chapter", function () {
+	it("should add amount to chapter", inject(function ($rootScope) {
 		b.addPost(11, 1, "test", 100);
+		$rootScope.$apply();
 		expect(b.chapters[0].amount).toBe(200);
-	});
+	}));
 
-	it("should add amount to frame", function () {
+	it("should add amount to frame", inject(function ($rootScope) {
 		b.addPost(11, 1, "test", 100);
+		$rootScope.$apply();
 		expect(b.frames[0].amount).toBe(200);
-	});
+	}));
 });
