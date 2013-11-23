@@ -69,4 +69,12 @@ describe("When using the budget-service", function () {
 		expect(b.frames[0].revenue).toBe(0);
 		expect(b.frames[0].cost).toBe(200);
 	}));
+
+	it("should be able to add chapter after posts", inject(function ($rootScope) {
+		b.addPost(12, 1, "test post 1", 100);
+		b.addPost(12, 2, "test post 2", 100);
+		b.addChapter(1, 12, "test chapter");
+		$rootScope.$apply();
+		expect(b.frames[0].chapters[1].posts.length).toBe(2);
+	}));
 });

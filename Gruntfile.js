@@ -6,6 +6,16 @@ module.exports = function(grunt) {
 				autowatch: true
 			}
 		},
+		less: {
+			development: {
+				options: {
+					paths: ["./less"]
+				},
+				files: {
+					"./css/budget.css": "./less/budget.less"
+				}
+			}
+		},
 		connect: {
 			server: {
 				options: {
@@ -14,10 +24,16 @@ module.exports = function(grunt) {
 					keepalive: true
 				}
 			}
+		},
+		watch: {
+			files: "./less/*",
+			tasks: ["less"]
 		}
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-connect');
+	grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-karma');
 
 	grunt.registerTask('test', ['karma']);

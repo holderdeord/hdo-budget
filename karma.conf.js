@@ -16,6 +16,7 @@ module.exports = function(config) {
     files: [
       'bower_components/angular/angular.js',
       'bower_components/d3/d3.js',
+      'bower_components/numeral/numeral.js',
       'lib/*.js',
       'src/*.js',
       'test/*.js'

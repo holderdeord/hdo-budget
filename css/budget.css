@@ -1,0 +1,44 @@
+table.budget table {
+  border-spacing: 0;
+  width: 100%;
+}
+table.budget td,
+table.budget th {
+  text-align: right;
+}
+table.budget td.no,
+table.budget th.no {
+  width: 10%;
+}
+table.budget td.name,
+table.budget th.name {
+  text-align: left;
+  width: 60%;
+}
+table.budget td.revenue,
+table.budget th.revenue,
+table.budget td.cose,
+table.budget th.cose {
+  width: 15%;
+}
+table.budget td[colspan],
+table.budget th[colspan] {
+  background: #ccc;
+  padding: 0;
+}
+table.budget td[colspan] [colspan],
+table.budget th[colspan] [colspan] {
+  background: #aaa;
+}
+table.budget tr.toggler td {
+  cursor: pointer;
+}
+table.budget tr.toggler:hover td {
+  text-decoration: underline;
+}
+table.budget tr.toggler + tr {
+  display: none;
+}
+table.budget tr.toggler + tr.toggled {
+  display: table-row;
+}

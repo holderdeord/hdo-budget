@@ -1,0 +1,44 @@
+@import (reference) "../bower_components/bootstrap/less/bootstrap.less";
+
+table.budget {
+	table {
+		border-spacing: 0;
+		width: 100%;
+	}
+	td,
+	th {
+		text-align: right;
+		&.no { 
+			width: 10%;
+		}
+		&.name { 
+			text-align: left;
+			width: 60%;
+		}
+		&.revenue,
+		&.cose {
+			width: 15%;
+		}
+		&[colspan] {
+			background: #ccc;
+			padding: 0;
+			[colspan] {
+				background: #aaa;
+			}
+		}
+	}
+	tr.toggler {
+		td {
+			cursor: pointer;
+		}
+		&:hover td {
+			text-decoration: underline;
+		}
+		& + tr {
+			display: none;
+			&.toggled {
+				display: table-row;
+			}
+		}
+	}
+}
