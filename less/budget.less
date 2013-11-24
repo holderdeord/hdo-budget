@@ -5,6 +5,13 @@ table.budget {
 		border-spacing: 0;
 		width: 100%;
 	}
+	tbody [colspan] {
+		background: #ccc;
+		padding: 0;
+		[colspan] {
+			background: #aaa;
+		}
+	}
 	td,
 	th {
 		text-align: right;
@@ -19,13 +26,12 @@ table.budget {
 		&.cose {
 			width: 15%;
 		}
-		&[colspan] {
-			background: #ccc;
-			padding: 0;
-			[colspan] {
-				background: #aaa;
-			}
-		}
+	}
+	tfoot td {
+		border-top: solid 1px grey;
+	}
+	thead th {
+		border-bottom: solid 1px black;
 	}
 	tr.toggler {
 		td {

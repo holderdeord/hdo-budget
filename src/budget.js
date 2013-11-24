@@ -9,7 +9,13 @@ angular.module("budgetApp", [])
 	})
 	.factory("budget", ['$q', function ($q) {
 		var format = "0,0";
-		function FrameFactory () {
+		function update (cost, revenue) {
+			this.cost += cost;
+			this.costFormatted = numeral(this.cost).format(format);
+			this.revenue += revenue;
+			this.revenueFormatted = numeral(this.revenue).format(format);
+		};
+		function FrameFactory (budget) {
 			function Frame(frameNo, frameName) {
 				this.no = frameNo;
 				this.name = frameName;
@@ -22,10 +28,8 @@ angular.module("budgetApp", [])
 					this.chapters.push(chapter);
 				}
 				this.update = function (cost, revenue) {
-					this.cost += cost;
-					this.costFormatted = numeral(this.cost).format(format);
-					this.revenue += revenue;
-					this.revenueFormatted = numeral(this.revenue).format(format);
+					budget.update(cost, revenue);
+					update.call(this, cost, revenue);
 				}
 			}
 			var frameIsResolved = {};
@@ -113,8 +117,19 @@ angular.module("budgetApp", [])
 			}
 		}
 		return {
-			$new: function (name) {
-				var frames = new FrameFactory();
+			$new: function (meta) {
+				function Budget(meta) {
+					angular.extend(this, meta);
+					this.cost = 0;
+					this.costFormatted = numeral(0).format(format);
+					this.revenue = 0;
+					this.revenueFormatted = numeral(0).format(format);
+					this.update = function (cost, revenue) {
+						update.call(this, cost, revenue);
+					};
+				}
+				var budget = new Budget(meta);
+				var frames = new FrameFactory(budget);
 				var chapters = new ChapterFactory(frames);
 				var posts = new PostFactory(chapters);
 				return {
@@ -123,7 +138,7 @@ angular.module("budgetApp", [])
 					addPost: posts.add,
 					chapters: chapters.chapters,
 					frames: frames.frames,
-					name: name,
+					meta: budget,
 					posts: posts.posts
 				}
 			}
@@ -187,16 +202,16 @@ angular.module("budgetApp", [])
 				deferred.resolve();
 			}
 		}
-		function $new(bJson) {
-			var b = budget.$new(bJson.name);
+		function $new(meta) {
+			var b = budget.$new(meta);
 			var deferred = $q.defer();
-			var promises = bJson.posts.map(function (url) {
+			var promises = meta.posts.map(function (url) {
 				var d = $q.defer();
 				posts(url).then(parsePosts(b, d));
 				return d.promise;
 			});
 			var structureDeferred = $q.defer();
-			structure(bJson.structure).then(parseStructure(b, structureDeferred));
+			structure(meta.structure).then(parseStructure(b, structureDeferred));
 			promises.push(structureDeferred);
 			$q.all(promises).then(function () {
 				deferred.resolve(b);

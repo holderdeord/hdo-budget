@@ -15,7 +15,7 @@ describe("When loading budget(s) into the budget controller", function () {
 			]);
 		});
 		spyOn(budgetLoader, "$new").andCallFake(function () {
-			return { then: function (cb) { cb(budget.$new("default budget")); }};
+			return { then: function (cb) { cb(budget.$new({ name: "default budget" })); }};
 		});
 		$controller('BudgetController', { $scope: scope, budgetLoader: budgetLoader, d3: d3 });
 		$rootScope.$apply();
@@ -27,6 +27,6 @@ describe("When loading budget(s) into the budget controller", function () {
 	}));
 
 	it("should load default budget", function () {
-		expect(scope.budget.name).toEqual("default budget");
+		expect(scope.budget.meta.name).toEqual("default budget");
 	})
 });

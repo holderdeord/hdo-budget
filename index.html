@@ -12,6 +12,10 @@
 		<table class="budget">
 			<thead>
 				<tr>
+					<td colspan="2">&nbsp;</td>
+					<td colspan="2">{{budget.meta.name}}</td>
+				</tr>
+				<tr>
 					<th class="no">&nbsp;</th>
 					<th class="name">Ramme/Kapittel/Post</th>
 					<th class="revenue">Inntekter</th>
@@ -56,6 +60,14 @@
 					</td>
 				</tr>
 			</tbody>
+			<tfoot>
+				<tr>
+					<td class="no">&nbsp;</td>
+					<td class="name">TOTALT</td>
+					<td class="revenue">{{budget.meta.revenueFormatted}}</td>
+					<td class="cost">{{budget.meta.costFormatted}}</td>
+				</tr>
+			</tfoot>
 		</table>
 	</body>
 </html>

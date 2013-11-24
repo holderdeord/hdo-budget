@@ -60,7 +60,7 @@ describe("When using the budget loader service", function () {
 	it("should resolve .$new with a new budget", inject(function ($rootScope) {
 		var structure = bl.structure("frames");
 		bl.$new(b).then(function (budget) {
-			expect(budget.name).toEqual("test budget");
+			expect(budget.meta.name).toEqual("test budget");
 			expect(budget.frames.length).toBe(1);
 			expect(budget.chapters.length).toBe(1);
 			expect(budget.posts.length).toBe(3);

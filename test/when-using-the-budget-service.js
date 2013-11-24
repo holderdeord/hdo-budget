@@ -3,14 +3,19 @@ describe("When using the budget-service", function () {
 
 	beforeEach(module('budgetApp'));
 	beforeEach(inject(function (budget) {
-		b = budget.$new("test");
+		b = budget.$new({name: "test"});
 		b.addFrame(1, "test");
 		b.addChapter(1, 11, "test");
 		b.addPost(11, 1, "test", 100);
 	}));
 
 	it("should be able to name budget", function () {
-		expect(b.name).toEqual("test");
+		expect(b.meta.name).toEqual("test");
+	});
+
+	it("should be able to see cost and revenue", function () {
+		expect(b.meta.cost).toBe(0);
+		expect(b.meta.revenue).toBe(0);
 	});
 	
 	it("should be able to add frame", function () {
@@ -72,6 +77,13 @@ describe("When using the budget-service", function () {
 		$rootScope.$apply();
 		expect(b.frames[0].revenue).toBe(0);
 		expect(b.frames[0].cost).toBe(200);
+	}));
+
+	it("should add amount to budget", inject(function ($rootScope) {
+		b.addPost(11, 1, "test", 100);
+		$rootScope.$apply();
+		expect(b.meta.revenue).toBe(0);
+		expect(b.meta.cost).toBe(200);
 	}));
 
 	it("should be able to add chapter after posts", inject(function ($rootScope) {
