@@ -20,6 +20,12 @@ table.budget {
 	td,
 	th {
 		text-align: right;
+		&.no,
+		&.name,
+		&.revenue,
+		&.cost {
+			padding: 0.1em 0.25em;
+		}
 		&.no { 
 			width: 10%;
 		}
@@ -50,6 +56,16 @@ table.budget {
 			&.toggled {
 				display: table-row;
 			}
+		}
+	}
+	&.with-alternative {
+		.cost,
+		.diff,
+		.revenue {
+			width: 10%;
+		}
+		.name {
+			width: 40%
 		}
 	}
 }

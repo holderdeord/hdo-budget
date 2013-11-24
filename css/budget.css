@@ -369,6 +369,16 @@ table.budget th {
   text-align: right;
 }
 table.budget td.no,
+table.budget th.no,
+table.budget td.name,
+table.budget th.name,
+table.budget td.revenue,
+table.budget th.revenue,
+table.budget td.cost,
+table.budget th.cost {
+  padding: 0.1em 0.25em;
+}
+table.budget td.no,
 table.budget th.no {
   width: 10%;
 }
@@ -400,4 +410,12 @@ table.budget tr.toggler + tr {
 }
 table.budget tr.toggler + tr.toggled {
   display: table-row;
+}
+table.budget.with-alternative .cost,
+table.budget.with-alternative .diff,
+table.budget.with-alternative .revenue {
+  width: 10%;
+}
+table.budget.with-alternative .name {
+  width: 40%;
 }

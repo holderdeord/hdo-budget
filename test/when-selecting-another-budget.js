@@ -20,18 +20,27 @@ describe("When selecting another budget", function () {
 		$controller('BudgetController', { $scope: scope, d3: d3 });
 		$rootScope.$apply();
 		scope.selectBudget(alternative);
-		$rootScope.$apply();
 	}));
 
-	it("should select alternative budget", function () {
+	it("should select budget as selected", function () {
 		expect(scope.selectedBudget).toBe(alternative);
+	});
+
+	it("should set alternative to null", function () {
+		expect(scope.alternative).toBeNull();
+		expect(scope.selectedAlternative).toBeNull();
 	});
 
 	it("should prepare list of alternatives", function () {
 		expect(scope.alternatives).toEqual([original]);
 	});
 
+	it("should set selected budget to null before its loaded", function () {
+		expect(scope.budget).toBeNull();
+	});
+
 	it("should load alternative budget", function () {
+		scope.$apply();
 		expect(scope.budget.meta.name).toEqual("alternative");
 	});
 });

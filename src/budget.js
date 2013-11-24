@@ -9,6 +9,9 @@ angular.module("budgetApp", [])
 	})
 	.factory("budget", ['$q', function ($q) {
 		var format = "0,0";
+		function getDiff (other) {
+			return numeral(this.revenue - other.revenue - this.cost + other.cost).format(format);
+		}
 		function update (cost, revenue) {
 			this.cost += cost;
 			this.costFormatted = numeral(this.cost).format(format);
@@ -27,10 +30,14 @@ angular.module("budgetApp", [])
 				this.addChapter = function (chapter) {
 					this.chapters.push(chapter);
 				}
+				this.getDiff = function (other) {
+					return getDiff.call(this, other);
+				}
 				this.update = function (cost, revenue) {
 					budget.update(cost, revenue);
 					update.call(this, cost, revenue);
 				}
+				this
 			}
 			var frameIsResolved = {};
 			var frameMap = {};
@@ -70,6 +77,9 @@ angular.module("budgetApp", [])
 					this.revenueFormatted = numeral(this.revenue).format(format);
 					this.frame.update(post.cost, post.revenue);
 				}
+				this.getDiff = function (other) {
+					return getDiff.call(this, other);
+				}
 			}
 			var chapterIsResolved = {};
 			var chapterMap = {};
@@ -100,9 +110,12 @@ angular.module("budgetApp", [])
 				this.no = postNo;
 				this.text = text;
 				this.cost = chapter.no <= 2800 ? amount : 0;
-				this.costFormatted = numeral(amount).format(format)
+				this.costFormatted = numeral(amount).format(format);
 				this.revenue = chapter.no > 3000 ? amount : 0;
-				this.revenueFormatted = numeral(amount).format(format)
+				this.revenueFormatted = numeral(amount).format(format);
+				this.getDiff = function (other) {
+					return getDiff.call(this, other);
+				}
 			}
 			var posts = [];
 			return {
@@ -124,6 +137,9 @@ angular.module("budgetApp", [])
 					this.costFormatted = numeral(0).format(format);
 					this.revenue = 0;
 					this.revenueFormatted = numeral(0).format(format);
+					this.getDiff = function (other) {
+						return getDiff.call(this, other);
+					}
 					this.update = function (cost, revenue) {
 						update.call(this, cost, revenue);
 					};
@@ -245,10 +261,19 @@ angular.module("budgetApp", [])
 			});
 		});
 
+		$scope.selectAlternative = function (alternative) {
+			$scope.selectedAlternative = alternative;
+			$scope.alternative = null;
+			budgetLoader.$new(alternative).then(function (newAlternative) {
+				$scope.alternative = newAlternative;
+			});
+		};
 		$scope.selectBudget = function (budget) {
 			$scope.selectedBudget = budget;
 			$scope.alternatives = prepareAlternatives($scope.budgets, budget);
 			$scope.budget = null;
+			$scope.alternative = null;
+			$scope.selectedAlternative = null;
 			budgetLoader.$new(budget).then(function (newBudget) {
 				$scope.budget = newBudget;
 			});
