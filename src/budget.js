@@ -128,46 +128,89 @@ angular.module("budgetApp", [])
 			}
 		}
 	}])
-	.controller("BudgetController", ["$scope", "budget", function ($scope, budget) {
-		$scope.budget = budget.$new();
-		d3.csv("/data/frames.csv", function (d){
-			return {
-				frameNo: d.frameNo,
-				frameName: d.frameName,
-				chapterNo: d.chapterNo,
-				chapterName: d.chapterName
-			};
-		}, function (error, rows) {
-			rows.forEach(function (r) {
-				$scope.budget.addFrame(r.frameNo, r.frameName);
-				$scope.budget.addChapter(r.frameNo, r.chapterNo, r.chapterName);
-			});
-			$scope.$digest();
-		});
-		function parseKeys(d) {
-			var keys = Object.keys(d);
-			return {
-				chapterNo: d[keys[0]],
-				postNo: d[keys[1]],
-				text: d[keys[2]],
-				amount: parseInt(+d[keys[3]].replace(/\s/g, ""))
-			};
-		}
-		function parseRows(error, rows) {
-			rows.forEach(function (r) {
-				$scope.budget.addPost(r.chapterNo, r.postNo, r.text, r.amount);
-			});
-			$scope.$digest();
-		}
-		d3.csv("/data/posts-cost.csv", parseKeys, parseRows);
-		d3.csv("/data/posts-revenue.csv", parseKeys, parseRows);
-		/*
-		structure.forEach(function (line) {
-			$scope.budget.addFrame(line.frameNo, line.frameName);
-			$scope.budget.addChapter(line.frameNo, line.chapterNo, line.chapterName);
-		});
-		posts.forEach(function (post) {
-			$scope.budget.addPost(post.chapterNo, post.postNo, post.text, post.amount);
-		});
+	.service("d3", function () {
+		return d3;
+	})
+	.service("budgetLoader", ['$rootScope', '$q', 'budget', 'd3', function ($rootScope, $q, budget, d3) {
+		function structure(url) {
+			var deferred = $q.defer();
+			d3.csv(url, function (d){
+				var keys = Object.keys(d);
+					return {
+						frameNo: d[keys[0]],
+						frameName: d[keys[1]],
+						chapterNo: d[keys[2]],
+						chapterName: d[keys[3]]
+					};
+				}, function (error, rows) {
+					deferred.resolve(rows);
+					/*
+					rows.forEach(function (r) {
+						budget.addFrame(r.frameNo, r.frameName);
+						budget.addChapter(r.frameNo, r.chapterNo, r.chapterName);
+					});
 */
+					$rootScope.$digest();
+				});
+			return deferred.promise;
+		}
+		function posts(url) {
+			var deferred = $q.defer();
+			d3.csv(url, function parseKeys(d) {
+				var keys = Object.keys(d);
+				return {
+					chapterNo: d[keys[0]],
+					postNo: d[keys[1]],
+					text: d[keys[2]],
+					amount: parseInt(+d[keys[3]].replace(/\s/g, ""))
+				};
+			}, function (error, rows) {
+				deferred.resolve(rows);
+			});
+			return deferred.promise;
+		}
+		function parsePosts(budget, deferred) {
+			return function (rows) {
+				rows.forEach(function (r) {
+					budget.addPost(r.chapterNo, r.postNo, r.text, r.amount);
+				});
+				deferred.resolve(budget);
+			};
+		}
+		function parseStructure(budget, deferred) {
+			return function (rows) {
+				rows.forEach(function (r) {
+					budget.addFrame(r.frameNo, r.frameName);
+					budget.addChapter(r.frameNo, r.chapterNo, r.chapterName);
+				});
+				deferred.resolve();
+			}
+		}
+		function $new(structure, postFiles) {
+			var b = budget.$new();
+			var deferred = $q.defer();
+			var promises = postFiles.map(function (url) {
+				var d = $q.defer();
+				posts(url).then(parsePosts(b, d));
+				return d.promise;
+			});
+			var structureDeferred = $q.defer();
+			structure.then(parseStructure(b, structureDeferred));
+			promises.push(structureDeferred);
+			$q.all(promises).then(function () {
+				deferred.resolve(b);
+			});
+			return deferred.promise;
+		}
+		return {
+			$new: $new,
+			posts: posts,
+			structure: structure
+		};
+	}])
+	.controller("BudgetController", ["$scope", "budgetLoader", function ($scope, budgetLoader) {
+		var structure = budgetLoader.structure("/data/frames.csv");
+		budgetLoader.$new(structure, ["/data/posts-cost.csv", "/data/posts-revenue.csv"]).then(function (budget) {
+			$scope.budget = budget;
+		});
 	}]);
