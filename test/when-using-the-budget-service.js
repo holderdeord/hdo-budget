@@ -3,11 +3,15 @@ describe("When using the budget-service", function () {
 
 	beforeEach(module('budgetApp'));
 	beforeEach(inject(function (budget) {
-		b = budget.$new();
+		b = budget.$new("test");
 		b.addFrame(1, "test");
 		b.addChapter(1, 11, "test");
 		b.addPost(11, 1, "test", 100);
 	}));
+
+	it("should be able to name budget", function () {
+		expect(b.name).toEqual("test");
+	});
 	
 	it("should be able to add frame", function () {
 		b.addFrame(2, "test");

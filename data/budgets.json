@@ -1,0 +1,10 @@
+[
+	{
+		"name": "Statsbudsjettet 2014", 
+		"year": 2014,
+		"government": true,
+		"parties": ["H", "FrP"],
+		"structure": "/data/2014/structure.csv", 
+		"posts": ["/data/2014/main-cost.csv", "/data/2014/main-revenue.csv"]
+	}
+]

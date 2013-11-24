@@ -1,27 +1,23 @@
 describe("When using the budget loader service", function () {
 	var bl;
-	var b;
+	var b = {
+		"name": "test budget",
+		"structure": "frames",
+		"posts": ["post", "post2"]
+	};
 
 	beforeEach(module('budgetApp'));
-	beforeEach(inject(function (budget, budgetLoader, d3) {
-		b = budget.$new();
+	beforeEach(module('mocks'));
+	beforeEach(inject(function (budget, budgetLoader, d3, mockD3Csv) {
 		bl = budgetLoader;
-		d3.csv = function (url, row, cb) {
-			switch(url) {
-				case "frames":
-					cb({}, [ { frameNo: 1, frameName: "test", chapterNo: 11, chapterName: "test" } ]);
-					break;
-				case "post":
-					cb({}, [ 
-						{ chapterNo: 11, postNo: 1, text: "test", amount: "100 000"},
-						{ chapterNo: 11, postNo: 11, text: "test2", amount: "20 000"}
-					]);
-					break;
-				case "post2":
-					cb({}, [ { chapterNo: 11, postNo: 3, text: "test", amount: "100 000"} ]);
-					break;
-			}
-		}
+		d3.csv = mockD3Csv({
+			"frames": [ { frameNo: 1, frameName: "test", chapterNo: 11, chapterName: "test" } ],
+			"post": [
+				{ chapterNo: 11, postNo: 1, text: "test", amount: "100 000"},
+				{ chapterNo: 11, postNo: 11, text: "test2", amount: "20 000"}
+			],
+			"post2": [ { chapterNo: 11, postNo: 3, text: "test", amount: "100 000"} ]
+		});
 	}));
 
 	it("should return a promise when calling .structure", function () {
@@ -36,13 +32,20 @@ describe("When using the budget loader service", function () {
 		$rootScope.$apply();
 	}));
 
+	it("should cache .structure", inject(function ($rootScope, d3) {
+		bl.structure("frames");
+		bl.structure("frames");
+		$rootScope.$apply();
+		expect(d3.csv.calls.length).toBe(1);
+	}));
+
 	it("should return a promise when calling .posts", function () {
-		var posts = bl.posts("posts");
+		var posts = bl.posts("post");
 		expect(posts.then).toEqual(jasmine.any(Function));
 	});
 
 	it("should resolve .posts with rows", inject(function ($rootScope) {
-		bl.posts("posts").then(function (rows) {
+		bl.posts("post").then(function (rows) {
 			expect(rows.length).toBe(2);
 		});
 		$rootScope.$apply();
@@ -50,25 +53,18 @@ describe("When using the budget loader service", function () {
 
 	it("should return a promise when calling .$new", function () {
 		var structure = bl.structure("frames");
-		var budget = bl.$new(structure, ["post", "post2"]);
+		var budget = bl.$new(b);
 		expect(budget.then).toEqual(jasmine.any(Function));
 	});
 
 	it("should resolve .$new with a new budget", inject(function ($rootScope) {
 		var structure = bl.structure("frames");
-		bl.$new(structure, ["post", "post2"]).then(function (budget) {
+		bl.$new(b).then(function (budget) {
+			expect(budget.name).toEqual("test budget");
 			expect(budget.frames.length).toBe(1);
 			expect(budget.chapters.length).toBe(1);
 			expect(budget.posts.length).toBe(3);
 		});
 		$rootScope.$apply();
 	}));
-
-/*
-	it("should populate budget with structure", function () {
-		bl.structure(b, "test");
-		expect(b.frames.length).toBe(1);
-		expect(b.chapters.length).toBe(1);
-	});
-*/
 });

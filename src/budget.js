@@ -113,7 +113,7 @@ angular.module("budgetApp", [])
 			}
 		}
 		return {
-			$new: function () {
+			$new: function (name) {
 				var frames = new FrameFactory();
 				var chapters = new ChapterFactory(frames);
 				var posts = new PostFactory(chapters);
@@ -123,6 +123,7 @@ angular.module("budgetApp", [])
 					addPost: posts.add,
 					chapters: chapters.chapters,
 					frames: frames.frames,
+					name: name,
 					posts: posts.posts
 				}
 			}
@@ -132,26 +133,26 @@ angular.module("budgetApp", [])
 		return d3;
 	})
 	.service("budgetLoader", ['$rootScope', '$q', 'budget', 'd3', function ($rootScope, $q, budget, d3) {
+		var cachedStructure = {};
 		function structure(url) {
 			var deferred = $q.defer();
-			d3.csv(url, function (d){
-				var keys = Object.keys(d);
-					return {
-						frameNo: d[keys[0]],
-						frameName: d[keys[1]],
-						chapterNo: d[keys[2]],
-						chapterName: d[keys[3]]
-					};
-				}, function (error, rows) {
-					deferred.resolve(rows);
-					/*
-					rows.forEach(function (r) {
-						budget.addFrame(r.frameNo, r.frameName);
-						budget.addChapter(r.frameNo, r.chapterNo, r.chapterName);
+			if (cachedStructure[url]) {
+				deferred.resolve(cachedStructure[url]);
+			} else {
+				d3.csv(url, function (d){
+					var keys = Object.keys(d);
+						return {
+							frameNo: d[keys[0]],
+							frameName: d[keys[1]],
+							chapterNo: d[keys[2]],
+							chapterName: d[keys[3]]
+						};
+					}, function (error, rows) {
+						cachedStructure[url] = rows;
+						deferred.resolve(rows);
+						$rootScope.$digest();
 					});
-*/
-					$rootScope.$digest();
-				});
+			}
 			return deferred.promise;
 		}
 		function posts(url) {
@@ -186,16 +187,16 @@ angular.module("budgetApp", [])
 				deferred.resolve();
 			}
 		}
-		function $new(structure, postFiles) {
-			var b = budget.$new();
+		function $new(bJson) {
+			var b = budget.$new(bJson.name);
 			var deferred = $q.defer();
-			var promises = postFiles.map(function (url) {
+			var promises = bJson.posts.map(function (url) {
 				var d = $q.defer();
 				posts(url).then(parsePosts(b, d));
 				return d.promise;
 			});
 			var structureDeferred = $q.defer();
-			structure.then(parseStructure(b, structureDeferred));
+			structure(bJson.structure).then(parseStructure(b, structureDeferred));
 			promises.push(structureDeferred);
 			$q.all(promises).then(function () {
 				deferred.resolve(b);
@@ -208,9 +209,32 @@ angular.module("budgetApp", [])
 			structure: structure
 		};
 	}])
-	.controller("BudgetController", ["$scope", "budgetLoader", function ($scope, budgetLoader) {
-		var structure = budgetLoader.structure("/data/frames.csv");
-		budgetLoader.$new(structure, ["/data/posts-cost.csv", "/data/posts-revenue.csv"]).then(function (budget) {
+	.controller("BudgetController", ["$scope", "budgetLoader", "d3", function ($scope, budgetLoader, d3) {
+		d3.json("/data/budgets.json", function (budgets) {
+			$scope.budgets = budgets;
+			budgetLoader.$new(budgets[0]).then(function (budget) {
+				$scope.budget = budget;
+			});
+			/*
+			$scope.years = meta.budgets.reduce(function (years, b) {
+				if (years.indexOf(b.year) === -1) {
+					years.push(b.year);
+				}
+				return years;
+			}, []).sort(function (a, b) { return b - a; });
+			$scope.year = meta.default;
+			$scope.selectedBudget = meta.budgets.reduce(function (budget, b) {
+
+			}
+
+			*/
+		});
+		/*
+		var year = 2014;
+		var structure = budgetLoader.structure("/data/" + year + "/structure.csv");
+		var posts = ["/data/" + year + "/main-cost.csv", "/data/" + year + "/main-revenue.csv"];
+		budgetLoader.$new(structure, posts).then(function (budget) {
 			$scope.budget = budget;
 		});
+*/
 	}]);
