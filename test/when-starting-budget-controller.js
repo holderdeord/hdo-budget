@@ -1,4 +1,4 @@
-describe("When loading budget(s) into the budget controller", function () {
+describe("When starting budget controller", function () {
 	var scope;
 	var defaultBudget;
 

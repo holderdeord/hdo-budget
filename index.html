@@ -9,13 +9,13 @@
 	</head>
 	<body ng-controller="BudgetController">
 		<h1>Statsbudsjett</h1>
-		<nav>
+		<nav ng-show="budgets">
 			<ul>
 				<li class="disabled">
 					<a href>Vis:</a>
 				</li>
 				<li ng-class="{'active': budget == selectedBudget}" ng-repeat="budget in budgets">
-					<a href>{{budget.name}}</a>
+					<a href ng-click="selectBudget(budget)">{{budget.name}}</a>
 				</li>
 			</ul>
 			<ul ng-show="alternatives.length > 0">
@@ -27,7 +27,8 @@
 				</li>
 			</ul>
 		</nav>
-		<table class="budget">
+		<div ng-hide="budget">LASTER INN...</div>
+		<table class="budget" ng-show="budget">
 			<thead>
 				<tr>
 					<td colspan="2">&nbsp;</td>

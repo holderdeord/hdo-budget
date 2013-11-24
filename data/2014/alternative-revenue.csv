@@ -1,0 +1,423 @@
+chapterNo,postNo,text,amount
+3021,1,Leieinntekter ,300 000
+3024,1,Erstatning for utgifter i rettssaker ,13 900 000
+3041,1,Salgsinntekter ,7 600 000
+3051,1,Refusjon innland ,1 800 000
+3100,1,Diverse gebyrer ved utenriksstasjonene ,15 420 000
+3220,1,Inntekter ved oppdrag ,3 845 000
+3224,1,Inntekter fra oppdrag mv. ,1 553 000
+3230,1,Inntekter ved oppdrag ,58 410 000
+3256,1,Inntekter ved oppdrag ,10 698 000
+3280,1,Eksterne inntekter NOKUT ,10 000
+3300,1,Ymse inntekter ,75 000
+3320,1,Ymse inntekter ,1 466 000
+3322,1,Ymse inntekter ,117 000
+3323,1,Ymse inntekter ,31 367 000
+3324,1,Ymse inntekter ,500 000
+3326,1,Ymse inntekter ,8 932 000
+3329,1,Ymse inntekter ,5 889 000
+3334,1,Ymse inntekter ,10 470 000
+3339,1,Spilleoverskudd fra Norsk Tipping AS ,371 850 000
+3400,1,Diverse inntekter ,2 496 000
+3410,1,Rettsgebyr ,191 039 000
+3413,1,Saks- og gebyrinntekter ,15 181 000
+3440,1,Gebyr - pass og våpen ,261 600 000
+3451,1,Gebyr ,134 660 000
+3454,1,Refusjoner ,23 197 000
+3456,1,Brukerbetaling ,142 896 000
+3469,1,"Vergemåls-/representantordning, ODA-godkjente utgifter ",8 901 000
+3470,1,Tilkjente saksomkostninger m.m. ,3 571 000
+3473,1,Diverse inntekter ,5 000
+3490,1,"Retur av asylsøkere med avslag og tilbakevending for flyktninger, ODA-godkjente utgifter ",126 654 000
+3585,1,Gebyrer ,900 000
+3605,1,Administrasjonsvederlag ,22 110 000
+3614,1,"Gebyrinntekter, lån ",61 000 000
+3615,1,Premieinntekter ,154 000 000
+3616,1,Premieinntekter ,97 000 000
+3635,1,Refusjon statlig virksomhet mv. ,34 050 000
+3640,1,Diverse inntekter ,1 240 000
+3821,1,"Integreringstilskudd for overføringsflyktninger, ODA-godkjente utgifter ",181 425 000
+3822,1,"Norskopplæring i mottak, ODA-godkjente utgifter ",112 288 000
+3842,1,Diverse inntekter ,637 000
+3855,1,Diverse inntekter ,13 873 000
+3858,1,Diverse inntekter ,433 000
+3859,1,Tilskudd fra Europakommisjonen ,2 300 000
+3902,1,Gebyrinntekter ,70 800 000
+3903,1,Gebyrinntekter og andre inntekter ,33 000 000
+3904,1,Gebyrinntekter ,500 000 000
+3905,1,Oppdragsinntekter ,27 000 000
+3906,1,Leie av bergrettigheter og eiendommer ,100 000
+3910,1,Gebyrer for skip og flyttbare innretninger i NOR ,153 000 000
+3914,1,Gebyrer ,500 000
+4000,1,Refusjoner ,10 000
+4021,1,Oppdragsinntekter ,76 750 000
+4022,1,Oppdragsinntekter ,86 650 000
+4030,1,Refusjoner og diverse inntekter ,109 000
+4100,1,Refusjoner m.m. ,110 000
+4115,1,Gebyr m.m. ,109 993 000
+4143,1,Driftsinntekter m.m. ,38 625 000
+4147,1,Refusjoner m.m. ,39 000
+4300,1,Refusjon fra Utenriksdepartementet ,2 400 000
+4313,1,Gebyrinntekter ,138 800 000
+4320,1,Salgsinntekter m.m. ,172 400 000
+4350,1,Kjørevegsavgift ,33 800 000
+4354,1,Gebyrer for tilsyn med tau- og kabelbaner og tivoli og fornøyelsesparker ,13 000 000
+4380,1,Diverse gebyrer ,152 700 000
+4420,1,Oppdrag og andre diverse inntekter ,1 363 000
+4465,1,"Gebyrinntekter tinglysing, borettslag ",57 900 000
+4471,1,Salgs- og utleieinntekter ,10 038 000
+4510,1,Inntekter ved oppdrag ,175 881 000
+4581,1,Ymse inntekter ,153 000
+4605,1,Økonomitjenester ,45 900 000
+4610,1,Særskilt vederlag for tolltjenester ,6 200 000
+4618,1,Refunderte utleggs- og tinglysingsgebyr ,82 000 000
+4620,1,Salgsinntekter ,300 000
+4638,1,Salgsinntekter ,539 600 000
+4700,1,Driftsinntekter ,2 246 000
+4710,1,Driftsinntekter ,3 882 404 000
+4719,1,Driftsinntekter ,750 000
+4720,1,Driftsinntekter ,67 925 000
+4723,1,Driftsinntekter ,4 868 000
+4725,1,Driftsinntekter ,55 134 000
+4731,1,Driftsinntekter ,62 998 000
+4732,1,Driftsinntekter ,51 904 000
+4733,1,Driftsinntekter ,175 133 000
+4734,1,Driftsinntekter ,5 747 000
+4740,1,Driftsinntekter ,130 384 000
+4760,1,Driftsinntekter ,1 035 000
+4790,1,Driftsinntekter ,1 031 000
+4791,1,Driftsinntekter ,794 292 000
+4792,1,Driftsinntekter ,10 368 000
+4795,1,Driftsinntekter ,9 256 000
+4810,1,Gebyrinntekter ,25 000 000
+4820,1,Gebyrinntekter ,68 000 000
+5312,1,Gebyrer m.m. ,13 000 000
+5490,1,Salg av utstyr mv. ,165 000
+5705,1,"Refusjon av dagpenger, statsgaranti ved konkurs ",65 000 000
+3051,2,Refusjon utland ,650 000
+3100,2,Gebyrer for utlendingssaker ved utenriksstasjonene ,110 021 000
+3220,2,Salgsinntekter mv. ,1 128 000
+3222,2,Salgsinntekter mv. ,4 898 000
+3229,2,Salgsinntekter mv. ,1 637 000
+3230,2,Salgsinntekter mv. ,14 641 000
+3256,2,Salgsinntekter mv. ,329 000
+3280,2,Salgsinntekter mv. ,1 253 000
+3281,2,Salgsinntekter mv. ,10 000
+3324,2,Billett- og salgsinntekter m.m. ,22 100 000
+3329,2,Inntekter ved oppdrag ,21 000 000
+3334,2,Inntekter ved oppdrag ,8 572 000
+3339,2,Gebyr-lotterier ,6 918 000
+3400,2,Refusjon av ODA-godkjente utgifter ,1 136 000
+3413,2,Sideutgifter ,13 416 000
+3430,2,Arbeidsdriftens inntekter ,85 655 000
+3440,2,Refusjoner mv. ,342 618 000
+3442,2,Diverse inntekter ,14 894 000
+3444,2,Refusjoner ,15 000 000
+3456,2,Variable refusjoner ,59 790 000
+3474,2,Refusjoner ,2 490 000
+3490,2,Gebyr for nødvisum ,124 000
+3642,2,Oppdrags- og samarbeidsvirksomhet ,880 000
+3710,2,Diverse inntekter ,198 751 000
+3713,2,Diverse inntekter ,214 000
+3715,2,Diverse inntekter ,28 280 000
+3716,2,Diverse inntekter ,1 847 000
+3720,2,Diverse inntekter ,2 736 000
+3722,2,Diverse inntekter ,1 326 000
+3725,2,Diverse inntekter ,141 000
+3750,2,Diverse inntekter ,2 246 000
+3821,2,"Særskilt tilskudd ved bosetting av enslige, mindreårige flyktninger, ODA-godkjente utgifter ",31 511 000
+3855,2,Barnetrygd ,3 833 000
+3900,2,Ymse inntekter ,306 000
+3904,2,"Refusjoner, oppdragsinntekter og andre inntekter ",31 000 000
+3905,2,Tilskudd til samfinansieringsprosjekter ,47 000 000
+3906,2,Behandlingsgebyrer ,700 000
+3910,2,Maritime personellsertifikater ,12 400 000
+4062,2,Andre inntekter ,10 747 000
+4115,2,Driftsinntekter og refusjoner mv. ,5 369 000
+4320,2,Diverse gebyrer ,317 500 000
+4350,2,Salg av utstyr og tjenester mv. ,255 800 000
+4400,2,Diverse inntekter ,383 000
+4420,2,Statlig ordning for frivillig kjøp av klimakvoter ,567 000
+4429,2,Refusjoner og diverse inntekter ,4 020 000
+4465,2,"Gebyrinntekter tinglysing, fast eiendom ",320 000 000
+4520,2,Ymse inntekter ,20 500 000
+4535,2,Diverse inntekter ,1 800 000
+4536,2,Diverse inntekter ,1 900 000
+4584,2,Ymse inntekter ,2 841 000
+4590,2,Ymse inntekter ,42 610 000
+4592,2,Ymse inntekter ,17 467 000
+4600,2,Diverse refusjoner ,1 000 000
+4610,2,Andre inntekter ,2 500 000
+4618,2,Andre inntekter ,25 800 000
+4620,2,Oppdragsinntekter ,208 300 000
+4634,2,Refusjoner ,41 400 000
+4810,2,Oppdrags- og samarbeidsinntekter ,71 400 000
+4820,2,Oppdrags- og samarbeidsinntekter ,70 000 000
+5701,2,Diverse inntekter ,570 000 000
+5704,2,Dividende ,170 000 000
+3041,3,Leieinntekter ,1 000 000
+3410,3,Diverse refusjoner ,1 654 000
+3430,3,Andre inntekter ,15 690 000
+3432,3,Andre inntekter ,947 000
+3440,3,Salgsinntekter ,90 232 000
+3442,3,Inntekter fra Justissektorens kurs- og øvingssenter ,16 560 000
+3451,3,Diverse inntekter ,23 940 000
+3456,3,Faste refusjoner ,8 784 000
+3490,3,"Reiseutgifter for flyktninger til og fra utlandet, ODA-godkjente utgifter ",20 945 000
+3642,3,Gebyr tilsyn ,48 490 000
+3710,3,Vaksinesalg ,99 300 000
+3720,3,Helsetjenester i annet EØS-land ,24 840 000
+3902,3,Inntekter fra salg av tjenester ,11 200 000
+3904,3,Refusjoner og inntekter knyttet til forvaltning av Altinn-løsningen ,57 000 000
+3910,3,Diverse inntekter ,3 500 000
+4020,3,Oppdragsinntekter ,297 470 000
+4320,3,Refusjoner fra forsikringsselskaper ,32 900 000
+4400,3,Refusjon fra Utenriksdepartementet ,1 576 000
+4471,3,Inntekter fra diverse tjenesteyting ,55 327 000
+4520,3,Brukerbetaling for tilleggstjenester fra departementene ,75 383 000
+4560,3,Diverse inntekter ,3 048 000
+4590,3,Inntekter ved oppdrag ,37 069 000
+4592,3,Leieinntekter m.m. ,3 460 000
+4602,3,Prospektkontrollgebyrer ,10 000 000
+4610,3,Refunderte pante- og tinglysingsgebyr ,2 000 000
+4800,3,Oppdrags- og samarbeidsinntekter ,1 502 000
+4810,3,Refusjon av tilsynsutgifter ,10 000 000
+5701,3,Hjelpemiddelsentraler m.m. ,36 590 000
+3225,4,Refusjon av ODA-godkjente utgifter ,51 929 000
+3288,4,Refusjon av ODA-godkjente utgifter ,4 684 000
+3339,4,Gebyr-stiftelser ,267 000
+3430,4,Tilskudd ,2 140 000
+3440,4,Gebyr - vaktselskap ,2 000 000
+3490,4,"Statlige mottak, ODA-godkjente utgifter ",929 413 000
+3587,4,"Gebyrer, sentral godkjenning foretak ",31 475 000
+3605,4,Tolketjenester ,2 300 000
+3640,4,"Kjemikaliekontroll, gebyrer ",6 110 000
+3715,4,Gebyrinntekter ,4 486 000
+3718,4,Gebyrinntekter ,1 710 000
+3720,4,Gebyrinntekter ,3 241 000
+3724,4,Gebyrinntekter ,29 021 000
+3750,4,Registreringsgebyr ,102 832 000
+3856,4,Refusjon av ODA-godkjente utgifter ,93 240 000
+3902,4,Oppdragsinntekter ,2 400 000
+3910,4,Gebyrer for skip i NIS ,39 400 000
+4420,4,"Gebyrer, forurensningsområdet ",29 759 000
+4550,4,Klagegebyr ,2 049 000
+4560,4,Internasjonale oppdrag ,2 205 000
+4610,4,Diverse refusjoner ,3 200 000
+5310,4,Refusjon av ODA-godkjente utgifter ,21 100 000
+5705,4,Refusjon av dagpenger for grensearbeidere mv. bosatt i Norge ,5 000 000
+3100,5,Refusjon spesialutsendinger mv. ,7 068 000
+3440,5,Personalbarnehage ,5 767 000
+3490,5,Refusjonsinntekter ,11 023 000
+3605,5,Oppdragsinntekter mv. ,52 300 000
+3640,5,Tvangsmulkt ,2 200 000
+3715,5,Oppdragsinntekter ,1 460 000
+3720,5,Helsetjenester til utenlandsboende mv. ,50 000 000
+3901,5,Inntekt av informasjonstjenester ,7 250 000
+3910,5,Overtredelsesgebyrer og tvangsmulkt ,4 500 000
+4030,5,Saksbehandlingsgebyr ,17 274 000
+4560,5,Tilbakebetaling for bruk av elektronisk ID og digital post ,394 000
+4618,5,Gebyr for utleggsforretninger ,28 000 000
+3440,6,Gebyr - utlendingssaker ,143 000 000
+3490,6,"Beskyttelse til flyktninger utenfor Norge mv., ODA-godkjente utgifter ",6 977 000
+3605,6,Gebyrinntekter for fastsettelse av bidrag ,23 000 000
+3750,6,Refusjonsgebyr ,2 829 000
+4030,6,Forvaltningssanksjoner ,932 000
+4350,6,Videresalg av elektrisitet til togdrift ,291 000 000
+4420,6,"Gebyrer, fylkenes miljøvernavdelinger ",27 000 000
+4560,6,Tilbakebetaling fra tjenesteeiere for elektronisk ID og digital post ,1 604 000
+3339,7,Inntekter ved oppdrag ,7 648 000
+3440,7,Gebyr - sivile gjøremål ,670 021 000
+3640,7,"Byggesaksbehandling, gebyrer ",19 791 000
+3901,7,Inntekter knyttet til NPI ,5 200 000
+4070,7,Refusjoner og andre inntekter ,5 213 000
+4350,7,Betaling for bruk av Gardermobanen ,112 400 000
+4420,7,"Gebyrer, kvotesystemet ",10 600 000
+4618,7,Gebyr for bindende forhåndsuttalelser ,1 500 000
+3640,8,Refusjon utgifter regionale verneombud ,10 660 000
+3901,8,Gebyrer immaterielle rettigheter ,41 100 000
+4420,8,"Gebyrer, naturforvaltningsområdet ",4 298 000
+4420,9,Internasjonale oppdrag ,29 084 000
+4429,9,Internasjonale oppdrag ,1 139 000
+4610,11,Gebyr på kredittdeklarasjoner ,20 000 000
+5312,11,Tilfeldige inntekter ,8 280 000
+4030,13,Inntekter vederlag oppdrettskonsesjoner ,300 000 000
+4471,21,"Inntekter, Antarktis ",12 358 000
+4030,22,Inntekter ordningen fiskeforsøk og veiledning ,7 790 000
+5440,24,Driftsresultat: ,
+5309,29,Ymse ,50 000 000
+5310,29,Termingebyr ,30 420 000
+4112,30,"Husleie, Bioforsk ",19 180 000
+5440,30,Avskrivninger ,22 800 000 000
+5470,30,Avsetning til investeringsformål ,18 070 000
+5490,30,Avsetning til investeringsformål ,1 000 000
+5491,30,Avskrivninger ,858 018 000
+5445,39,Avsetning til investeringsformål ,924 594 000
+3041,40,Salg av leiligheter ,105 000 000
+4820,40,Flom- og skredforebygging ,16 300 000
+5446,40,"Salgsinntekter, Fornebu ",200 000
+4710,47,Salg av eiendom ,167 350 000
+4760,48,"Fellesfinansierte investeringer, inntekter ",26 500 000
+3722,50,Premie fra private ,18 400 000
+3723,50,Premie fra private ,2 500 000
+4829,50,Overføring fra fondet ,50 000 000
+5325,50,Tilbakeføring fra landsdekkende innovasjonsordning ,5 000 000
+5800,50,Overføring fra fondet ,133 091 675 000
+4380,51,Fra reguleringsfondet ,10 000 000
+5325,52,Tilbakeføring av tapsfondsmidler ,100 000 000
+3855,60,Kommunale egenandeler ,1 078 864 000
+3229,61,Refusjon fra fylkeskommuner ,1 069 000
+3334,70,Gebyr ,10 000 000
+3961,70,"Garantiprovisjon, Statkraft SF ",2 112 000
+4800,70,"Garantiprovisjon, Gassco ",1 200 000
+5325,70,Låneprovisjoner ,57 200 000
+5326,70,Låne- og garantiprovisjoner ,6 600 000
+5329,70,Gebyrer m.m. ,40 000 000
+5501,70,Toppskatt mv. ,35 900 000 000
+5506,70,Avgift ,2 200 000 000
+5508,70,CO2-avgift i petroleumsvirksomheten på kontinentalsokkelen ,4 900 000 000
+5509,70,Avgift ,10 000 000
+5511,70,Toll ,2 900 000 000
+5521,70,Merverdiavgift ,251 000 000 000
+5526,70,Avgift på alkohol ,12 500 000 000
+5531,70,Avgift på tobakkvarer mv. ,7 000 000 000
+5538,70,Veibruksavgift på bensin ,6 080 000 000
+5541,70,Avgift på elektrisk kraft ,8 200 000 000
+5542,70,Grunnavgift på mineralolje mv. ,1 400 000 000
+5543,70,CO2 -avgift ,5 400 000 000
+5546,70,Avgift på sluttbehandling av avfall ,47 000 000
+5547,70,Trikloreten (TRI) ,1 000 000
+5548,70,Avgift på hydrofluorkarboner (HFK) og perfluorkarboner (PFK) ,415 000 000
+5549,70,Avgift på utslipp av NOx ,105 000 000
+5550,70,Miljøavgift på plantevernmiddel ,50 000 000
+5551,70,Avgift knyttet til andre undersjøiske naturforekomster enn petroleum ,1 000 000
+5555,70,Avgift på sjokolade- og sukkervarer mv. ,1 250 000 000
+5556,70,Avgift på alkoholfrie drikkevarer mv. ,2 050 000 000
+5557,70,Avgift på sukker mv. ,197 000 000
+5559,70,Grunnavgift på engangsemballasje ,1 350 000 000
+5565,70,Dokumentavgift ,7 800 000 000
+5571,70,Petroleumstilsynet - sektoravgift ,86 870 000
+5572,70,Legemiddelomsetningsavgift ,73 000 000
+5575,70,Kontroll- og tilsynsavgift akvakultur ,30 655 000
+5578,70,Sektoravgifter under Svalbard miljøvernfond ,12 320 000
+5580,70,"Finanstilsynet, bidrag fra tilsynsenhetene ",329 800 000
+5583,70,Avgift på frekvenser mv. ,297 400 000
+3961,71,"Garantiprovisjon, Eksportfinans ASA ",9 000 000
+5460,71,Tilbakeføring fra Gammel alminnelig ordning ,13 300 000
+5507,71,Ordinær skatt på formue og inntekt ,67 800 000 000
+5511,71,Auksjonsinntekter fra tollkvoter ,195 000 000
+5536,71,Engangsavgift ,21 100 000 000
+5537,71,Avgift på båtmotorer ,166 000 000
+5538,71,Veibruksavgift på autodiesel ,11 100 000 000
+5542,71,Avgift på smøreolje mv. ,123 000 000
+5543,71,Svovelavgift ,34 000 000
+5547,71,Tetrakloreten (PER) ,1 000 000
+5551,71,Avgift knyttet til undersøkelses- og utvinningsrett av mineraler etter mineralloven ,10 000 000
+5559,71,Miljøavgift på kartong ,71 000 000
+5568,71,Årsavgift-stiftelser ,22 364 000
+5574,71,Avgifter immaterielle rettigheter ,150 000 000
+5576,71,Totalisatoravgift ,125 000 000
+5578,71,Jeger- og fellingsavgifter ,75 200 000
+5582,71,Konsesjonsavgifter fra vannkraftutbygging ,149 000 000
+5700,71,Trygdeavgift ,116 400 000 000
+5701,71,Refusjon ved yrkesskade ,844 000 000
+5501,72,Fellesskatt ,221 500 000 000
+5507,72,Særskatt på oljeinntekter ,111 900 000 000
+5536,72,Årsavgift ,10 060 000 000
+5559,72,Miljøavgift på plast ,25 000 000
+5568,72,Vederlag TV2 ,10 509 000
+5572,72,Avgift utsalgssteder utenom apotek ,4 900 000
+5578,72,Fiskeravgifter ,18 000 000
+5700,72,Arbeidsgiveravgift ,165 500 000 000
+5536,73,Vektårsavgift ,372 000 000
+5559,73,Miljøavgift på metall ,55 000 000
+5568,73,Refusjon - Norsk Rikstoto og Norsk Tipping AS ,36 887 000
+5572,73,Legemiddelkontrollavgift ,75 322 000
+5575,73,Årsavgift Merkeregisteret ,9 550 000
+5701,73,Refusjon fra bidragspliktige ,305 000 000
+5507,74,Arealavgift mv. ,1 900 000 000
+5559,74,Miljøavgift på glass ,81 000 000
+5568,74,Avgift-forhåndskontroll av kinofilm ,5 500 000
+5575,74,Sektoravgifter Kystverket ,773 453 000
+5536,75,Omregistreringsavgift ,1 850 000 000
+5575,75,Fiskeriforskningsavgift ,151 000 000
+3732,80,Renter på investeringslån ,404 000 000
+4840,80,"Renter, TCM DA ",100 000 000
+5440,80,Renter av statens kapital ,4 900 000 000
+5603,80,Renter av statens faste kapital ,81 825 000
+5605,80,Av statskassens foliokonto i Norges Bank ,233 200 000
+5607,80,Renter ,2 182 000 000
+5610,80,Renter ,904 000
+5613,80,Renter ,21 900 000
+5614,80,Renter ,100 000
+5615,80,Renter ,3 659 000 000
+5617,80,Renter ,3 866 755 000
+5619,80,Renter ,116 300 000
+5624,80,Renter ,30 000 000
+5625,80,Renter på lån fra statskassen ,320 000 000
+5629,80,Renter ,1 150 000 000
+5652,80,Renter ,4 700 000
+5701,80,Renter ,1 700 000
+5605,81,Av verdipapirer og bankinnskudd i utenlandsk valuta ,300 000
+5625,81,"Rentemargin, innovasjonslåneordningen ",5 000 000
+5650,81,Renter på lån til Secora AS ,4 000 000
+5605,82,Av innenlandske verdipapirer ,1 579 500 000
+5605,83,Av alminnelige fordringer ,30 000 000
+5605,84,Av driftskreditt til statsbedrifter ,309 800 000
+3634,85,"Innfordring av feilutbetalinger, arbeidsmarkedstiltak ",200 000
+3635,85,Innfordring av feilutbetaling av ventelønn ,800 000
+3732,85,Avdrag på investeringslån fom. 2008 ,212 000 000
+4150,85,Markedsordningen for korn ,59 520 000
+4610,85,Overtredelsesgebyr - valutadeklarering ,6 000 000
+4618,85,Overtredelsesgebyr ,100 000
+4620,85,Tvangsmulkt ,10 000 000
+4634,85,Misligholdte lån i Statens lånekasse for utdanning ,240 000 000
+4825,85,Fondsavkastning ,1 216 000 000
+5605,85,Renteinntekter fra bytteavtaler mv. ,790 300 000
+5611,85,Utbytte ,225 000 000
+5616,85,Aksjeutbytte ,357 000 000
+5618,85,Utbytte ,188 000 000
+5622,85,Utbytte ,478 000 000
+5625,85,"Utbytte, lavrisikolåneordningen ",17 400 000
+5631,85,Statens overskuddsandel ,30 000 000
+5651,85,Utbytte ,5 000 000
+5652,85,Utbytte ,121 000 000
+5656,85,Utbytte ,10 333 453 000
+5685,85,Utbytte ,14 421 000 000
+5692,85,Utbytte ,77 200 000
+5693,85,Utbytte fra Folketrygdfondet ,1 100 000
+4602,86,Vinningsavståelse og overtredelsesgebyr ,500 000
+4634,86,"Bøter, inndragninger mv. ",1 300 000 000
+4799,86,Militære bøter ,500 000
+4840,86,"Avdrag, TCM DA ",1 114 000 000
+5605,86,Renter av lån til andre stater ,200 000
+5625,86,Utbytte fra investeringsfond for Nordvest-Russland og Øst-Europa ,500 000
+5631,86,Utbytte ,2 000
+3287,87,Avkastning - Regionale forskningsfond ,219 000 000
+4634,87,Trafikantsanksjoner ,70 000 000
+5605,87,Renteinntekter mv. fra Statens finansfond ,16 700 000
+4634,88,"Forsinkelsesgebyr, Regnskapsregisteret ",200 000 000
+5310,89,Purregebyrer ,117 600 000
+5605,89,Garantiprovisjon ,40 100 000
+3100,90,Tilbakebetaling av nødlån fra utlandet ,318 000
+3614,90,Tilbakebetaling av lån ,10 200 000 000
+3732,90,Avdrag på investeringslån tom. 2007 ,676 000 000
+4023,90,Tilbakebetaling lån fra Nofima ,4 284 000
+4162,90,Avdrag på lån ,50 000 000
+4312,90,Avdrag på lån ,444 400 000
+4322,90,Avdrag på lån ,25 000 000
+5310,90,Redusert lån og rentegjeld ,8 253 202 000
+5312,90,Avdrag ,10 540 000 000
+5325,90,Avdrag på utestående fordringer ,42 200 000 000
+5326,90,Avdrag på utestående fordringer ,100 000 000
+5329,90,Avdrag på utestående fordringer ,6 350 000 000
+5999,90,Lån ,50 458 743 000
+5325,91,"Tilbakeført kapital, såkornfond ",10 000 000
+5460,91,Avdrag på lån til byggelånsgarantiordningen ,100 000
+5310,93,Utdanningslån ,5 200 318 000
+4533,95,Fondskapital Samefolkets fond ,75 000 000
+4540,95,Fondskapital Romanifolket/taternes kulturfond ,75 000 000
+4840,95,Fondskapital ,2 000 000 000
+5341,95,Avdrag på lån til andre stater ,300 000
+3950,96,Salg av aksjer ,25 000 000
+3950,97,Salg av EWOS ,1 800 000 000

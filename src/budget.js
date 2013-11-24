@@ -149,6 +149,7 @@ angular.module("budgetApp", [])
 	})
 	.service("budgetLoader", ['$rootScope', '$q', 'budget', 'd3', function ($rootScope, $q, budget, d3) {
 		var cachedStructure = {};
+		var cachedBudgets = {};
 		function structure(url) {
 			var deferred = $q.defer();
 			if (cachedStructure[url]) {
@@ -203,19 +204,24 @@ angular.module("budgetApp", [])
 			}
 		}
 		function $new(meta) {
-			var b = budget.$new(meta);
 			var deferred = $q.defer();
-			var promises = meta.posts.map(function (url) {
-				var d = $q.defer();
-				posts(url).then(parsePosts(b, d));
-				return d.promise;
-			});
-			var structureDeferred = $q.defer();
-			structure(meta.structure).then(parseStructure(b, structureDeferred));
-			promises.push(structureDeferred);
-			$q.all(promises).then(function () {
-				deferred.resolve(b);
-			});
+			if (cachedBudgets[meta.name]) {
+				deferred.resolve(cachedBudgets[meta.name]);
+			} else {
+				var b = budget.$new(meta);
+				var promises = meta.posts.map(function (url) {
+					var d = $q.defer();
+					posts(url).then(parsePosts(b, d));
+					return d.promise;
+				});
+				var structureDeferred = $q.defer();
+				structure(meta.structure).then(parseStructure(b, structureDeferred));
+				promises.push(structureDeferred);
+				$q.all(promises).then(function () {
+					deferred.resolve(b);
+					cachedBudgets[meta.name] = b;
+				});
+			}
 			return deferred.promise;
 		}
 		return {
@@ -225,35 +231,26 @@ angular.module("budgetApp", [])
 		};
 	}])
 	.controller("BudgetController", ["$scope", "budgetLoader", "d3", function ($scope, budgetLoader, d3) {
+		function prepareAlternatives(budgets, selected) {
+			return budgets.filter(function (b) {
+				return b !== selected;
+			});
+		}
 		d3.json("/data/budgets.json", function (budgets) {
 			$scope.budgets = budgets;
 			$scope.selectedBudget = budgets[0];
-			$scope.alternatives = $scope.budgets.filter(function (b) {
-				return b !== $scope.selectedBudget;
-			});
+			$scope.alternatives = prepareAlternatives(budgets, $scope.selectedBudget);
 			budgetLoader.$new(budgets[0]).then(function (budget) {
 				$scope.budget = budget;
 			});
-			/*
-			$scope.years = meta.budgets.reduce(function (years, b) {
-				if (years.indexOf(b.year) === -1) {
-					years.push(b.year);
-				}
-				return years;
-			}, []).sort(function (a, b) { return b - a; });
-			$scope.year = meta.default;
-			$scope.selectedBudget = meta.budgets.reduce(function (budget, b) {
-
-			}
-
-			*/
 		});
-		/*
-		var year = 2014;
-		var structure = budgetLoader.structure("/data/" + year + "/structure.csv");
-		var posts = ["/data/" + year + "/main-cost.csv", "/data/" + year + "/main-revenue.csv"];
-		budgetLoader.$new(structure, posts).then(function (budget) {
-			$scope.budget = budget;
-		});
-*/
+
+		$scope.selectBudget = function (budget) {
+			$scope.selectedBudget = budget;
+			$scope.alternatives = prepareAlternatives($scope.budgets, budget);
+			$scope.budget = null;
+			budgetLoader.$new(budget).then(function (newBudget) {
+				$scope.budget = newBudget;
+			});
+		};
 	}]);

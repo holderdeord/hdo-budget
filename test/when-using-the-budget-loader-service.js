@@ -67,4 +67,12 @@ describe("When using the budget loader service", function () {
 		});
 		$rootScope.$apply();
 	}));
+
+	it("should cache budgets", inject(function ($rootScope, d3) {
+		bl.$new(b);
+		$rootScope.$apply();
+		bl.$new(b);
+		$rootScope.$apply();
+		expect(d3.csv.calls.length).toBe(3);
+	}));
 });

@@ -6,5 +6,13 @@
 		"parties": ["H", "FrP"],
 		"structure": "/data/2014/structure.csv", 
 		"posts": ["/data/2014/main-cost.csv", "/data/2014/main-revenue.csv"]
+	},
+	{
+		"name": "Alternativ Statsbudsjettet 2014", 
+		"year": 2014,
+		"government": false,
+		"parties": ["H", "FrP"],
+		"structure": "/data/2014/structure.csv", 
+		"posts": ["/data/2014/alternative-cost.csv", "/data/2014/alternative-revenue.csv"]
 	}
 ]
