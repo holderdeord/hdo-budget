@@ -9,6 +9,24 @@
 	</head>
 	<body ng-controller="BudgetController">
 		<h1>Statsbudsjett</h1>
+		<nav>
+			<ul>
+				<li class="disabled">
+					<a href>Vis:</a>
+				</li>
+				<li ng-class="{'active': budget == selectedBudget}" ng-repeat="budget in budgets">
+					<a href>{{budget.name}}</a>
+				</li>
+			</ul>
+			<ul ng-show="alternatives.length > 0">
+				<li class="disabled">
+					<a href>Sammenlign med:</a>
+				</li>
+				<li ng-class="{'active': budget == compareToBudget}" ng-repeat="budget in alternatives">
+					<a href>{{budget.name}}</a>
+				</li>
+			</ul>
+		</nav>
 		<table class="budget">
 			<thead>
 				<tr>

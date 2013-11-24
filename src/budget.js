@@ -227,6 +227,10 @@ angular.module("budgetApp", [])
 	.controller("BudgetController", ["$scope", "budgetLoader", "d3", function ($scope, budgetLoader, d3) {
 		d3.json("/data/budgets.json", function (budgets) {
 			$scope.budgets = budgets;
+			$scope.selectedBudget = budgets[0];
+			$scope.alternatives = $scope.budgets.filter(function (b) {
+				return b !== $scope.selectedBudget;
+			});
 			budgetLoader.$new(budgets[0]).then(function (budget) {
 				$scope.budget = budget;
 			});

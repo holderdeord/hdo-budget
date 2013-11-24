@@ -1,5 +1,10 @@
-@import (reference) "../bower_components/bootstrap/less/bootstrap.less";
+@import (reference) "../bower_components/bootstrap/less/bootstrap";
+@import "../bower_components/bootstrap/less/normalize";
+@import "../bower_components/bootstrap/less/scaffolding";
 
+nav {
+	ul:extend(.nav all, .nav-pills all) {}
+}
 table.budget {
 	table {
 		border-spacing: 0;
