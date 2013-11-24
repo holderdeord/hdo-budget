@@ -27,7 +27,9 @@
 				</li>
 			</ul>
 		</nav>
-		<div ng-hide="budget">LASTER INN...</div>
+		<div class="loader" ng-hide="budget">
+			<div>LASTER INN...</div>
+		</div>
 		<table class="budget" ng-class="{'with-alternative': !!alternative}" ng-show="budget">
 			<thead>
 				<tr>
