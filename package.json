@@ -3,6 +3,8 @@
   "version": "0.0.0",
   "devDependencies": {
     "grunt": "~0.4.2",
+    "grunt-cli": "~0.1.11",
+    "bower": "~1.2.7",
     "grunt-contrib-connect": "~0.5.0",
     "karma-script-launcher": "~0.1.0",
     "karma-firefox-launcher": "~0.1.0",
