@@ -28,7 +28,8 @@
     "grunt-contrib-watch": "~0.5.3"
   },
   "dependencies": {
-    "grunt-cli": "~0.1.11"
+    "grunt-cli": "~0.1.11",
+    "grunt": "~0.4.2"
   },
   "engines": {
     "node": "0.10.x",
