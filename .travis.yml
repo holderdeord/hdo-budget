@@ -1,15 +1,15 @@
 language: node_js
 node_js:
-  - "0.10"
-script: "node node_modules/grunt-cli/bin/grunt test:travis"
+- '0.10'
+script: node node_modules/grunt-cli/bin/grunt test:travis
 before_script:
-  - npm install -g bower
-  - bower install
+- npm install -g bower
+- bower install
 notifications:
   hipchat:
-    rooms:
-      secure: "dPDcvtGQXXzdj31ftZkRShrn+l1TCnTEPTdr6YVAfzAI1Ashzhr4yGvnNfMs\n4lbxYDJfRxpTO5Xd1Hte5HH7c0ijoHEGjajySSl43+nLeShw+CWhuxKSbmCM\nnICGbjLhNPSDTIg1QPO/AkUCF3YG6szmd3JX9XLathUrt0HOBTY="
     on_success: always
     on_failure: always
+    rooms:
+      secure: CBeDkxDphJiflb+Y2xcryBh2SiiPNxAuLP2uwii37w3xy1GRB80H3WqKS5TFPHAG3spIyDpGZHImAgbkDQ1SnzZbKNjgoMxRnxc3sTPS3QUV/r61nJ5f9HQ57v25D3CHtcCPJ+BPqeVdyH/Owux11oWcCzG0lLH8h7elPh7dI5Q=
   template:
-    - "%{author} | %{commit} | %{message} | %{build_url}"
+  - '%{author} | %{commit} | %{message} | %{build_url}'
