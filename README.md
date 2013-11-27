@@ -6,24 +6,30 @@ A simple application that loads the Norwegian state budget (and its alternatives
 Setup
 -----
 
-The application is a [node.js](http://nodejs.org/) project, and uses [npm](https://npmjs.org/) to manage its backend components and [Bower](http://bower.io/) for its frontend components. You need to install the components to run the application.
+The application is a [node.js](http://nodejs.org/) project, and uses [npm](https://npmjs.org/) to manage its backend components and [Bower](http://bower.io/) for its frontend components. In addition it uses [Grunt](http://gruntjs.com/) to as a task runner. In order to use these with the commands described below, you need to install them globally (but grunt and bower is also available locally in the `node_modules` folder).
+
+	// install node.js from http://nodejs.org/
+	npm install -g bower
+	npm install -g grunt
+
+Components required to run the application are installed with the following:
 
 	npm install
 	bower install
 
-To run the webserver you'll need [Grunt](http://gruntjs.com/).
+To run the webserver:
 
 	grunt
 
-To run the tests.
+To run the tests:
 
 	grunt test
 
-To compile less
+To compile less:
 
 	grunt less
 
-To autocompile less upon saving files.
+To autocompile less upon saving files:
 
 	grunt watch
 
