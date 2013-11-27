@@ -1,76 +1,77 @@
 @import (reference) "../bower_components/bootstrap/less/bootstrap";
 @import "../bower_components/bootstrap/less/normalize";
 @import "../bower_components/bootstrap/less/scaffolding";
+@import "../bower_components/bootstrap/less/grid";
 
 nav {
-	ul:extend(.nav all, .nav-pills all) {}
+  ul:extend(.nav all, .nav-pills all) {}
 }
 table.budget {
-	table {
-		border-spacing: 0;
-		width: 100%;
-	}
-	tbody [colspan] {
-		background: #ccc;
-		padding: 0;
-		[colspan] {
-			background: #aaa;
-		}
-	}
-	td,
-	th {
-		text-align: right;
-		&.no,
-		&.name,
-		&.revenue,
-		&.cost {
-			padding: 0.1em 0.25em;
-		}
-		&.no { 
-			width: 10%;
-		}
-		&.name { 
-			text-align: left;
-			width: 60%;
-		}
-		&.revenue,
-		&.cose {
-			width: 15%;
-		}
-	}
-	tfoot td {
-		border-top: solid 1px grey;
-	}
-	thead th {
-		border-bottom: solid 1px black;
-	}
-	tr.toggler {
-		td {
-			cursor: pointer;
-		}
-		&:hover td {
-			text-decoration: underline;
-		}
-		& + tr {
-			display: none;
-			&.toggled {
-				display: table-row;
-			}
-		}
-	}
-	&.with-alternative {
-		.cost,
-		.diff,
-		.revenue {
-			width: 10%;
-		}
-		.name {
-			width: 40%
-		}
-	}
+  table {
+    border-spacing: 0;
+    width: 100%;
+  }
+  tbody [colspan] {
+    background: #ccc;
+    padding: 0;
+    [colspan] {
+      background: #aaa;
+    }
+  }
+  td,
+  th {
+    text-align: right;
+    &.no,
+    &.name,
+    &.revenue,
+    &.cost {
+      padding: 0.1em 0.25em;
+    }
+    &.no {
+      width: 10%;
+    }
+    &.name {
+      text-align: left;
+      width: 60%;
+    }
+    &.revenue,
+    &.cose {
+      width: 15%;
+    }
+  }
+  tfoot td {
+    border-top: solid 1px grey;
+  }
+  thead th {
+    border-bottom: solid 1px black;
+  }
+  tr.toggler {
+    td {
+      cursor: pointer;
+    }
+    &:hover td {
+      text-decoration: underline;
+    }
+    & + tr {
+      display: none;
+      &.toggled {
+        display: table-row;
+      }
+    }
+  }
+  &.with-alternative {
+    .cost,
+    .diff,
+    .revenue {
+      width: 10%;
+    }
+    .name {
+      width: 40%
+    }
+  }
 }
 .loader:extend(.progress all, .progress.active all, .progress-striped all) {
-	div:extend(.progress-bar all) {
-		width: 100%;
-	}
+  div:extend(.progress-bar all) {
+    width: 100%;
+  }
 }
