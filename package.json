@@ -1,7 +1,12 @@
 {
   "name": "hdo-budget",
   "version": "0.0.0",
+  "description": "Norwegian government budgets",
   "main": "node node_modules/grunt-cli/bin/grunt",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/holderdeord/hdo-budget.git"
+  },
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-cli": "~0.1.11",
@@ -21,5 +26,8 @@
     "karma-ng-scenario": "~0.1.0",
     "grunt-contrib-less": "~0.8.2",
     "grunt-contrib-watch": "~0.5.3"
+  },
+  "dependencies": {
+    "grunt-cli": "~0.1.11"
   }
 }
