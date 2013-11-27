@@ -10,7 +10,7 @@ The application is a [node.js](http://nodejs.org/) project, and uses [npm](https
 
 	// install node.js from http://nodejs.org/
 	npm install -g bower
-	npm install -g grunt
+	npm install -g grunt-cli
 
 Components required to run the application are installed with the following:
 
