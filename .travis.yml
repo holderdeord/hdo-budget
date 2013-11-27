@@ -1,0 +1,7 @@
+language: node_js
+node_js:
+  - "0.10"
+script: "node node_modules/grunt-cli/bin/grunt test:travis"
+before_script:
+  - npm install -g bower
+  - bower install

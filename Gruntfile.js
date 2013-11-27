@@ -1,9 +1,24 @@
 module.exports = function(grunt) {
 	grunt.initConfig({
+		connect: {
+			server: {
+				options: {
+					port: 9001,
+					base: '.',
+					keepalive: true
+				}
+			}
+		},
 		karma: {
-			unit: {
-				configFile: 'karma.conf.js',
+			options: {
+				configFile: 'karma.conf.js'
+			},
+			browsers: {
 				autowatch: true
+			},
+			travis: {
+				browsers: ['PhantomJS'],
+				singleRun: true
 			}
 		},
 		less: {
@@ -13,15 +28,6 @@ module.exports = function(grunt) {
 				},
 				files: {
 					"./css/budget.css": "./less/budget.less"
-				}
-			}
-		},
-		connect: {
-			server: {
-				options: {
-					port: 9001,
-					base: '.',
-					keepalive: true
 				}
 			}
 		},
@@ -36,6 +42,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-karma');
 
-	grunt.registerTask('test', ['karma']);
+	grunt.registerTask('test:browsers', ['karma:browsers']);
+	grunt.registerTask('test:travis', ['karma:travis']);
 	grunt.registerTask('default', ['connect']);
 };
