@@ -30,32 +30,32 @@
 		<div class="loader" ng-hide="budget">
 			<div>LASTER INN...</div>
 		</div>
-		<table class="budget" ng-class="{'with-alternative': !!alternative}" ng-show="budget">
+		<table class="budget" ng-class="{'with-alternative': !!selectedAlternative}" ng-show="budget">
 			<thead>
 				<tr>
 					<td colspan="2">&nbsp;</td>
 					<td colspan="2">{{budget.meta.name}}</td>
-					<td colspan="3" ng-show="alternative">{{alternative.meta.name}}</td>
+					<td colspan="3" ng-show="selectedAlternative">{{budget.alternative.name}}</td>
 				</tr>
 				<tr>
 					<th class="no">&nbsp;</th>
 					<th class="name">Ramme/Kapittel/Post</th>
 					<th class="revenue">Inntekter</th>
 					<th class="cost">Utgifter</th>
-					<th class="revenue" ng-show="alternative">Inntekter</th>
-					<th class="cost" ng-show="alternative">Utgifter</th>
-					<th class="diff" ng-show="alternative">Inntekter</th>
+					<th class="revenue" ng-show="selectedAlternative">Inntekter</th>
+					<th class="cost" ng-show="selectedAlternative">Utgifter</th>
+					<th class="diff" ng-show="selectedAlternative">Inntekter</th>
 				</tr>
 			</thead>
 			<tbody ng-repeat="frame in budget.frames">
 				<tr hdo-toggle>
 					<td class="no">{{frame.no}}</td>
 					<td class="name">{{frame.name}}</td>
-					<td class="revenue">{{frame.revenueFormatted}}</td>
-					<td class="cost">{{frame.costFormatted}}</td>
-					<td class="revenue" ng-show="alternative">&nbsp;</td>
-					<td class="cost" ng-show="alternative">&nbsp;</td>
-					<td class="diff" ng-show="alternative">&nbsp;</td>
+					<td class="revenue">{{m(frame.revenue)}}</td>
+					<td class="cost">{{m(frame.cost)}}</td>
+					<td class="revenue" ng-show="selectedAlternative">{{m(frame.alternative.revenue)}}</td>
+					<td class="cost" ng-show="selectedAlternative">{{m(frame.alternative.cost)}}</td>
+					<td class="diff" ng-show="selectedAlternative">{{m(frame.getDiff())}}</td>
 				</tr>
 				<tr>
 					<td colspan="7">
@@ -63,12 +63,12 @@
 							<tbody ng-repeat="chapter in frame.chapters">
 								<tr hdo-toggle>
 									<td class="no">{{chapter.no}}</td>
-									<td class="name">{{chapter.name}} ({{chapter.posts.length}})</td>
-									<td class="revenue">{{chapter.revenueFormatted}}</td>
-									<td class="cost">{{chapter.costFormatted}}</td>
-									<td class="revenue" ng-show="alternative">&nbsp;</td>
-									<td class="cost" ng-show="alternative">&nbsp;</td>
-									<td class="diff" ng-show="alternative">&nbsp;</td>
+									<td class="name">{{chapter.name}}</td>
+									<td class="revenue">{{m(chapter.revenue)}}</td>
+									<td class="cost">{{m(chapter.cost)}}</td>
+									<td class="revenue" ng-show="selectedAlternative">{{m(chapter.alternative.revenue)}}</td>
+									<td class="cost" ng-show="selectedAlternative">{{m(chapter.alternative.cost)}}</td>
+									<td class="diff" ng-show="selectedAlternative">{{m(frame.getDiff())}}</td>
 								</tr>
 								<tr>
 									<td colspan="7">
@@ -77,14 +77,14 @@
 												<td class="no">{{post.no}}</td>
 												<td class="name">{{post.text}}</td>
 												<td class="revenue">
-													<span ng-show="post.revenue > 0">{{post.revenueFormatted}}</span>
+													<span ng-show="post.revenue > 0">{{m(post.revenue)}}</span>
 												</td>
 												<td class="cost">
-													<span ng-show="post.cost > 0">{{post.costFormatted}}</span>
+													<span ng-show="post.cost > 0">{{m(post.cost)}}</span>
 												</td>
-												<td class="revenue" ng-show="alternative">&nbsp;</td>
-												<td class="cost" ng-show="alternative">&nbsp;</td>
-												<td class="diff" ng-show="alternative">&nbsp;</td>
+												<td class="revenue" ng-show="selectedAlternative">{{m(post.alternative.revenue)}}</td>
+												<td class="cost" ng-show="selectedAlternative">{{m(post.alternative.cost)}}</td>
+												<td class="diff" ng-show="selectedAlternative">{{m(frame.getDiff())}}</td>
 											</tr>
 										</table>
 									</td>
@@ -98,11 +98,11 @@
 				<tr>
 					<td class="no">&nbsp;</td>
 					<td class="name">TOTALT</td>
-					<td class="revenue">{{budget.meta.revenueFormatted}}</td>
-					<td class="cost">{{budget.meta.costFormatted}}</td>
-					<td class="revenue" ng-show="alternative">&nbsp;</td>
-					<td class="cost" ng-show="alternative">&nbsp;</td>
-					<td class="diff" ng-show="alternative">&nbsp;</td>
+					<td class="revenue">{{m(budget.meta.revenue)}}</td>
+					<td class="cost">{{m(budget.meta.cost)}}</td>
+					<td class="revenue" ng-show="selectedAlternative">{{m(budget.alternative.revenue)}}</td>
+					<td class="cost" ng-show="selectedAlternative">{{m(budget.alternative.cost)}}</td>
+					<td class="diff" ng-show="selectedAlternative">{{m(frame.getDiff())}}</td>
 				</tr>
 			</tfoot>
 		</table>
