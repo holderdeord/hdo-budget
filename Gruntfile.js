@@ -3,7 +3,7 @@ module.exports = function(grunt) {
 		connect: {
 			server: {
 				options: {
-					port: 80,
+					port: 35169,
 					base: '.',
 					keepalive: true
 				}
