@@ -18,6 +18,32 @@ angular.module("budgetApp", [])
 			this.revenue += revenue;
 			this.revenueFormatted = numeral(this.revenue).format(format);
 		};
+		function Budget(meta) {
+			angular.extend(this, meta);
+			this.cost = 0;
+			this.costFormatted = numeral(0).format(format);
+			this.revenue = 0;
+			this.revenueFormatted = numeral(0).format(format);
+			this.alternative = {
+				cost: 0,
+				revenue: 0
+			};
+			this.setAlternative = function (meta) {
+				this.alternative.name = meta.name;
+				this.alternative.cost = this.alternative.cost || 0;
+				this.alternative.revenue = this.alternative.revenue || 0;
+			};
+			this.addAlternative = function (alternative) {
+				this.alternative.cost += alternative.cost;
+				this.alternative.revenue += alternative.revenue;
+			};
+			this.getDiff = function (other) {
+				return getDiff.call(this, other);
+			};
+			this.update = function (cost, revenue) {
+				update.call(this, cost, revenue);
+			};
+		}
 		function FrameFactory (budget) {
 			function Frame(frameNo, frameName) {
 				this.no = frameNo;
@@ -27,17 +53,25 @@ angular.module("budgetApp", [])
 				this.costFormatted = numeral(0).format(format);
 				this.revenue = 0;
 				this.revenueFormatted = numeral(0).format(format);
+				this.alternative = {
+					cost: 0,
+					revenue: 0
+				};
+				this.addAlternative = function (alternative) {
+					budget.addAlternative(alternative);
+					this.alternative.cost += alternative.cost;
+					this.alternative.revenue += alternative.revenue;
+				};
 				this.addChapter = function (chapter) {
 					this.chapters.push(chapter);
-				}
+				};
 				this.getDiff = function (other) {
 					return getDiff.call(this, other);
-				}
+				};
 				this.update = function (cost, revenue) {
 					budget.update(cost, revenue);
 					update.call(this, cost, revenue);
-				}
-				this
+				};
 			}
 			var frameIsResolved = {};
 			var frameMap = {};
@@ -69,6 +103,10 @@ angular.module("budgetApp", [])
 				this.revenue = 0;
 				this.revenueFormatted = numeral(0).format(format);
 				this.posts = [];
+				this.alternative = {
+					cost: 0,
+					revenue: 0
+				};
 				this.addPost = function (post) {
 					this.posts.push(post);
 					this.cost += post.cost;
@@ -76,6 +114,11 @@ angular.module("budgetApp", [])
 					this.revenue += post.revenue;
 					this.revenueFormatted = numeral(this.revenue).format(format);
 					this.frame.update(post.cost, post.revenue);
+				}
+				this.addAlternative = function (alternative) {
+					this.frame.addAlternative(alternative);
+					this.alternative.cost += alternative.cost;
+					this.alternative.revenue += alternative.revenue;
 				}
 				this.getDiff = function (other) {
 					return getDiff.call(this, other);
@@ -113,37 +156,48 @@ angular.module("budgetApp", [])
 				this.costFormatted = numeral(amount).format(format);
 				this.revenue = chapter.no > 3000 ? amount : 0;
 				this.revenueFormatted = numeral(amount).format(format);
+				this.alternative = null;
 				this.getDiff = function (other) {
 					return getDiff.call(this, other);
-				}
+				};
+				this.setAlternative = function (alternative) {
+					this.alternative = alternative;
+					this.chapter.addAlternative(alternative);
+				};
 			}
+			function AlternativePost(chapterNo, amount) {
+				this.cost = chapterNo <= 2800 ? amount : 0;
+				this.revenue = chapterNo > 3000 ? amount : 0;
+			}
+			var postMap = {};
 			var posts = [];
+			function add (chapterNo, postNo, text, amount, alternative) {
+				chapters.get(chapterNo).then(function (chapter) {
+					var post = new Post(chapter, postNo, text, amount);
+					posts.push(post);
+					chapter.addPost(post);
+					postMap[chapterNo + '-' + postNo] = post;
+					if (alternative) {
+						post.setAlternative(alternative);
+					}
+				});
+			}
 			return {
-				add: function (chapterNo, postNo, text, amount) {
-					chapters.get(chapterNo).then(function (chapter) {
-						var post = new Post(chapter, postNo, text, amount);
-						posts.push(post);
-						chapter.addPost(post);
-					});
+				add: add,
+				addAlternative: function (chapterNo, postNo, text, amount) {
+					var alternative = new AlternativePost(chapterNo, amount);
+					var post = postMap[chapterNo + '-' + postNo];
+					if (post) {
+						post.setAlternative(alternative);
+						return;
+					}
+					add(chapterNo, postNo, text, 0, alternative);
 				},
 				posts: posts
 			}
 		}
 		return {
 			$new: function (meta) {
-				function Budget(meta) {
-					angular.extend(this, meta);
-					this.cost = 0;
-					this.costFormatted = numeral(0).format(format);
-					this.revenue = 0;
-					this.revenueFormatted = numeral(0).format(format);
-					this.getDiff = function (other) {
-						return getDiff.call(this, other);
-					}
-					this.update = function (cost, revenue) {
-						update.call(this, cost, revenue);
-					};
-				}
 				var budget = new Budget(meta);
 				var frames = new FrameFactory(budget);
 				var chapters = new ChapterFactory(frames);
@@ -152,10 +206,13 @@ angular.module("budgetApp", [])
 					addFrame: frames.add,
 					addChapter: chapters.add,
 					addPost: posts.add,
+					addAlternativePost: posts.addAlternative,
+					alternative: budget.alternative,
 					chapters: chapters.chapters,
 					frames: frames.frames,
 					meta: budget,
-					posts: posts.posts
+					posts: posts.posts,
+					setAlternative: budget.setAlternative
 				}
 			}
 		}
@@ -210,6 +267,14 @@ angular.module("budgetApp", [])
 				deferred.resolve(budget);
 			};
 		}
+		function parseAlternatives(budget, deferred) {
+			return function (rows) {
+				rows.forEach(function (r) {
+					budget.addAlternativePost(r.chapterNo, r.postNo, r.text, r.amount);
+				});
+				deferred.resolve(budget);
+			}
+		}
 		function parseStructure(budget, deferred) {
 			return function (rows) {
 				rows.forEach(function (r) {
@@ -240,8 +305,23 @@ angular.module("budgetApp", [])
 			}
 			return deferred.promise;
 		}
+		function alternative(budget, meta) {
+			var deferred = $q.defer();
+			var promises = meta.posts.map(function (url) {
+				var d = $q.defer();
+				posts(url).then(parseAlternatives(budget, d));
+				return d.promise;
+			});
+			$q.all(promises).then(function () {
+				budget.setAlternative(meta);
+				console.log(budget);
+				deferred.resolve(budget);
+			});
+			return deferred.promise;
+		}
 		return {
 			$new: $new,
+			alternative: alternative,
 			posts: posts,
 			structure: structure
 		};
@@ -263,9 +343,8 @@ angular.module("budgetApp", [])
 
 		$scope.selectAlternative = function (alternative) {
 			$scope.selectedAlternative = alternative;
-			$scope.alternative = null;
-			budgetLoader.$new(alternative).then(function (newAlternative) {
-				$scope.alternative = newAlternative;
+			budgetLoader.alternative($scope.budget, alternative).then(function (newBudget) {
+				$scope.budget = newBudget;
 			});
 		};
 		$scope.selectBudget = function (budget) {

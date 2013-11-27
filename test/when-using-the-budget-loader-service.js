@@ -5,6 +5,11 @@ describe("When using the budget loader service", function () {
 		"structure": "frames",
 		"posts": ["post", "post2"]
 	};
+	var b2 = {
+		"name": "alternative budget",
+		"structure": "frames",
+		"posts": ["post3"]
+	};
 
 	beforeEach(module('budgetApp'));
 	beforeEach(module('mocks'));
@@ -13,10 +18,11 @@ describe("When using the budget loader service", function () {
 		d3.csv = mockD3Csv({
 			"frames": [ { frameNo: 1, frameName: "test", chapterNo: 11, chapterName: "test" } ],
 			"post": [
-				{ chapterNo: 11, postNo: 1, text: "test", amount: "100 000"},
-				{ chapterNo: 11, postNo: 11, text: "test2", amount: "20 000"}
+				{ chapterNo: 11, postNo: 1, text: "test", amount: 100000},
+				{ chapterNo: 11, postNo: 11, text: "test2", amount: 20000}
 			],
-			"post2": [ { chapterNo: 11, postNo: 3, text: "test", amount: "100 000"} ]
+			"post2": [ { chapterNo: 11, postNo: 3, text: "test", amount: 100000} ],
+			"post3": [ { chapterNo: 11, postNo: 3, text: "test", amount: 20000} ]
 		});
 	}));
 
@@ -52,7 +58,6 @@ describe("When using the budget loader service", function () {
 	}));
 
 	it("should return a promise when calling .$new", function () {
-		var structure = bl.structure("frames");
 		var budget = bl.$new(b);
 		expect(budget.then).toEqual(jasmine.any(Function));
 	});
@@ -75,4 +80,28 @@ describe("When using the budget loader service", function () {
 		$rootScope.$apply();
 		expect(d3.csv.calls.length).toBe(3);
 	}));
+
+	describe("Populating a budget with its alternative", function () {
+		var budget;
+
+		beforeEach(inject(function ($rootScope) {
+			bl.$new(b).then(function (newBudget) {
+				budget = newBudget;
+			})
+			$rootScope.$apply();
+		}));
+
+		it("Should return a promise", inject(function ($rootScope) {
+			var promise = bl.alternative(budget, b2);
+			$rootScope.$apply();
+			expect(promise.then).toEqual(jasmine.any(Function));
+		}));
+
+		it("When resolved, should have set name on alternative", inject(function ($rootScope) {
+			bl.alternative(budget, b2).then(function (populatedBudget) {
+				expect(populatedBudget.alternative.name).toEqual("alternative budget");
+			});
+			$rootScope.$apply();
+		}));
+	});
 });
