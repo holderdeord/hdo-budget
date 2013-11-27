@@ -34,7 +34,8 @@
     "grunt-karma": "~0.6.2",
     "grunt-contrib-less": "~0.8.2",
     "grunt-contrib-watch": "~0.5.3",
-    "express": "~3.4.4"
+    "express": "~3.4.4",
+    "bower": "~1.2.7"
   },
   "engines": {
     "node": "0.10.x",
