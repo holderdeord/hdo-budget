@@ -9,4 +9,4 @@ app.configure(function () {
     );
 });
 app.listen(port); //the port you want to use
-console.log("Express server running");
+console.log("Express server running on http://localhost:" + port);
