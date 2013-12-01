@@ -8,9 +8,6 @@ angular.module("budgetApp", [])
     }
   })
   .factory("budget", ['$q', function ($q) {
-    function getDiff (other) {
-      return this.revenue - other.revenue - this.cost + other.cost;
-    }
     function update (cost, revenue) {
       this.cost += cost;
       this.revenue += revenue;
@@ -23,6 +20,16 @@ angular.module("budgetApp", [])
         cost: 0,
         revenue: 0
       };
+      this.resetAlternative = function () {
+        this.alternative.cost = 0;
+        this.alternative.revenue = 0;
+        this.frames.forEach(function (f) {
+          f.resetAlternative();
+          f.chapters.forEach(function (c) {
+            c.resetAlternative();
+          });
+        });
+      };
       this.setAlternative = function (meta) {
         this.alternative.name = meta.name;
         this.alternative.cost = this.alternative.cost || 0;
@@ -31,9 +38,6 @@ angular.module("budgetApp", [])
       this.addAlternative = function (alternative) {
         this.alternative.cost += alternative.cost;
         this.alternative.revenue += alternative.revenue;
-      };
-      this.getDiff = function () {
-        return getDiff.call(this, this.alternative);
       };
       this.update = function (cost, revenue) {
         update.call(this, cost, revenue);
@@ -58,8 +62,11 @@ angular.module("budgetApp", [])
         this.addChapter = function (chapter) {
           this.chapters.push(chapter);
         };
-        this.getDiff = function () {
-          return getDiff.call(this, this.alternative);
+        this.resetAlternative = function () {
+          this.alternative = {
+            cost: 0,
+            revenue: 0
+          };
         };
         this.update = function (cost, revenue) {
           budget.update(cost, revenue);
@@ -103,14 +110,17 @@ angular.module("budgetApp", [])
           this.cost += post.cost;
           this.revenue += post.revenue;
           this.frame.update(post.cost, post.revenue);
-        }
+        };
         this.addAlternative = function (alternative) {
           this.frame.addAlternative(alternative);
           this.alternative.cost += alternative.cost;
           this.alternative.revenue += alternative.revenue;
-        }
-        this.getDiff = function () {
-          return getDiff.call(this, this.alternative);
+        };
+        this.resetAlternative = function () {
+          this.alternative = {
+            cost: 0,
+            revenue: 0
+          };
         }
       }
       var chapterIsResolved = {};
@@ -144,9 +154,6 @@ angular.module("budgetApp", [])
         this.cost = chapter.no <= 2800 ? amount : 0;
         this.revenue = chapter.no > 3000 ? amount : 0;
         this.alternative = null;
-        this.getDiff = function () {
-          return getDiff.call(this, this.alternative);
-        };
         this.setAlternative = function (alternative) {
           this.alternative = alternative;
           this.chapter.addAlternative(alternative);
@@ -199,6 +206,7 @@ angular.module("budgetApp", [])
           frames: frames.frames,
           meta: budget,
           posts: posts.posts,
+          resetAlternative: budget.resetAlternative,
           setAlternative: budget.setAlternative
         }
       }
@@ -293,6 +301,7 @@ angular.module("budgetApp", [])
       return deferred.promise;
     }
     function alternative(budget, meta) {
+      budget.resetAlternative();
       var deferred = $q.defer();
       var promises = meta.posts.map(function (url) {
         var d = $q.defer();
@@ -326,9 +335,15 @@ angular.module("budgetApp", [])
         $scope.budget = budget;
       });
     });
+    $scope.d = function (entity, alternative) {
+      if (!entity) return 0;
+      if (!alternative) return entity.revenue - entity.cost;
+      return entity.revenue - alternative.revenue - entity.cost + alternative.cost;
+    };
     $scope.m = function (value) {
+      if (value == 0) return "";
       return numeral(value).format("0,0");
-    }
+    };
     $scope.selectAlternative = function (alternative) {
       $scope.selectedAlternative = alternative;
       budgetLoader.alternative($scope.budget, alternative).then(function (newBudget) {

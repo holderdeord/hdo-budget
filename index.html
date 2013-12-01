@@ -55,7 +55,7 @@
           <td class="cost">{{m(frame.cost)}}</td>
           <td class="revenue" ng-show="selectedAlternative">{{m(frame.alternative.revenue)}}</td>
           <td class="cost" ng-show="selectedAlternative">{{m(frame.alternative.cost)}}</td>
-          <td class="diff" ng-show="selectedAlternative">{{m(frame.getDiff())}}</td>
+          <td class="diff" ng-show="selectedAlternative">{{m(d(frame, frame.alternative))}}</td>
         </tr>
         <tr>
           <td colspan="7">
@@ -68,7 +68,7 @@
                   <td class="cost">{{m(chapter.cost)}}</td>
                   <td class="revenue" ng-show="selectedAlternative">{{m(chapter.alternative.revenue)}}</td>
                   <td class="cost" ng-show="selectedAlternative">{{m(chapter.alternative.cost)}}</td>
-                  <td class="diff" ng-show="selectedAlternative">{{m(frame.getDiff())}}</td>
+                  <td class="diff" ng-show="selectedAlternative">{{m(d(chapter, chapter.alternative))}}</td>
                 </tr>
                 <tr>
                   <td colspan="7">
@@ -84,7 +84,7 @@
                         </td>
                         <td class="revenue" ng-show="selectedAlternative">{{m(post.alternative.revenue)}}</td>
                         <td class="cost" ng-show="selectedAlternative">{{m(post.alternative.cost)}}</td>
-                        <td class="diff" ng-show="selectedAlternative">{{m(frame.getDiff())}}</td>
+                        <td class="diff" ng-show="selectedAlternative">{{m(d(post, post.alternative))}}</td>
                       </tr>
                     </table>
                   </td>
@@ -102,7 +102,7 @@
           <td class="cost">{{m(budget.meta.cost)}}</td>
           <td class="revenue" ng-show="selectedAlternative">{{m(budget.alternative.revenue)}}</td>
           <td class="cost" ng-show="selectedAlternative">{{m(budget.alternative.cost)}}</td>
-          <td class="diff" ng-show="selectedAlternative">{{m(frame.getDiff())}}</td>
+          <td class="diff" ng-show="selectedAlternative">{{m(d(budget.meta, budget.alternative))}}</td>
         </tr>
       </tfoot>
     </table>

@@ -36,4 +36,11 @@ describe("When selecting alternative budget", function () {
     scope.$apply();
     expect(scope.budget.alternative.cost).toEqual(150000);
   });
+
+  it("should not stack multiple selections of alternative budget", function () {
+    scope.$apply();
+    scope.selectAlternative(alternative);
+    scope.$apply();
+    expect(scope.budget.alternative.cost).toEqual(150000);
+  });
 });
