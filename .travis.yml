@@ -10,7 +10,8 @@ notifications:
     on_success: always
 script: node node_modules/grunt-cli/bin/grunt test:travis
 language: node_js
-deploy: 
+deploy:
+  provider: heroku
   api_key: 
     secure: OaDLXErpjYoGpSzJzXZ3TGptvUpBTr0KVjz0OH+MbMiUAzF6lihNZPfC97rAM3EidpeuHezZli6BS5Amb5v3QhfEjXMj3oIXrwpucuO0JHXcRY7HOwGbdDipt9FjmpH9pooR/s4klptBav5gbC1i923VH8mlh8X4qCcIVUj6IfY=
 before_script: 
