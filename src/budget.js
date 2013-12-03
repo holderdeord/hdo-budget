@@ -1,10 +1,18 @@
 angular.module("budgetApp", [])
   .directive("hdoToggle", function () {
-    return function (scope, element) {
-      element.addClass("toggler");
-      element.on("click", function () {
-        element.parent().children().toggleClass("toggled");
-      });
+    return {
+      scope: {
+        entity: "=",
+        key: "@"
+      },
+      link: function (scope, element) {
+        element.addClass("toggler");
+        element.on("click", function () {
+          scope.entity[scope.key + "Loaded"] = scope.entity[scope.key];
+          element.parent().children().toggleClass("toggled");
+          scope.$apply();
+        });
+      }
     }
   })
   .factory("budget", ['$q', function ($q) {

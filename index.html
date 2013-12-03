@@ -48,7 +48,7 @@
         </tr>
       </thead>
       <tbody ng-repeat="frame in budget.frames">
-        <tr hdo-toggle>
+        <tr hdo-toggle entity="frame" key="chapters">
           <td class="no">{{frame.no}}</td>
           <td class="name">{{frame.name}}</td>
           <td class="revenue">{{m(frame.revenue)}}</td>
@@ -60,8 +60,8 @@
         <tr>
           <td colspan="7">
             <table>
-              <tbody ng-repeat="chapter in frame.chapters">
-                <tr hdo-toggle>
+              <tbody ng-repeat="chapter in frame.chaptersLoaded">
+                <tr hdo-toggle entity="chapter" key="posts">
                   <td class="no">{{chapter.no}}</td>
                   <td class="name">{{chapter.name}}</td>
                   <td class="revenue">{{m(chapter.revenue)}}</td>

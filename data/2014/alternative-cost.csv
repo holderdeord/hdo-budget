@@ -4,14 +4,14 @@ chapterNo,postNo,text,amount
 20,1,Driftsutgifter ,95 600 000
 21,1,Driftsutgifter ,151 300 000
 24,1,Driftsutgifter ,61 500 000
-41,1,Driftsutgifter ,862 000 000
+41,1,Driftsutgifter ,762 000 000
 42,1,Driftsutgifter ,6 800 000
 43,1,Driftsutgifter ,63 300 000
 44,1,Driftsutgifter ,10 400 000
 51,1,Driftsutgifter ,476 400 000
 61,1,Driftsutgifter ,93 158 000
-100,1,Driftsutgifter ,1 822 566 000
-103,1,Driftsutgifter ,47 524 000
+100,1,Driftsutgifter ,1 922 566 000
+103,1,Driftsutgifter ,47 504 000
 104,1,Driftsutgifter ,9 179 000
 115,1,"Driftsutgifter, kan nyttes under post 70",27 954 000
 118,1,"Driftsutgifter, kan nyttes under post 70",30 841 000
@@ -182,7 +182,7 @@ chapterNo,postNo,text,amount
 1634,1,Driftsutgifter ,284 500 000
 1638,1,"Driftsutgifter, kan overføres",9 200 000
 1650,1,Driftsutgifter ,33 000 000
-1700,1,Driftsutgifter ,373 483 000
+1700,1,Driftsutgifter ,373 683 000
 1710,1,"Driftsutgifter, kan overføres",3 034 794 000
 1719,1,Driftsutgifter ,254 421 000
 1720,1,Driftsutgifter ,3 872 711 000
@@ -245,7 +245,7 @@ chapterNo,postNo,text,amount
 552,21,"Kunnskapsutvikling, informasjon, mv., kan overføres",15 900 000
 571,21,"Spesielle driftsutgifter, kan overføres",19 500 000
 581,21,Kunnskapsutvikling og -formidling ,4 700 000
-601,21,Spesielle driftsutgifter ,62 400 000
+601,21,Spesielle driftsutgifter ,12 400 000
 605,21,Spesielle driftsutgifter ,29 810 000
 621,21,Spesielle driftsutgifter ,63 740 000
 634,21,"Forsøk, utviklingstiltak mv., kan overføres",60 400 000
@@ -982,8 +982,8 @@ chapterNo,postNo,text,amount
 1420,73,"Forebyggende og konfliktdempende tiltak i rovviltforvaltningen, kan overføres",64 600 000
 1429,73,"Tilskudd til bygninger og anlegg fra middelalderen og brannsikring, kan overføres",41 997 000
 1530,73,Tilskudd til de politiske partiers fylkesorganisasjoner ,72 353 000
-1561,73,Tilskudd til digital kompetanse ,3 182 000
-1700,73,"Forskning og utvikling, kan overføres",31 174 000
+1561,73,Tilskudd til digital kompetanse ,3 382 000
+1700,73,"Forskning og utvikling, kan overføres",31 374 000
 1815,73,"Statlig deltakelse i petroleumsvirksomhet på islandsk kontinentalsokkel, kan overføres",6 500 000
 1820,73,"Tilskudd til utjevning av overføringstariffer, kan overføres",120 000 000
 1830,73,Tilskudd til INTPOW ,4 000 000
