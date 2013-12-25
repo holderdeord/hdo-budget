@@ -1,3 +1,7 @@
+var angular = require("angular");
+var d3 = require("d3");
+var numeral = require("numeral");
+
 angular.module("budgetApp", [])
   .directive("hdoToggle", function () {
     return {
