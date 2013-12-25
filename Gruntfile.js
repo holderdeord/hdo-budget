@@ -1,7 +1,7 @@
 module.exports = function(grunt) {
   grunt.initConfig({
     browserify: {
-      test: {
+      deployment: {
         files: {
           'app/budget.js': ['src/*.js']
         }
@@ -39,10 +39,17 @@ module.exports = function(grunt) {
         }
       }
     },
+    uglify: {
+      deployment: {
+        files: {
+          'app/budget.min.js': ['app/budget.js']
+        }
+      }
+    },
     watch: {
       browserify: {
         files: "./src/*",
-        tasks: ["browserify:test"]
+        tasks: ["browserify:deployment"]
       },
       less: {
         files: "./less/*",
@@ -54,6 +61,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-buster');
   grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-exec');
   grunt.loadNpmTasks('grunt-karma');
@@ -61,5 +69,5 @@ module.exports = function(grunt) {
   grunt.registerTask('test:deployment', ['karma:travis', 'buster::test'])
   grunt.registerTask('test:browsers', ['karma:browsers']);
   grunt.registerTask('test:travis', ['karma:travis']);
-  grunt.registerTask('default', ['exec:web']);
+  grunt.registerTask('default', ['browserify:deployment', 'uglify:deployment', 'exec:web']);
 };
