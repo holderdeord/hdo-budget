@@ -1,5 +1,12 @@
 module.exports = function(grunt) {
   grunt.initConfig({
+    browserify: {
+      test: {
+        files: {
+          'app/budget.js': ['src/*.js']
+        }
+      }
+    },
     exec: {
       web: {
         cmd: "node web.js"
@@ -28,11 +35,18 @@ module.exports = function(grunt) {
       }
     },
     watch: {
-      files: "./less/*",
-      tasks: ["less"]
+      browserify: {
+        files: "./src/*",
+        tasks: ["browserify:test"]
+      },
+      less: {
+        files: "./less/*",
+        tasks: ["less"]
+      }
     }
   });
 
+  grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-exec');

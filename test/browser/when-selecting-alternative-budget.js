@@ -3,8 +3,7 @@ describe("When selecting alternative budget", function () {
   var alternative;
   var original;
 
-  beforeEach(module('budgetApp'));
-  beforeEach(module('mocks'));
+  beforeEach(module('budgetApp', 'mocks'));
 
   beforeEach(inject(function ($rootScope, $controller, d3, mockD3Csv) {
     scope = $rootScope.$new();
@@ -26,7 +25,7 @@ describe("When selecting alternative budget", function () {
   it("should select alternative budget", function () {
     expect(scope.selectedAlternative).toBe(alternative);
   });
-  
+
   it("should load alternative budget", function () {
     scope.$apply();
     expect(scope.budget.alternative.name).toEqual("alternative");

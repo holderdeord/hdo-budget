@@ -5,7 +5,7 @@ describe("When starting budget controller", function () {
   beforeEach(module('budgetApp'));
   beforeEach(module('mocks'));
 
-  beforeEach(inject(function ($rootScope, $controller, d3, budget, budgetLoader) {
+  beforeEach(inject(function ($rootScope, $controller, d3, budget, budgetLoader, $q) {
     scope = $rootScope.$new();
     spyOn(d3, "json").andCallFake(function (url, cb) {
       cb([
@@ -15,7 +15,7 @@ describe("When starting budget controller", function () {
       ]);
     });
     spyOn(budgetLoader, "$new").andCallFake(function () {
-      return { then: function (cb) { cb(budget.$new({ name: "default budget" })); }};
+      return { then: function (cb) { cb(budget.$new($q, { name: "default budget" })); }};
     });
     $controller('BudgetController', { $scope: scope, budgetLoader: budgetLoader, d3: d3 });
     $rootScope.$apply();

@@ -5,4 +5,4 @@ angular.module("mocks", [])
         cb({}, responses[url]);
       });
     };
-  })
+  });

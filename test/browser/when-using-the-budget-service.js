@@ -2,8 +2,8 @@ describe("When using the budget-service", function () {
   var b;
 
   beforeEach(module('budgetApp'));
-  beforeEach(inject(function (budget) {
-    b = budget.$new({name: "test"});
+  beforeEach(inject(function (budget, $q) {
+    b = budget.$new($q, {name: "test"});
     b.addFrame(1, "test");
     b.addChapter(1, 11, "test");
     b.addChapter(1, 3001, "test");
@@ -22,7 +22,7 @@ describe("When using the budget-service", function () {
   it("should set alternative", function () {
     expect(b.alternative).toEqual(jasmine.any(Object));
   });
-  
+
   it("should be able to add frame", function () {
     b.addFrame(2, "test");
     expect(b.frames.length).toBe(2);
