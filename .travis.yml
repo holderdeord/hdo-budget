@@ -8,9 +8,12 @@ notifications:
       secure: CBeDkxDphJiflb+Y2xcryBh2SiiPNxAuLP2uwii37w3xy1GRB80H3WqKS5TFPHAG3spIyDpGZHImAgbkDQ1SnzZbKNjgoMxRnxc3sTPS3QUV/r61nJ5f9HQ57v25D3CHtcCPJ+BPqeVdyH/Owux11oWcCzG0lLH8h7elPh7dI5Q=
     on_failure: always
     on_success: always
-script: node node_modules/grunt-cli/bin/grunt test:deployment
+script: node node_modules/grunt-cli/bin/grunt test
 language: node_js
 deploy:
   provider: heroku
   api_key: 
     secure: OaDLXErpjYoGpSzJzXZ3TGptvUpBTr0KVjz0OH+MbMiUAzF6lihNZPfC97rAM3EidpeuHezZli6BS5Amb5v3QhfEjXMj3oIXrwpucuO0JHXcRY7HOwGbdDipt9FjmpH9pooR/s4klptBav5gbC1i923VH8mlh8X4qCcIVUj6IfY=
+before_script:
+- npm install -g bower
+- bower install

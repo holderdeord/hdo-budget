@@ -30,7 +30,7 @@ module.exports = function(grunt) {
       }
     },
     less: {
-      development: {
+      deployment: {
         options: {
           paths: ["./less"]
         },
@@ -51,9 +51,17 @@ module.exports = function(grunt) {
         files: "./src/*",
         tasks: ["browserify:deployment"]
       },
+      build: {
+        files: ["./src/*", "./less/*"],
+        tasks: ["build"]
+      },
       less: {
         files: "./less/*",
-        tasks: ["less"]
+        tasks: ["less:deployment"]
+      },
+      uglify: {
+        files: "./app/budget.js",
+        tasks: ["uglify:deployment"]
       }
     }
   });
@@ -66,8 +74,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-exec');
   grunt.loadNpmTasks('grunt-karma');
 
-  grunt.registerTask('test:deployment', ['karma:travis', 'buster::test'])
-  grunt.registerTask('test:browsers', ['karma:browsers']);
-  grunt.registerTask('test:travis', ['karma:travis']);
-  grunt.registerTask('default', ['browserify:deployment', 'uglify:deployment', 'exec:web']);
+  grunt.registerTask('test', ['karma:travis', 'buster::test']);
+  grunt.registerTask('test:buster', ['buster::test']);
+  grunt.registerTask('test:karma', ['karma:browsers']);
+  grunt.registerTask('web', ['exec:web']);
+  grunt.registerTask('build', ['browserify:deployment', 'uglify:deployment', 'less:deployment']);
+  grunt.registerTask('default', ['build', 'exec:web']);
 };
