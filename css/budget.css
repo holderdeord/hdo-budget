@@ -100,6 +100,37 @@ nav ul > .active > a > .badge {
 nav ul > li > a > .badge {
   margin-left: 3px;
 }
+.warning {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.warning h4 {
+  margin-top: 0;
+  color: inherit;
+}
+.warning .alert-link {
+  font-weight: bold;
+}
+.warning > p,
+.warning > ul {
+  margin-bottom: 0;
+}
+.warning > p + p {
+  margin-top: 5px;
+}
+.warning {
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  color: #b94a48;
+}
+.warning hr {
+  border-top-color: #e4b9c0;
+}
+.warning .alert-link {
+  color: #953b39;
+}
 .loader {
   overflow: hidden;
   height: 20px;
