@@ -28,11 +28,6 @@ describe("When using the budget-service", function () {
     expect(b.frames.length).toBe(2);
   });
 
-  it("should be able to add frame", function () {
-    b.addFrame(2, "test");
-    expect(b.frames.length).toBe(2);
-  });
-
   it("should be able to add chapter", inject(function ($rootScope) {
     b.addChapter(1, 12, "test");
     $rootScope.$apply();
@@ -43,12 +38,6 @@ describe("When using the budget-service", function () {
     b.addChapter(1, 12, "test");
     $rootScope.$apply();
     expect(b.frames[0].chapters.length).toBe(3);
-  }));
-
-  it("should not add redundant chapters", inject(function ($rootScope) {
-    b.addChapter(1, 11, "test");
-    $rootScope.$apply();
-    expect(b.chapters.length).toBe(2);
   }));
 
   it("should not add redundant chapters", inject(function ($rootScope) {

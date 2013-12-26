@@ -73,7 +73,7 @@ describe("When using the budget loader service", function () {
     });
     $rootScope.$apply();
   }));
-  
+
 // Don't know how to make this test work
 //  it("should cache budgets", inject(function ($rootScope, d3, $q) {
 //    bl.$new($q, b);

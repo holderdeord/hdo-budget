@@ -55,6 +55,10 @@ module.exports = function(grunt) {
         files: ["./src/*", "./less/*"],
         tasks: ["build"]
       },
+      buster: {
+        files: ["./test/combiner/*", "./src/*"],
+        tasks: ["buster::test"]
+      },
       less: {
         files: "./less/*",
         tasks: ["less:deployment"]

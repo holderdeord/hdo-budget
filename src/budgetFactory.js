@@ -120,7 +120,9 @@ function ChapterFactory($q, frames) {
   var chapters =  [];
   return {
     add: function (frameNo, chapterNo, chapterName) {
-      if (chapterIsResolved[chapterNo]) return;
+      if (chapterIsResolved[chapterNo]) {
+        return chapterMap[chapterNo].promise
+      };
       chapterMap[chapterNo] = chapterMap[chapterNo] || $q.defer();
       frames
         .get(frameNo)
@@ -131,6 +133,7 @@ function ChapterFactory($q, frames) {
           frame.addChapter(chapter);
         });
       chapterIsResolved[chapterNo] = true;
+      return chapterMap[chapterNo].promise;
     },
     chapterMap: chapterMap,
     chapters: chapters,
@@ -140,7 +143,7 @@ function ChapterFactory($q, frames) {
     }
   }
 }
-function PostFactory(chapters) {
+function PostFactory($q, chapters) {
   function Post(chapter, postNo, text, amount) {
     this.chapter = chapter;
     this.no = postNo;
@@ -160,28 +163,34 @@ function PostFactory(chapters) {
   var postMap = {};
   var posts = [];
   function add (chapterNo, postNo, text, amount, alternative) {
+    var key = chapterNo + '-' + postNo;
+    postMap[key] = postMap[key] || $q.defer();
     chapters
       .get(chapterNo)
       .then(function (chapter) {
         var post = new Post(chapter, postNo, text, amount);
+        postMap[key].resolve(post);
         posts.push(post);
         chapter.addPost(post);
-        postMap[chapterNo + '-' + postNo] = post;
         if (alternative) {
           post.setAlternative(alternative);
         }
       });
+    return postMap[key].promise;
   }
   return {
     add: add,
     addAlternative: function (chapterNo, postNo, text, amount) {
       var alternative = new AlternativePost(chapterNo, amount);
-      var post = postMap[chapterNo + '-' + postNo];
-      if (post) {
-        post.setAlternative(alternative);
-        return;
+      var key = chapterNo + '-' + postNo;
+      if (postMap[key]) {
+        postMap[key].promise.then(function (post) {
+            post.setAlternative(alternative);
+            return post.chapter;
+        });
+        return postMap[key];
       }
-      add(chapterNo, postNo, text, 0, alternative);
+      return add(chapterNo, postNo, text, 0, alternative);
     },
     posts: posts
   }
@@ -191,7 +200,7 @@ module.exports = {
     var budget = new Budget(meta);
     var frames = new FrameFactory($q, budget);
     var chapters = new ChapterFactory($q, frames);
-    var posts = new PostFactory(chapters);
+    var posts = new PostFactory($q, chapters);
     return {
       addFrame: frames.add,
       addChapter: chapters.add,
