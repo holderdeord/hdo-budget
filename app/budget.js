@@ -10099,113 +10099,10 @@ angular.module("budgetApp", [])
   .service("d3", function () {
     return d3;
   })
-  .service("budgetLoader", ['$rootScope', '$q', 'budget', 'd3', function ($rootScope, $q, budget, d3) {
-    var cachedStructure = {};
-    var cachedBudgets = {};
-    function structure(url) {
-      var deferred = $q.defer();
-      if (cachedStructure[url]) {
-        deferred.resolve(cachedStructure[url]);
-      } else {
-        d3.csv(url, function (d){
-          var keys = Object.keys(d);
-            return {
-              frameNo: d[keys[0]],
-              frameName: d[keys[1]],
-              chapterNo: d[keys[2]],
-              chapterName: d[keys[3]]
-            };
-          }, function (error, rows) {
-            cachedStructure[url] = rows;
-            deferred.resolve(rows);
-            $rootScope.$digest();
-          });
-      }
-      return deferred.promise;
-    }
-    function posts(url) {
-      var deferred = $q.defer();
-      d3.csv(url, function parseKeys(d) {
-        var keys = Object.keys(d);
-        return {
-          chapterNo: d[keys[0]],
-          postNo: d[keys[1]],
-          text: d[keys[2]],
-          amount: parseInt(+d[keys[3]].replace(/\s/g, ""))
-        };
-      }, function (error, rows) {
-        deferred.resolve(rows);
-      });
-      return deferred.promise;
-    }
-    function parsePosts(budget, deferred) {
-      return function (rows) {
-        rows.forEach(function (r) {
-          budget.addPost(r.chapterNo, r.postNo, r.text, r.amount);
-        });
-        deferred.resolve(budget);
-      };
-    }
-    function parseAlternatives(budget, deferred) {
-      return function (rows) {
-        rows.forEach(function (r) {
-          budget.addAlternativePost(r.chapterNo, r.postNo, r.text, r.amount);
-        });
-        deferred.resolve(budget);
-      }
-    }
-    function parseStructure(budget, deferred) {
-      return function (rows) {
-        rows.forEach(function (r) {
-          budget.addFrame(r.frameNo, r.frameName);
-          budget.addChapter(r.frameNo, r.chapterNo, r.chapterName);
-        });
-        deferred.resolve();
-      }
-    }
-    function $new(meta) {
-      var deferred = $q.defer();
-      if (cachedBudgets[meta.name]) {
-        deferred.resolve(cachedBudgets[meta.name]);
-      } else {
-        var b = budget.$new($q, meta);
-        var promises = meta.posts.map(function (url) {
-          var d = $q.defer();
-          posts(url).then(parsePosts(b, d));
-          return d.promise;
-        });
-        var structureDeferred = $q.defer();
-        structure(meta.structure).then(parseStructure(b, structureDeferred));
-        promises.push(structureDeferred);
-        $q.all(promises).then(function () {
-          deferred.resolve(b);
-          cachedBudgets[meta.name] = b;
-        });
-      }
-      return deferred.promise;
-    }
-    function alternative(budget, meta) {
-      budget.resetAlternative();
-      var deferred = $q.defer();
-      var promises = meta.posts.map(function (url) {
-        var d = $q.defer();
-        posts(url).then(parseAlternatives(budget, d));
-        return d.promise;
-      });
-      $q.all(promises).then(function () {
-        budget.setAlternative(meta);
-        deferred.resolve(budget);
-      });
-      return deferred.promise;
-    }
-    return {
-      $new: $new,
-      alternative: alternative,
-      posts: posts,
-      structure: structure
-    };
+  .service("budgetLoader", [function () {
+    return require("./budgetLoader");
   }])
-  .controller("BudgetController", ["$scope", "budgetLoader", "d3", function ($scope, budgetLoader, d3) {
+  .controller("BudgetController", ["$scope", "budgetLoader", "d3", "$q", function ($scope, budgetLoader, d3, $q) {
     function prepareAlternatives(budgets, selected) {
       return budgets.filter(function (b) {
         return b !== selected;
@@ -10215,7 +10112,7 @@ angular.module("budgetApp", [])
       $scope.budgets = budgets;
       $scope.selectedBudget = budgets[0];
       $scope.alternatives = prepareAlternatives(budgets, $scope.selectedBudget);
-      budgetLoader.$new(budgets[0]).then(function (budget) {
+      budgetLoader.$new($q, budgets[0]).then(function (budget) {
         $scope.budget = budget;
       });
     });
@@ -10230,7 +10127,7 @@ angular.module("budgetApp", [])
     };
     $scope.selectAlternative = function (alternative) {
       $scope.selectedAlternative = alternative;
-      budgetLoader.alternative($scope.budget, alternative).then(function (newBudget) {
+      budgetLoader.alternative($q, $scope.budget, alternative).then(function (newBudget) {
         $scope.budget = newBudget;
       });
     };
@@ -10240,12 +10137,12 @@ angular.module("budgetApp", [])
       $scope.budget = null;
       $scope.alternative = null;
       $scope.selectedAlternative = null;
-      budgetLoader.$new(budget).then(function (newBudget) {
+      budgetLoader.$new($q, budget).then(function (newBudget) {
         $scope.budget = newBudget;
       });
     };
   }]);
-},{"./budgetFactory":7,"angular":1,"d3":4,"numeral":5}],7:[function(require,module,exports){
+},{"./budgetFactory":7,"./budgetLoader":8,"angular":1,"d3":4,"numeral":5}],7:[function(require,module,exports){
 var angular = require("angular");
 
 function update (cost, revenue) {
@@ -10456,4 +10353,111 @@ module.exports = {
     }
   }
 };
-},{"angular":1}]},{},[6,7])
+},{"angular":1}],8:[function(require,module,exports){
+var d3 = require("d3");
+var budget = require("./budgetFactory");
+
+var cachedStructure = {};
+var cachedBudgets = {};
+function structure($q, url) {
+  var deferred = $q.defer();
+  if (cachedStructure[url]) {
+    deferred.resolve(cachedStructure[url]);
+  } else {
+    d3.csv(url, function (d){
+      var keys = Object.keys(d);
+      return {
+        frameNo: d[keys[0]],
+        frameName: d[keys[1]],
+        chapterNo: d[keys[2]],
+        chapterName: d[keys[3]]
+      };
+    }, function (error, rows) {
+      cachedStructure[url] = rows;
+      deferred.resolve(rows);
+    });
+  }
+  return deferred.promise;
+}
+function posts($q, url) {
+  var deferred = $q.defer();
+  d3.csv(url, function parseKeys(d) {
+    var keys = Object.keys(d);
+    return {
+      chapterNo: d[keys[0]],
+      postNo: d[keys[1]],
+      text: d[keys[2]],
+      amount: parseInt(+d[keys[3]].replace(/\s/g, ""))
+    };
+  }, function (error, rows) {
+    deferred.resolve(rows);
+  });
+  return deferred.promise;
+}
+function parsePosts(budget, deferred) {
+  return function (rows) {
+    rows.forEach(function (r) {
+      budget.addPost(r.chapterNo, r.postNo, r.text, r.amount);
+    });
+    deferred.resolve(budget);
+  };
+}
+function parseAlternatives(budget, deferred) {
+  return function (rows) {
+    rows.forEach(function (r) {
+      budget.addAlternativePost(r.chapterNo, r.postNo, r.text, r.amount);
+    });
+    deferred.resolve(budget);
+  }
+}
+function parseStructure(budget, deferred) {
+  return function (rows) {
+    rows.forEach(function (r) {
+      budget.addFrame(r.frameNo, r.frameName);
+      budget.addChapter(r.frameNo, r.chapterNo, r.chapterName);
+    });
+    deferred.resolve();
+  }
+}
+function $new($q, meta) {
+  var deferred = $q.defer();
+  if (cachedBudgets[meta.name]) {
+    deferred.resolve(cachedBudgets[meta.name]);
+  } else {
+    var b = budget.$new($q, meta);
+    var promises = meta.posts.map(function (url) {
+      var d = $q.defer();
+      posts($q, url).then(parsePosts(b, d));
+      return d.promise;
+    });
+    var structureDeferred = $q.defer();
+    structure($q, meta.structure).then(parseStructure(b, structureDeferred));
+    promises.push(structureDeferred);
+    $q.all(promises).then(function () {
+      deferred.resolve(b);
+      cachedBudgets[meta.name] = b;
+    });
+  }
+  return deferred.promise;
+}
+function alternative($q, budget, meta) {
+  budget.resetAlternative();
+  var deferred = $q.defer();
+  var promises = meta.posts.map(function (url) {
+    var d = $q.defer();
+    posts($q, url).then(parseAlternatives(budget, d));
+    return d.promise;
+  });
+  $q.all(promises).then(function () {
+    budget.setAlternative(meta);
+    deferred.resolve(budget);
+  });
+  return deferred.promise;
+}
+module.exports = {
+  $new: $new,
+  alternative: alternative,
+  posts: posts,
+  structure: structure
+};
+},{"./budgetFactory":7,"d3":4}]},{},[6,7,8])

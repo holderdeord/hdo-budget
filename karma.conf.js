@@ -18,7 +18,7 @@ module.exports = function(config) {
       'bower_components/d3/d3.js',
       'bower_components/numeral/numeral.js',
       'lib/*.js',
-      'app/*.js',
+      'app/budget.js',
       'test/browser/*.js'
     ],
 
