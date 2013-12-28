@@ -1,10 +1,11 @@
 var angular = require("angular");
+var util = require("util");
 
-function update (cost, revenue) {
+var update = function (cost, revenue) {
   this.cost += cost;
   this.revenue += revenue;
-}
-function Budget(meta) {
+};
+var Budget = function (meta) {
   angular.extend(this, meta);
   this.cost = 0;
   this.revenue = 0;
@@ -34,9 +35,9 @@ function Budget(meta) {
   this.update = function (cost, revenue) {
     update.call(this, cost, revenue);
   };
-}
-function FrameFactory ($q, budget) {
-  function Frame(frameNo, frameName) {
+};
+var FrameFactory = function ($q, budget) {
+  var Frame = function (frameNo, frameName) {
     this.no = frameNo;
     this.name = frameName;
     this.chapters = [];
@@ -64,7 +65,7 @@ function FrameFactory ($q, budget) {
       budget.update(cost, revenue);
       update.call(this, cost, revenue);
     };
-  }
+  };
   var frameIsResolved = {};
   var frameMap = {};
   var frames = [];
@@ -84,9 +85,9 @@ function FrameFactory ($q, budget) {
       return frameMap[frameNo].promise;
     }
   }
-}
-function ChapterFactory($q, frames) {
-  function Chapter(frame, chapterNo, chapterName) {
+};
+var ChapterFactory = function ($q, frames) {
+  var Chapter = function (frame, chapterNo, chapterName) {
     this.frame = frame;
     this.no = chapterNo;
     this.name = chapterName;
@@ -114,7 +115,7 @@ function ChapterFactory($q, frames) {
         revenue: 0
       };
     }
-  }
+  };
   var chapterIsResolved = {};
   var chapterMap = {};
   var chapters =  [];
@@ -122,7 +123,7 @@ function ChapterFactory($q, frames) {
     add: function (frameNo, chapterNo, chapterName) {
       if (chapterIsResolved[chapterNo]) {
         return chapterMap[chapterNo].promise
-      };
+      }
       chapterMap[chapterNo] = chapterMap[chapterNo] || $q.defer();
       frames
         .get(frameNo)
@@ -142,8 +143,8 @@ function ChapterFactory($q, frames) {
       return chapterMap[chapterNo].promise;
     }
   }
-}
-function PostFactory($q, chapters) {
+};
+var PostFactory = function ($q, chapters) {
   var resolveCost = function (chapterNo, amount) {
     return chapterNo <= 2800 ? amount : 0;
   };
@@ -208,13 +209,25 @@ function PostFactory($q, chapters) {
     },
     posts: posts
   }
-}
+};
+var OutputFactory = function ($q, postFactory) {
+  return {
+    postsAsCsv: function () {
+      var output = "chapterNo,postNo,text,amount";
+      angular.forEach(postFactory.posts, function (post) {
+        output += util.format("\n%d,%d,%s,%d", post.chapter.no, post.no, post.text, post.cost + post.revenue);
+      });
+      return output;
+    }
+  }
+};
 module.exports = {
   $new: function ($q, meta) {
     var budget = new Budget(meta);
-    var frames = new FrameFactory($q, budget);
-    var chapters = new ChapterFactory($q, frames);
-    var posts = new PostFactory($q, chapters);
+    var frames = FrameFactory($q, budget);
+    var chapters = ChapterFactory($q, frames);
+    var posts = PostFactory($q, chapters);
+    var output = OutputFactory($q, posts);
     return {
       addFrame: frames.add,
       addChapter: chapters.add,
@@ -225,6 +238,7 @@ module.exports = {
       chapterMap: chapters.chapterMap,
       frames: frames.frames,
       meta: budget,
+      output: output,
       posts: posts.posts,
       resetAlternative: budget.resetAlternative,
       setAlternative: budget.setAlternative
