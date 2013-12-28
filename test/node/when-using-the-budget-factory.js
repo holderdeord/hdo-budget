@@ -4,12 +4,14 @@ var buster = require("buster");
 var assert = buster.assert;
 
 buster.testCase("When using the budget factory", {
-  setUp: function () {
+  setUp: function (done) {
     this.budget = budgetFactory.$new(Q, { name: "test" });
-    this.budget.addFrame(1, "test");
-    this.budget.addChapter(1, 11, "test");
-    this.budget.addChapter(1, 3001, "test");
-    this.budget.addPost(11, 1, "test", 100);
+    var promises = [];
+    promises.push(this.budget.addFrame(1, "test"));
+    promises.push(this.budget.addChapter(1, 11, "test"));
+    promises.push(this.budget.addChapter(1, 3001, "test"));
+    promises.push(this.budget.addPost(11, 1, "test", 100));
+    Q.all(promises).then(done);
   },
 
   "can initiate budget": function () {
@@ -17,7 +19,7 @@ buster.testCase("When using the budget factory", {
   },
 
   "should be able to see cost and revenue": function () {
-    assert.equals(this.budget.meta.cost, 0);
+    assert.equals(this.budget.meta.cost, 100);
     assert.equals(this.budget.meta.revenue, 0);
   },
 
@@ -49,15 +51,23 @@ buster.testCase("When using the budget factory", {
 
   "should be able to add post": function (done) {
     var b = this.budget;
-    b.addPost(11, 1, "test", 100).then(done(function () {
+    b.addPost(11, 2, "test", 100).then(done(function () {
       assert.equals(b.posts.length, 2);
     }));
   },
 
   "should add post to chapter": function (done) {
     var b = this.budget;
-    b.addPost(11, 1, "test", 100).then(done(function () {
+    b.addPost(11, 2, "test", 100).then(done(function () {
       assert.equals(b.chapters[0].posts.length, 2);
+    }));
+  },
+
+  "should be able to accumulate posts": function (done) {
+    var b = this.budget;
+    b.addPost(11, 1, "test", 100).then(done(function () {
+      assert.equals(b.posts.length, 1);
+      assert.equals(b.posts[0].cost, 200);
     }));
   },
 
@@ -65,13 +75,13 @@ buster.testCase("When using the budget factory", {
     var b = this.budget;
     b.addPost(11, 1, "test", 100).then(done(function () {
       assert.equals(b.posts[0].revenue, 0);
-      assert.equals(b.posts[0].cost, 100);
+      assert.equals(b.posts[0].cost, 200);
     }));
   },
 
   "should add amount to chapter": function (done) {
     var b = this.budget;
-    b.addPost(11, 1, "test", 100).then(done(function () {
+    b.addPost(11, 2, "test", 100).then(done(function () {
       assert.equals(b.chapters[0].revenue, 0);
       assert.equals(b.chapters[0].cost, 200);
     }));
@@ -79,7 +89,7 @@ buster.testCase("When using the budget factory", {
 
   "should add amount to frame": function (done) {
     var b = this.budget;
-    b.addPost(11, 1, "test", 100).then(done(function () {
+    b.addPost(11, 2, "test", 100).then(done(function () {
       assert.equals(b.frames[0].revenue, 0);
       assert.equals(b.frames[0].cost, 200);
     }));

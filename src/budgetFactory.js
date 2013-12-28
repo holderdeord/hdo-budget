@@ -144,40 +144,54 @@ function ChapterFactory($q, frames) {
   }
 }
 function PostFactory($q, chapters) {
-  function Post(chapter, postNo, text, amount) {
+  var resolveCost = function (chapterNo, amount) {
+    return chapterNo <= 2800 ? amount : 0;
+  };
+  var resolveRevenue = function (chapterNo, amount) {
+    return chapterNo > 3000 ? amount : 0;
+  };
+  var Post = function (chapter, postNo, text, amount) {
     this.chapter = chapter;
     this.no = postNo;
     this.text = text;
-    this.cost = chapter.no <= 2800 ? amount : 0;
-    this.revenue = chapter.no > 3000 ? amount : 0;
+    this.cost = resolveCost(chapter.no, amount);
+    this.revenue = resolveRevenue(chapter.no, amount);
     this.alternative = null;
     this.setAlternative = function (alternative) {
       this.alternative = alternative;
       this.chapter.addAlternative(alternative);
     };
-  }
-  function AlternativePost(chapterNo, amount) {
-    this.cost = chapterNo <= 2800 ? amount : 0;
-    this.revenue = chapterNo > 3000 ? amount : 0;
-  }
+  };
+  var AlternativePost = function (chapterNo, amount) {
+    this.cost = resolveCost(chapterNo, amount);
+    this.revenue = resolveRevenue(chapterNo, amount);
+  };
+  var postIsResolved = {};
   var postMap = {};
   var posts = [];
-  function add (chapterNo, postNo, text, amount, alternative) {
+  var add = function (chapterNo, postNo, text, amount, alternative) {
     var key = chapterNo + '-' + postNo;
     postMap[key] = postMap[key] || $q.defer();
-    chapters
-      .get(chapterNo)
-      .then(function (chapter) {
-        var post = new Post(chapter, postNo, text, amount);
-        postMap[key].resolve(post);
-        posts.push(post);
-        chapter.addPost(post);
-        if (alternative) {
-          post.setAlternative(alternative);
-        }
-      });
+    if (postIsResolved[key]) {
+      var post = postIsResolved[key];
+      post.cost += resolveCost(chapterNo, amount);
+      post.revenue += resolveRevenue(chapterNo, amount);
+    } else {
+      chapters
+        .get(chapterNo)
+        .then(function (chapter) {
+          var post = new Post(chapter, postNo, text, amount);
+          postMap[key].resolve(post);
+          posts.push(post);
+          chapter.addPost(post);
+          if (alternative) {
+            post.setAlternative(alternative);
+          }
+          postIsResolved[key] = post;
+        });
+    }
     return postMap[key].promise;
-  }
+  };
   return {
     add: add,
     addAlternative: function (chapterNo, postNo, text, amount) {
