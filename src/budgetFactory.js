@@ -151,16 +151,29 @@ var PostFactory = function ($q, chapters) {
   var resolveRevenue = function (chapterNo, amount) {
     return chapterNo > 3000 ? amount : 0;
   };
-  var Post = function (chapter, postNo, text, amount) {
-    this.chapter = chapter;
+  var Post = function (chapterNo, postNo, text, amount) {
+    this.chapterNo = chapterNo;
+    this.chapter = null;
+    this.chapterDeferred = $q.defer();
     this.no = postNo;
     this.text = text;
-    this.cost = resolveCost(chapter.no, amount);
-    this.revenue = resolveRevenue(chapter.no, amount);
+    this.cost = resolveCost(chapterNo, amount);
+    this.revenue = resolveRevenue(chapterNo, amount);
     this.alternative = null;
     this.setAlternative = function (alternative) {
       this.alternative = alternative;
-      this.chapter.addAlternative(alternative);
+      if (this.chapter) {
+        this.chapter.addAlternative(alternative);
+      } else {
+        this.chapterDeferred.promise.then(function (chapter) {
+          chapter.addAlternative(alternative);
+        });
+      }
+    };
+    this.setChapter = function (chapter) {
+      chapter.addPost(this);
+      this.chapter = chapter;
+      this.chapterDeferred.resolve(chapter);
     };
   };
   var AlternativePost = function (chapterNo, amount) {
@@ -173,22 +186,22 @@ var PostFactory = function ($q, chapters) {
   var add = function (chapterNo, postNo, text, amount, alternative) {
     var key = chapterNo + '-' + postNo;
     postMap[key] = postMap[key] || $q.defer();
-    if (postIsResolved[key]) {
-      var post = postIsResolved[key];
+    var post = postIsResolved[key];
+    if (post) {
       post.cost += resolveCost(chapterNo, amount);
       post.revenue += resolveRevenue(chapterNo, amount);
     } else {
+      post = new Post(chapterNo, postNo, text, amount);
+      posts.push(post);
+      postIsResolved[key] = post;
+      postMap[key].resolve(post);
+      if (alternative) {
+        post.setAlternative(alternative);
+      }
       chapters
         .get(chapterNo)
         .then(function (chapter) {
-          var post = new Post(chapter, postNo, text, amount);
-          postMap[key].resolve(post);
-          posts.push(post);
-          chapter.addPost(post);
-          if (alternative) {
-            post.setAlternative(alternative);
-          }
-          postIsResolved[key] = post;
+          post.setChapter(chapter);
         });
     }
     return postMap[key].promise;
@@ -215,7 +228,7 @@ var OutputFactory = function ($q, postFactory) {
     postsAsCsv: function () {
       var output = "chapterNo,postNo,text,amount";
       angular.forEach(postFactory.posts, function (post) {
-        output += util.format("\n%d,%d,%s,%d", post.chapter.no, post.no, post.text, post.cost + post.revenue);
+        output += util.format("\n%d,%d,%s,%d", post.chapterNo, post.no, post.text, post.cost + post.revenue);
       });
       return output;
     }

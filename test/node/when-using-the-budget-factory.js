@@ -5,22 +5,17 @@ var assert = buster.assert;
 
 buster.testCase("When using the budget factory", {
   setUp: function (done) {
-    this.budget = budgetFactory.$new(Q, { name: "test" });
+    var b = this.budget = budgetFactory.$new(Q, { name: "test" });
     var promises = [];
     promises.push(this.budget.addFrame(1, "test"));
     promises.push(this.budget.addChapter(1, 11, "test"));
     promises.push(this.budget.addChapter(1, 3001, "test"));
     promises.push(this.budget.addPost(11, 1, "test", 100));
-    Q.all(promises).then(done);
-  },
-
-  "can initiate budget": function () {
-    assert.equals(this.budget.meta.name, "test");
-  },
-
-  "should be able to see cost and revenue": function () {
-    assert.equals(this.budget.meta.cost, 100);
-    assert.equals(this.budget.meta.revenue, 0);
+    Q.all(promises).then(done(function () {
+      assert.equals(b.meta.name, "test");
+      assert.equals(b.meta.cost, 100);
+      assert.equals(b.meta.revenue, 0);
+    }));
   },
 
   "can add frames": function () {
@@ -139,6 +134,13 @@ buster.testCase("When using the budget factory", {
       assert.equals(b.frames[0].alternative.revenue, 300);
       assert.equals(b.alternative.cost, 200);
       assert.equals(b.alternative.revenue, 300);
+    }));
+  },
+
+  "should add posts without chapter available": function (done) {
+    var b = this.budget;
+    b.addPost(12, 1, "test", 100).then(done(function () {
+      assert.equals(b.posts.length, 2)
     }));
   }
 });
