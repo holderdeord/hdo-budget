@@ -228,7 +228,7 @@ var OutputFactory = function ($q, postFactory) {
     postsAsCsv: function () {
       var output = "chapterNo,postNo,text,amount";
       angular.forEach(postFactory.posts, function (post) {
-        output += util.format("\n%d,%d,%s,%d", post.chapterNo, post.no, post.text, post.cost + post.revenue);
+        output += util.format('\n%d,%d,"%s",%d', post.chapterNo, post.no, post.text, post.cost + post.revenue);
       });
       return output;
     }

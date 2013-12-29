@@ -17,6 +17,6 @@ buster.testCase("Wehn outputting budgets to csv", {
   },
 
   "Should output a valid csv-string": function () {
-    assert.equals(this.budget.output.postsAsCsv(), "chapterNo,postNo,text,amount\n11,3001,test 2,1000\n11,1,test,400");
+    assert.equals(this.budget.output.postsAsCsv(), 'chapterNo,postNo,text,amount\n11,3001,"test 2",1000\n11,1,"test",400');
   }
 });
