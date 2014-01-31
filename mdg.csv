@@ -1,0 +1,170 @@
+chapterNo,postNo,text,amount
+41,21,Oppretting av lobbyregister for Stortinget,5 000 000
+100,21, Spesielle driftsutgifter,10 000 000
+116,70," Deltaking i internasjonale organisasjoner,  Tilskudd",250 000 000
+160,70," Bistand til sivilt samfunn og demokratiutvikling,  Sivilt samfunn",100 000 000
+160,75," Bistand til sivilt samfunn og demokratiutvikling,  Internasjonale organisasjoner og nettverk",50 000 000
+161,70,"Næringsutvikling,  Næringsutvikling ",200 000 000
+165,71,"Forsking, kompetanseheving og evaluering,  Faglig samarbeid",100 000 000
+166,73,"Miljø og bærekraftig utvikling m.v,  Klima- og skogsatsingen",2 912 500 000
+166,74, Miljø og bærekraftig utvikling m.v.  Fornybar energi,−1 464 000 000
+168,70,"Kvinner og likestilling, Kvinner og likestilling",200 000 000
+172,70,"Gjeldslette m.v., Gjeldsslette m.v.",150 000 000
+225,60,"Tiltak i grunnopplæringa,  Landslinjer",20 000 000
+225,99," Tiltak i grunnopplæringa, Skolehager",30 000 000
+226,21,"Kvalitetsutvikling i grunnopplæringa, Spesielle driftsutgifter",−145 400 000
+226,22,"Kvalitetsutvikling i grunnopplæringa, Videreutdanning for lærere og skoleledere",563 600 000
+226,62,"Kvalitetsutvikling i grunnopplæringa, Tilskudd til økt lærertetthet ",100 000 000
+270,75,"Internasjonal mobilitet og sosiale formål for studenter, Tilskudd til bygging av studentboliger",500 000 000
+285,56,"Norges forskningsråd, Forsking for omstilling til bærekraft",100 000 000
+285,57,"Norges forskningsråd, Forsking for frivillige organisasjoner",100 000 000
+290,70," Formidling av sosiale og økologiske innovasjoner, Tilskudd",30 000 000
+320,56,"Allmenne kulturformål, Norsk kulturfond - flerårig prosjekttilskudd",8 000 000
+320,74,Tilskudd til tiltak under Norsk kulturråd,−4 000 000
+320,75,Tilskudd til litteraturhus,4 000 000
+320,77,Prosjekt- og utviklingstiltak på museums- og arkivfeltet,5 000 000
+321,73,"Kunstnerformål, Kunstnerstipend mm",20 000 000
+322,55,"Billedkunst m.v.,  Norsk kulturfond",5 000 000
+323,55," Musikkformål,  Norsk kulturfond - flerårig prosjekttilskudd",10 000 000
+328,55," Museums- og andre kulturvernformål,  Norsk kulturfond",10 000 000
+440,1,"Politidirektoratet,  Driftsutgifter",300 000 000
+440,72," Politidirektoratet,  Datalagringsdirektivet",−220 000 000
+460,1," Spesialenheten for politisaker,  Driftsutgifter",0
+470,70," Fri rettshjelp,  Fri saksførsel",300 000 000
+470,71," Fri rettshjelp,  Fritt rettsråd",80 000 000
+490,1," UDI,  Driftsutgifter",11 200 000
+490,6,UDI tilskudd til kommuner med asylmottak m.v.,250 000 000
+490,21," UDI,  Spesielle driftsutgifter (vedrørende asylmottak)",300 000 000
+490,73,"UDI,  Gjenbosetting, støttetiltak",5 400 000
+490,75,UDI Reiseutgifter for flyktninger til og fra utlandet,3 900 000
+551,62,"Regional utvikling og nyskaping,  Regionale samvirkesentre",50 000 000
+551,63,"Regional utvikling og nyskaping,  Regionale sentra for entreprenørskap og innovasjon",50 000 000
+571,60," Rammetilskudd til kommuner,  Innbyggertilskudd",1 000 000 000
+576,70,",  Tilskudd til lokal bærekraftig innovasjon",100 000 000
+580,70," Bostøtte,  Tilskudd, overslag",300 000 000
+581,76," Bolig- og bymiljøtiltak,  Tilskudd til utleieboliger",1 000 000 000
+581,77," Bolig- og bymiljøtiltak,  Kompetansetilskudd til bærekraftig bolig - og byggkvalitet",10 000 000
+588,60,Rentestøtte til miljøvennlige skolebygg,300 000 000
+601,21,"Utredningsvirksomhet, forskning m.v.  Spesielle driftsutgifter",5 000 000
+605,1," Arbeids - og velferdsetaten,  Driftsutgifter",0
+711,21," Ernæring og mattrygghet,  Spesielle driftsutgifter",10 000 000
+711,74," Ernæring og mattrygghet,  Skolefrukt",30 000 000
+719,70," Annet folkehelsearbeid,  Smittevern",2 000 000
+732,72,"Regionale helseforetak, Basisbevilgning Helse Sør-Øst RHF",2 697 900 000
+732,73," Regionale helseforetak, Basisbevilgning Helse Vest RHF",949 000 000
+732,74," Regionale helseforetak,  Basisbevilgning Helse Midt-Norge REF",716 500 000
+732,75," Regionale helseforetak,  Basisbevilgning Helse Nord RHF",636 600 000
+732,76,"Innsatsstyrt finansiering, overslagsbevilgning",−5 100 000 000
+732,79," Regionale helseforetak, Raskere tilbake",100 000 000
+733,72," Habilitering og rehabilitering,  Kjøp av opptrening m.v.",10 000 000
+762,60,"Primærhelsetjenester, Tilskudd til skolehelsetjenester",100 000 000
+762,75," Primærhelsetjenester, Grønn resept",10 000 000
+763,61," Rustiltak, kommunalt rusarbeid",238 900 000
+764,60," Psykisk helse,  Psykisk helsearbeid",150 000 000
+780,50," Forskning, Norges forskningsråd",10 000 000
+800,1," BLD,  Driftsutgifter",5 000 000
+820,1," Integrerings- og mangfoldsdirektoratet,  Driftsutgifter",6 600 000
+821,60," Bosetting av flykninger m.v., Integreringstilskudd",113 000 000
+821,61,Særskilt tilskudd ved bosetting av enslige mindreårige flyktninger,50 600 000
+822,60," Opplæring i norsk og samfunnskunnskap,  Tilskudd",8 900 000
+840,60," Krisetiltak,  Incest- og voldtektssentre",10 000 000
+840,70," Krisetiltak,  Tilskudd til voldsforebyggende tiltak",5 000 000
+844,70," Kontantstøtte,  Tilskudd",50 000 000
+854,60," Tiltak i barne- og ungdomsvernet,  kommunalt barnevern",100 000 000
+854,65," Tiltak i barne- og ungdomsvernet,  refusjon av utgifter til enslige mindreårige asylsøkere m.v.",50 000 000
+856,99, Barnevernets omsorgssenter for enslige mindreårige asylsøkere,50 000 000
+865,21,"Til utredning av nye merkeordninger som gir forbrukerne lett tilgjengelig informasjon både om miljøegenskaper, arbeidsforhold og hensyn til dyrevelferd under produksjonen av alle varer.",10 000 000
+920,50," Norges forskningsråd, tilskudd",200 000 000
+1100,21," Landbruks- og matdepartementet,  Spesielle driftsutgifter",10 000 000
+1112,50," Kunnskapsutvikling m.v. på matområdet,  Veterinærinstituttet",10 000 000
+1112,51," Kunnskapsutvikling m.v. på matområdet,   Bioforsk",10 000 000
+1115,1," Mattilsynet,  Driftsutgifter",50 000 000
+1137,50,"Forskning og innovasjon, Norges forskningsråd",50 000 000
+1139,71," Genressurser m.v.,  Genressursforvaltning",10 000 000
+1150,74," Til gjennomføring av jordbruksavtalen,  Direkte tilskudd",500 000 000
+1150,77,".14, Tilskudd til pelsdyrfôrlag",−23 200 000
+1300,1," Samferdselsdepartementet, Driftsutgifter",5 000 000
+1301,72, Forskning og utvikling m.v.  Transnova,400 000 000
+1320,30," Statens vegvesen,  Gang- og sykkelveier",559 000 000
+1320,30," Statens vegvesen,  Riksveginvesteringer (store prosjekt)",−2 500 000 000
+1320,36," Statens vegvesen, E16 over Filefjell",−190 000 000
+1330,60," Særskilte transporttiltak,  Særskilte tilskudd til kollektivtransport",200 000 000
+1330,61," Særskilte transporttiltak,  Belønningsordningen",500 000 000
+1330,62," Sørskilte transporttiltak, , Belønningsordning for sykkelttiltak",200 000 000
+1350,23," Jernbaneverket,  Drift og vedlikehold",2 000 000 000
+1350,30," Jernbaneverket,   Investeringer i linjen",500 000 000
+1400,61," MD,  Framtidens byer",15 000 000
+1400,62," MD,  Den naturlige skolesekken",5 000 000
+1400,81," MD,  Byutvikling, lokalt miljøvern mm",30 000 000
+1406,21," Miljøvennlig skipsfart,  Spesielle driftsutgifter",3 000 000
+1410,21," Miljøvernforskning og miljøovervåkning,  Spesielle driftsutgifter",30 000 000
+1410,51," Miljøvernforskning og miljøovervåkning,  Forskingsprogram mm",10 000 000
+1410,54," Miljøvernforsk. og miljøovervåkn.,  Artsprosjektet",5 000 000
+1420,21," Miljødirektoratet,  Spesielle driftsutgifter",35 000 000
+1420,22," Miljødirektoratet,  Statlige vannmiljøtiltak",100 000 000
+1420,35," Miljødirektoratet,  Nytt skogvern",250 000 000
+1420,36," Miljødirektoratet, (oppryddingstiltak)",200 000 000
+1420,73," Miljødirektoratet,  forebyggende og konfliktdempende tiltak i  rovviltforvaltningen",50 000 000
+1482,73, Klima- og skogsatsingen (flyttet fra kapitel 166 under  UD av  Solberg),2 912 500 000
+1482,74, Fornybar energi,1 964 000 000
+1482,75, Tilskudd til Det globale klimafondet,4 000 000 000
+1500,21," FAD, Spesielle driftsutgifter",10 000 000
+1534,72," Tilskudd til samiske formål,  Samisk språk, info mm",5 000 000
+1561,71," IKT-politikk,  Tilskudd til fri programvare",4 500 000
+1570,1," Datatilsynet,  Driftsutgifter",20 000 000
+1600,1,Driftsutgifter,10 000 000
+1600,21,Spesielle driftsutgifter,10 000 000
+1620,1,"1620Statistisk sentralbyrå, driftsutgifter",10 000 000
+1761,1," Nye kampfly med baseløsning,  Gjennomføringskostnader",−83 000 000
+1761,45," Nye kampfly med baseløsning,  Større utstyrsanskaffelser og vedlikehold",−2 493 000 000
+1761,47," Nye kampfly med baseløsning,  Nybygg og nyanlegg",−153 000 000
+1810,1," Oljedirektoratet,  Driftsutgifter",−4 000 000
+1810,21,Spesielle driftsutgifter,−130 000 000
+1820,1," NVE, Driftsutgifter",20 000 000
+1820,21," NVE,  Spesielle driftsutgifter",50 000 000
+1820,22," NVE,  Tilskudd til flom- og skredforebygging",100 000 000
+1825,50," Energiomlegging m.v,  Tilskudd til Enova",0
+1825,51," Energiomlegging m.v,  Biogassprogrammet",300 000 000
+1830,50," Forskning og næringsutvikling,  Norges forskningsråd",90 000 000
+2309,1," Tilfeldige utgifter,  Ymse utgifter",−130 000 000
+2412,90," Husbanken,  Lån fra Husbanken",1 500 000 000
+2421,76," Innovasjon Norge,  Miljøteknologi",0
+2426,70," SIVA SF,  Tilskudd",50 000 000
+2440,30," SDØE,  Investeringer",−11 000 000 000
+2465,24," Statens kartverk,  Driftsresultat",134 000 000
+2650,71," Sykepenger, Sykepenger for selvstendige næringsdrivende ",208 000 000
+2650,72, Sykepenger  Omsorgs- og pleiepenger ved barns sykdom mm.,8 800 000
+2661,73," Grunn- og hjelpestønad, hjelpemidler m.v.  Hjelpemidler m.v. under arbeid og utdanning",20 000 000
+2711,72," Spesialisthelsetjeneste,  Tannbehandling (overslag)",0
+5501,70,Toppskatt m.v. - Formuesskatt,−830 000 000
+5501,70,  Toppskatt m.v. - Toppskatt,−14 245 000 000
+5501,72, Fellesskatt (virkning av fradrag for enøk-investeringer),500 000 000
+5501,72, Fellesskatt (virkning av endrede regler på selskapsskatten),250 000 000
+5501,72, (virkning av tak på rentefradraget),−1 600 000 000
+5501,72,  Fellesskatt,1 000 000 000
+5501,72,Fellesskatt (virkning av å heve taket for BSU) (overslag),200 000 000
+5501,72,  Fellesskatt (virkning av økt fradrag for gaver),25 000 000
+5501,72, Fellesskatt,10 400 000 000
+5507,70," Petroleumsskatt, ordinær",220 000 000
+5507,72,"Petroleumsskatt, særskatt",−1 710 000 000
+5508,70,  Avgift på CO2-utslipp på sokkelen,−3 450 000 000
+5511,70, Tollinntekter,0
+5521,70, Merverdiavgift ,1 680 000 000
+5521,70, Merverdiavgift,447 000 000
+5521,70, Merverdiavgift ,4 000 000
+5521,77,Merverdiavgift,200 000 000
+5522,70,Finansskatt,−1 000 000 000
+5531,70,Avgift på tobakksvarer m.v. ,−163 050 000
+5541,70,Avgift på elektrisk kraft,−4 050 000 000
+5542,70,Avgift på mineralolje m.v.,−1 140 000 000
+5543,71,Svovelavgift ,−18 000 000
+5548,70,Avgift på HFK og PFK,−29 000 000
+5549,70, Avgift på utslipp av NOx,−8 000 000
+5555,70,Avgift på sjokolade og sukkervarer m.v.,−480 000 000
+5556,70,Avgift på alkoholfrie drikkevarer m.v.,−820 000 000
+5557,70,Avgift på sukker m.v.,−80 000 000
+5560,70,Avgift på handleposer av plast,−1 200 000 000
+5561,70,Flyseteavgift,−10 000 000 000
+5622,85," Aksjer i Avinor AS,  Utbytte",239 000 000
+5685,85," Aksjer i Statoil,  Utbytte",−5 000 000 000
+5700,72," Arbeidsgiveravgift Folketrygdens inntekter,",140 000 000

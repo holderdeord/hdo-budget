@@ -14,5 +14,13 @@
     "parties": ["H", "FrP"],
     "structure": "/data/2014/structure.csv",
     "posts": ["/data/2014/alternative-cost.csv", "/data/2014/alternative-revenue.csv"]
+  },
+  {
+    "name": "MDG Alternativ Statsbudsjettet 2014",
+    "year": 2014,
+    "government": false,
+    "parties": ["MDG"],
+    "structure": "/data/2014/structure.csv",
+    "posts": ["/data/2014/mdg-main.csv"]
   }
 ]
