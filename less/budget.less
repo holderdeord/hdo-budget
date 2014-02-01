@@ -18,12 +18,20 @@ table.budget {
       padding: 0;
       [colspan] {
         background: #aaa;
-        tr td {
-          border-bottom: dotted 1px #888;
+        tr {
+          td {
+            border-bottom: dotted 1px #888;
+          }
+          &:last-child td {
+            border-bottom: 0;
+          }
         }
       }
       tbody {
         border-bottom: dotted 1px #aaa;
+        &:last-child {
+          border-bottom: 0;
+        }
       }
     }
   }

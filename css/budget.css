@@ -1149,8 +1149,14 @@ table.budget tbody [colspan] [colspan] {
 table.budget tbody [colspan] [colspan] tr td {
   border-bottom: dotted 1px #888;
 }
+table.budget tbody [colspan] [colspan] tr:last-child td {
+  border-bottom: 0;
+}
 table.budget tbody [colspan] tbody {
   border-bottom: dotted 1px #aaa;
+}
+table.budget tbody [colspan] tbody:last-child {
+  border-bottom: 0;
 }
 table.budget td,
 table.budget th {
