@@ -11074,11 +11074,13 @@ var PostFactory = function ($q, chapters) {
     postMap[key] = postMap[key] || $q.defer();
     var post = postIsResolved[key];
     if (!post) {
-      postMap[key].resolve(add(chapterNo, postNo, text, 0));
+      post = add(chapterNo, postNo, text, 0);
+      postMap[key].resolve(post);
     }
     postMap[key].promise.then(function (p) {
       p.addAlternative(chapterNo, text, amount);
-    });
+    }); 
+    return post;
     // var alternative = new AlternativePost(chapterNo, text, amount);
     // var key = chapterNo + '-' + postNo;
     // if (postMap[key]) {
