@@ -1147,36 +1147,27 @@ table.budget td,
 table.budget th {
   text-align: right;
 }
-table.budget td.no,
-table.budget th.no,
-table.budget td.name,
-table.budget th.name,
-table.budget td.revenue,
-table.budget th.revenue,
 table.budget td.cost,
-table.budget th.cost {
-  padding: 0.1em 0.25em;
+table.budget td.revenue {
+  width: 13%;
 }
-table.budget td.no,
-table.budget th.no {
-  width: 10%;
-}
-table.budget td.name,
-table.budget th.name {
-  text-align: left;
-  width: 60%;
-}
-table.budget td.revenue,
-table.budget th.revenue,
-table.budget td.cose,
-table.budget th.cose {
-  width: 15%;
+table.budget th.cost,
+table.budget th.revenue {
+  text-align: center;
 }
 table.budget tfoot td {
   border-top: solid 1px grey;
 }
-table.budget thead th {
+table.budget thead tr:last-child th {
   border-bottom: solid 1px black;
+}
+table.budget tr .revenue,
+table.budget tr .cost {
+  border-left: solid 1px #bbb;
+}
+table.budget tr .revenue.main,
+table.budget tr .cost.main {
+  border-color: black;
 }
 table.budget tr.toggler td {
   cursor: pointer;
@@ -1189,14 +1180,6 @@ table.budget tr.toggler + tr {
 }
 table.budget tr.toggler + tr.toggled {
   display: table-row;
-}
-table.budget.with-alternative .cost,
-table.budget.with-alternative .diff,
-table.budget.with-alternative .revenue {
-  width: 10%;
-}
-table.budget.with-alternative .name {
-  width: 40%;
 }
 .loader div {
   width: 100%;

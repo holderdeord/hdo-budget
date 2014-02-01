@@ -11,39 +11,45 @@ table.budget {
     border-spacing: 0;
     width: 100%;
   }
-  tbody [colspan] {
-    background: #ccc;
-    padding: 0;
+  tbody {
     [colspan] {
-      background: #aaa;
+      background: #ccc;
+      padding: 0;
+      [colspan] {
+        background: #aaa;
+      }
     }
   }
   td,
   th {
     text-align: right;
-    &.no,
-    &.name,
-    &.revenue,
-    &.cost {
-      padding: 0.1em 0.25em;
+  }
+  td {
+    &.cost,
+    &.revenue {
+      width: 13%;
     }
-    &.no {
-      width: 10%;
-    }
-    &.name {
-      text-align: left;
-      width: 60%;
-    }
-    &.revenue,
-    &.cose {
-      width: 15%;
+  }
+  th {
+    &.cost,
+    &.revenue {
+      text-align: center;
     }
   }
   tfoot td {
     border-top: solid 1px grey;
   }
-  thead th {
+  thead tr:last-child th {
     border-bottom: solid 1px black;
+  }
+  tr {
+    .revenue,
+    .cost {
+      border-left: solid 1px #bbb;
+      &.main {
+        border-color: black;
+      }
+    }
   }
   tr.toggler {
     td {
@@ -57,16 +63,6 @@ table.budget {
       &.toggled {
         display: table-row;
       }
-    }
-  }
-  &.with-alternative {
-    .cost,
-    .diff,
-    .revenue {
-      width: 10%;
-    }
-    .name {
-      width: 40%
     }
   }
 }

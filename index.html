@@ -31,78 +31,84 @@
       </div>
       <table class="budget" ng-class="{'with-alternative': !!selectedAlternative}" ng-show="budget">
         <thead>
-        <tr>
-          <td colspan="2">&nbsp;</td>
-          <td colspan="2">{{budget.meta.name}}</td>
-          <td colspan="3" ng-show="selectedAlternative">{{budget.alternative.name}}</td>
-        </tr>
-        <tr>
-          <th class="no">&nbsp;</th>
-          <th class="name">Ramme/Kapittel/Post</th>
-          <th class="revenue">Inntekter</th>
-          <th class="cost">Utgifter</th>
-          <th class="revenue" ng-show="selectedAlternative">Inntekter</th>
-          <th class="cost" ng-show="selectedAlternative">Utgifter</th>
-          <th class="diff" ng-show="selectedAlternative">Differanse</th>
-        </tr>
+          <tr>
+            <th class="no">&nbsp;</th>
+            <th class="name">Ramme/Kapittel/Post</th>
+            <th class="revenue main" colspan="{{selectedAlternative ? 3 : 1}}">Inntekter</th>
+            <th class="cost main" colspan="{{selectedAlternative ? 3 : 1}}">Utgifter</th>
+          </tr>
+          <tr>
+            <th class="no">&nbsp;</th>
+            <th class="name">&nbsp;</th>
+            <th class="revenue main">{{budget.meta.name}}</th>
+            <th class="revenue" ng-show="selectedAlternative">{{budget.alternative.name}}</th>
+            <th class="revenue diff" ng-show="selectedAlternative">{{selectedAlternative ? 'Differanse' : ''}}</th>
+            <th class="cost main">{{budget.meta.name}}</th>
+            <th class="cost" ng-show="selectedAlternative">{{budget.alternative.name}}</th>
+            <th class="cost diff" ng-show="selectedAlternative">{{selectedAlternative ? 'Differanse' : ''}}</th>
+          </tr>
         </thead>
         <tbody ng-repeat="frame in budget.frames">
-        <tr hdo-toggle entity="frame" key="chapters">
-          <td class="no">{{frame.no}}</td>
-          <td class="name">{{frame.name}}</td>
-          <td class="revenue">{{m(frame.revenue)}}</td>
-          <td class="cost">{{m(frame.cost)}}</td>
-          <td class="revenue" ng-show="selectedAlternative">{{m(frame.alternative.revenue)}}</td>
-          <td class="cost" ng-show="selectedAlternative">{{m(frame.alternative.cost)}}</td>
-          <td class="diff" ng-show="selectedAlternative">{{m(d(frame, frame.alternative))}}</td>
-        </tr>
-        <tr>
-          <td colspan="7">
-            <table>
-              <tbody ng-repeat="chapter in frame.chaptersLoaded">
-              <tr hdo-toggle entity="chapter" key="posts">
-                <td class="no">{{chapter.no}}</td>
-                <td class="name">{{chapter.name}}</td>
-                <td class="revenue">{{m(chapter.revenue)}}</td>
-                <td class="cost">{{m(chapter.cost)}}</td>
-                <td class="revenue" ng-show="selectedAlternative">{{m(chapter.alternative.revenue)}}</td>
-                <td class="cost" ng-show="selectedAlternative">{{m(chapter.alternative.cost)}}</td>
-                <td class="diff" ng-show="selectedAlternative">{{m(d(chapter, chapter.alternative))}}</td>
-              </tr>
-              <tr>
-                <td colspan="7">
-                  <table>
-                    <tr ng-repeat="post in chapter.posts">
-                      <td class="no">{{post.no}}</td>
-                      <td class="name">{{post.text}}</td>
-                      <td class="revenue">
-                        <span ng-show="post.revenue > 0">{{m(post.revenue)}}</span>
-                      </td>
-                      <td class="cost">
-                        <span ng-show="post.cost > 0">{{m(post.cost)}}</span>
-                      </td>
-                      <td class="revenue" ng-show="selectedAlternative">{{m(post.alternative.revenue)}}</td>
-                      <td class="cost" ng-show="selectedAlternative">{{m(post.alternative.cost)}}</td>
-                      <td class="diff" ng-show="selectedAlternative">{{m(d(post, post.alternative))}}</td>
-                    </tr>
-                  </table>
-                </td>
-              </tr>
-              </tbody>
-            </table>
-          </td>
-        </tr>
+          <tr hdo-toggle entity="frame" key="chapters">
+            <td class="no">{{frame.no}}</td>
+            <td class="name">{{frame.name}}</td>
+            <td class="revenue main">{{m(frame.revenue)}}</td>
+            <td class="revenue" ng-show="selectedAlternative">{{m(frame.alternative.revenue)}}</td>
+            <td class="revenue diff" ng-show="selectedAlternative">{{m(dr(frame, frame.alternative))}}</td>
+            <td class="cost main">{{m(frame.cost)}}</td>
+            <td class="cost" ng-show="selectedAlternative">{{m(frame.alternative.cost)}}</td>
+            <td class="cost diff" ng-show="selectedAlternative">{{m(dc(frame, frame.alternative))}}</td>
+          </tr>
+          <tr>
+            <td colspan="8">
+              <table>
+                <tbody ng-repeat="chapter in frame.chaptersLoaded">
+                <tr hdo-toggle entity="chapter" key="posts">
+                  <td class="no">{{chapter.no}}</td>
+                  <td class="name">{{chapter.name}}</td>
+                  <td class="revenue main">{{m(chapter.revenue)}}</td>
+                  <td class="revenue" ng-show="selectedAlternative">{{m(chapter.alternative.revenue)}}</td>
+                  <td class="revenue diff" ng-show="selectedAlternative">{{m(dr(chapter, chapter.alternative))}}</td>
+                  <td class="cost main">{{m(chapter.alternative.cost)}}</td>
+                  <td class="cost" ng-show="selectedAlternative">{{m(chapter.cost)}}</td>
+                  <td class="cost diff" ng-show="selectedAlternative">{{m(dc(chapter, chapter.alternative))}}</td>
+                </tr>
+                <tr>
+                  <td colspan="8">
+                    <table>
+                      <tr ng-repeat="post in chapter.posts">
+                        <td class="no">{{post.no}}</td>
+                        <td class="name">{{post.text}}</td>
+                        <td class="revenue main">
+                          <span ng-show="post.revenue > 0">{{m(post.revenue)}}</span>
+                        </td>
+                        <td class="revenue" ng-show="selectedAlternative">{{m(post.alternative.revenue)}}</td>
+                        <td class="revenue diff" ng-show="selectedAlternative">{{m(dr(post, post.alternative))}}</td>
+                        <td class="cost main">{{m(post.alternative.cost)}}</td>
+                        <td class="cost" ng-show="selectedAlternative">
+                          <span ng-show="post.cost > 0">{{m(post.cost)}}</span>
+                        </td>
+                        <td class="cost diff" ng-show="selectedAlternative">{{m(dc(post, post.alternative))}}</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
         </tbody>
         <tfoot>
-        <tr>
-          <td class="no">&nbsp;</td>
-          <td class="name">TOTALT</td>
-          <td class="revenue">{{m(budget.meta.revenue)}}</td>
-          <td class="cost">{{m(budget.meta.cost)}}</td>
-          <td class="revenue" ng-show="selectedAlternative">{{m(budget.alternative.revenue)}}</td>
-          <td class="cost" ng-show="selectedAlternative">{{m(budget.alternative.cost)}}</td>
-          <td class="diff" ng-show="selectedAlternative">{{m(d(budget.meta, budget.alternative))}}</td>
-        </tr>
+          <tr>
+            <td class="no">&nbsp;</td>
+            <td class="name">TOTALT</td>
+            <td class="revenue main">{{m(budget.meta.revenue)}}</td>
+            <td class="revenue" ng-show="selectedAlternative">{{m(budget.alternative.revenue)}}</td>
+            <td class="revenue diff" ng-show="selectedAlternative">{{m(dr(budget.meta, budget.alternative))}}</td>
+            <td class="cost main">{{m(budget.alternative.cost)}}</td>
+            <td class="cost" ng-show="selectedAlternative">{{m(budget.meta.cost)}}</td>
+            <td class="cost diff" ng-show="selectedAlternative">{{m(dc(budget.meta, budget.alternative))}}</td>
+          </tr>
         </tfoot>
       </table>
     </div>

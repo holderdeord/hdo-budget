@@ -10746,43 +10746,44 @@ module.exports = d3;
 }).call(this);
 
 },{}],10:[function(require,module,exports){
-var angular = require("angular");
-var d3 = require("d3");
-var numeral = require("numeral");
+var angular = require('angular');
+var d3 = require('d3');
+var numeral = require('numeral');
 
-angular.module("budgetApp", [])
-  .directive("hdoToggle", function () {
+angular.module('budgetApp', [])
+  .directive('hdoToggle', function () {
     return {
       scope: {
-        entity: "=",
-        key: "@"
+        entity: '=',
+        key: '@'
       },
       link: function (scope, element) {
-        element.addClass("toggler");
-        element.on("click", function () {
-          scope.entity[scope.key + "Loaded"] = scope.entity[scope.key];
-          element.parent().children().toggleClass("toggled");
-          scope.$apply();
+        element.addClass('toggler');
+        element.on('click', function () {
+          scope.$apply(function () {
+            scope.entity[scope.key + 'Loaded'] = scope.entity[scope.key];
+            element.parent().children().toggleClass('toggled');
+          });
         });
       }
     }
   })
-  .factory("budget", [function () {
-    return require("./budgetFactory");
+  .factory('budget', [function () {
+    return require('./budgetFactory');
   }])
-  .service("d3", function () {
+  .service('d3', function () {
     return d3;
   })
-  .service("budgetLoader", [function () {
-    return require("./budgetLoader");
+  .service('budgetLoader', [function () {
+    return require('./budgetLoader');
   }])
-  .controller("BudgetController", ["$scope", "budgetLoader", "d3", "$q", function ($scope, budgetLoader, d3, $q) {
+  .controller('BudgetController', ['$scope', 'budgetLoader', 'd3', '$q', function ($scope, budgetLoader, d3, $q) {
     function prepareAlternatives(budgets, selected) {
       return budgets.filter(function (b) {
         return b !== selected;
       });
     }
-    d3.json("/data/budgets.json", function (budgets) {
+    d3.json('/data/budgets.json', function (budgets) {
       $scope.budgets = budgets;
       $scope.selectedBudget = budgets[0];
       $scope.alternatives = prepareAlternatives(budgets, $scope.selectedBudget);
@@ -10793,11 +10794,19 @@ angular.module("budgetApp", [])
     $scope.d = function (entity, alternative) {
       if (!entity) return 0;
       if (!alternative) return entity.revenue - entity.cost;
-      return entity.revenue - alternative.revenue - entity.cost + alternative.cost;
+      return alternative.revenue + entity.cost - alternative.cost - entity.revenue;
+    };
+    $scope.dc = function (entity, alternative) {
+      if (!$scope.selectedAlternative) return 0;
+      return alternative.cost - entity.cost;
+    };
+    $scope.dr = function (entity, alternative) {
+      if (!$scope.selectedAlternative) return 0;
+      return alternative.revenue - entity.revenue;
     };
     $scope.m = function (value) {
-      if (value == 0) return "";
-      return numeral(value).format("0,0");
+      if (value == 0) return '';
+      return numeral(value).format('0,0');
     };
     $scope.selectAlternative = function (alternative) {
       $scope.selectedAlternative = alternative;
@@ -10970,16 +10979,29 @@ var PostFactory = function ($q, chapters) {
   var resolveRevenue = function (chapterNo, amount) {
     return chapterNo > 3000 ? amount : 0;
   };
-  var Post = function (chapter, postNo, text, amount) {
-    this.chapter = chapter;
+  var Post = function (chapterNo, postNo, text, amount) {
+    this.chapterNo = chapterNo;
+    this.chapter = null;
+    this.chapterDeferred = $q.defer();
     this.no = postNo;
     this.text = text;
-    this.cost = resolveCost(chapter.no, amount);
-    this.revenue = resolveRevenue(chapter.no, amount);
+    this.cost = resolveCost(chapterNo, amount);
+    this.revenue = resolveRevenue(chapterNo, amount);
     this.alternative = null;
     this.setAlternative = function (alternative) {
       this.alternative = alternative;
-      this.chapter.addAlternative(alternative);
+      if (this.chapter) {
+        this.chapter.addAlternative(alternative);
+      } else {
+        this.chapterDeferred.promise.then(function (chapter) {
+          chapter.addAlternative(alternative);
+        });
+      }
+    };
+    this.setChapter = function (chapter) {
+      chapter.addPost(this);
+      this.chapter = chapter;
+      this.chapterDeferred.resolve(chapter);
     };
   };
   var AlternativePost = function (chapterNo, amount) {
@@ -10992,22 +11014,22 @@ var PostFactory = function ($q, chapters) {
   var add = function (chapterNo, postNo, text, amount, alternative) {
     var key = chapterNo + '-' + postNo;
     postMap[key] = postMap[key] || $q.defer();
-    if (postIsResolved[key]) {
-      var post = postIsResolved[key];
+    var post = postIsResolved[key];
+    if (post) {
       post.cost += resolveCost(chapterNo, amount);
       post.revenue += resolveRevenue(chapterNo, amount);
     } else {
+      post = new Post(chapterNo, postNo, text, amount);
+      posts.push(post);
+      postIsResolved[key] = post;
+      postMap[key].resolve(post);
+      if (alternative) {
+        post.setAlternative(alternative);
+      }
       chapters
         .get(chapterNo)
         .then(function (chapter) {
-          var post = new Post(chapter, postNo, text, amount);
-          postMap[key].resolve(post);
-          posts.push(post);
-          chapter.addPost(post);
-          if (alternative) {
-            post.setAlternative(alternative);
-          }
-          postIsResolved[key] = post;
+          post.setChapter(chapter);
         });
     }
     return postMap[key].promise;
@@ -11034,7 +11056,7 @@ var OutputFactory = function ($q, postFactory) {
     postsAsCsv: function () {
       var output = "chapterNo,postNo,text,amount";
       angular.forEach(postFactory.posts, function (post) {
-        output += util.format("\n%d,%d,%s,%d", post.chapter.no, post.no, post.text, post.cost + post.revenue);
+        output += util.format('\n%d,%d,"%s",%d', post.chapterNo, post.no, post.text, post.cost + post.revenue);
       });
       return output;
     }
