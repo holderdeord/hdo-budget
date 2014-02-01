@@ -3,9 +3,7 @@ describe("When selecting another budget", function () {
   var alternative;
   var original;
 
-  beforeEach(module('budgetApp'));
-  beforeEach(module('mocks'));
-
+  beforeEach(module('budgetApp', 'mocks'));
   beforeEach(inject(function ($rootScope, $controller, d3, mockD3Csv) {
     scope = $rootScope.$new();
     original = {name: "default budget", year: 2014, "default": true, structure: "structure.csv", posts: ["post.csv"]};
@@ -18,7 +16,7 @@ describe("When selecting another budget", function () {
       "post.csv": [{ chapterNo: 11, postNo: 3, text: "test", amount: "100 000"}]
     });
     $controller('BudgetController', { $scope: scope, d3: d3 });
-    $rootScope.$apply();
+    $rootScope.$digest();
     scope.selectBudget(alternative);
   }));
 

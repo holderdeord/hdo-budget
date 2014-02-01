@@ -10979,53 +10979,88 @@ var PostFactory = function ($q, chapters) {
   var resolveRevenue = function (chapterNo, amount) {
     return chapterNo > 3000 ? amount : 0;
   };
+  var Line = function (chapterNo, text, amount) {
+    this.text = text;
+    this.cost = resolveCost(chapterNo, amount);
+    this.revenue = resolveRevenue(chapterNo, amount);
+  };
   var Post = function (chapterNo, postNo, text, amount) {
     this.chapterNo = chapterNo;
     this.chapter = null;
     this.chapterDeferred = $q.defer();
     this.no = postNo;
     this.text = text;
-    this.cost = resolveCost(chapterNo, amount);
-    this.revenue = resolveRevenue(chapterNo, amount);
+    this.cost = 0;
+    this.revenue = 0;
     this.alternative = null;
-    this.setAlternative = function (alternative) {
-      this.alternative = alternative;
+    this.lines = [];
+    this.addAlternative = function (chapterNo, text, amount) {
+      var line;
+      if (this.alternative) {
+        line = this.alternative.addLine(chapterNo, text, amount);
+      } else {
+        this.alternative = new AlternativePost(chapterNo, text, amount);
+        line = this.alternative.lines[0];
+      }
       if (this.chapter) {
-        this.chapter.addAlternative(alternative);
+        this.chapter.addAlternative(line);
       } else {
         this.chapterDeferred.promise.then(function (chapter) {
-          chapter.addAlternative(alternative);
+          chapter.addAlternative(line);
         });
       }
     };
+    // this.setAlternative = function (alternative) {
+    //   this.alternative = alternative;
+    //   if (this.chapter) {
+    //     this.chapter.addAlternative(alternative);
+    //   } else {
+    //     this.chapterDeferred.promise.then(function (chapter) {
+    //       chapter.addAlternative(alternative);
+    //     });
+    //   }
+    // };
     this.setChapter = function (chapter) {
       chapter.addPost(this);
       this.chapter = chapter;
       this.chapterDeferred.resolve(chapter);
     };
+    this.addLine = function (chapterNo, text, amount) {
+      if(!(this.lines.length === 0 && amount === 0)) {
+        this.cost += resolveCost(chapterNo, amount);
+        this.revenue += resolveRevenue(chapterNo, amount);
+        this.lines.push(new Line(chapterNo, text, amount));
+      }
+    };
+    this.addLine(chapterNo, text, amount);
   };
-  var AlternativePost = function (chapterNo, amount) {
-    this.cost = resolveCost(chapterNo, amount);
-    this.revenue = resolveRevenue(chapterNo, amount);
+  var AlternativePost = function (chapterNo, text, amount) {
+    this.cost = 0;
+    this.revenue = 0;
+    this.lines = [];
+    this.addLine = function (chapterNo, text, amount) {
+      this.cost += resolveCost(chapterNo, amount);
+      this.revenue += resolveRevenue(chapterNo, amount);
+      var line = new Line(chapterNo, text, amount)
+      this.lines.push(line);
+      return line;
+    };
+    this.addLine(chapterNo, text, amount);
   };
   var postIsResolved = {};
   var postMap = {};
   var posts = [];
-  var add = function (chapterNo, postNo, text, amount, alternative) {
+  var add = function (chapterNo, postNo, text, amount) {
     var key = chapterNo + '-' + postNo;
     postMap[key] = postMap[key] || $q.defer();
     var post = postIsResolved[key];
     if (post) {
-      post.cost += resolveCost(chapterNo, amount);
-      post.revenue += resolveRevenue(chapterNo, amount);
+      post.addLine(chapterNo, text, amount);
     } else {
       post = new Post(chapterNo, postNo, text, amount);
       posts.push(post);
       postIsResolved[key] = post;
       postMap[key].resolve(post);
-      if (alternative) {
-        post.setAlternative(alternative);
-      }
       chapters
         .get(chapterNo)
         .then(function (chapter) {
@@ -11034,20 +11069,30 @@ var PostFactory = function ($q, chapters) {
     }
     return postMap[key].promise;
   };
+  var addAlternative = function (chapterNo, postNo, text, amount) {
+    var key = chapterNo + '-' + postNo;
+    postMap[key] = postMap[key] || $q.defer();
+    var post = postIsResolved[key];
+    if (!post) {
+      postMap[key].resolve(add(chapterNo, postNo, text, 0));
+    }
+    postMap[key].promise.then(function (p) {
+      p.addAlternative(chapterNo, text, amount);
+    });
+    // var alternative = new AlternativePost(chapterNo, text, amount);
+    // var key = chapterNo + '-' + postNo;
+    // if (postMap[key]) {
+    //   postMap[key].promise.then(function (post) {
+    //       post.setAlternative(alternative);
+    //       return post.chapter;
+    //   });
+    //   return postMap[key];
+    // }
+    // return add(chapterNo, postNo, text, 0, alternative);
+  };
   return {
     add: add,
-    addAlternative: function (chapterNo, postNo, text, amount) {
-      var alternative = new AlternativePost(chapterNo, amount);
-      var key = chapterNo + '-' + postNo;
-      if (postMap[key]) {
-        postMap[key].promise.then(function (post) {
-            post.setAlternative(alternative);
-            return post.chapter;
-        });
-        return postMap[key];
-      }
-      return add(chapterNo, postNo, text, 0, alternative);
-    },
+    addAlternative: addAlternative,
     posts: posts
   }
 };
