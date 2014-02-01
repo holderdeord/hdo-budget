@@ -1,119 +1,4 @@
 chapterNo,postNo,text,amount
-222,1,"Endre dagens ordninger med ikke-behovsprøvd utstyrsstipend, med et behovsprøvd stipend på 600 kroner per mnd.",89274000
-226,21,"Pilotprosjekt barn og ungdom med skrivevansker",1057129000
-226,22,"Kompetansehevingstiltak lærere (inkl. ikke-kvalifiserte lærere)",-550000000
-226,23,"Prøveprosjekter: PhD-lærere/nye karriereveier",-50000000
-226,76,"Leksehjelp",-175000000
-228,71,"",1420820000
-228,74,"",25658000
-228,75,"",224605000
-228,76,"",45172000
-228,7,"Avvikling av gratis frukt og grønt i ungdomsskolen",12100000
-228,73,"",111013000
-253,7,"Folkehøyskoler",-2500000
-254,7,"Studieforbund/voksenopplæring",-5000000
-255,76,"Raftostiftelsen",-95000
-257,7,"Styrking av program for basiskompetanse i arbeidslivet",-15000000
-260,5,"2000 flere studieplasser",-471600000
-260,7,"",-15000000
-270,75,"700 nye studentboliger",148981000
-281,45,"Utstyrsetterslep",-63477000
-281,5,"50 nye Nærings-PhD",-7800000
-285,52,"Norges Forskningsråd",1344725000
-285,53,"Forskning klima/fornybar energi",903605000
-287,21,"Øke basisbevilgninger til tekniskindustrielle forskningsinstitutt",-9197000
-310,7,"Tilskudd til tros- og livssynssamfunn",22300000
-324,7,"Stavanger Domkirke",25000000
-340,1,"Trosopplæring",-3000000
-340,75,"",65000000
-340,79,"Reversering av forslag om ny tilskuddspost «til disp. for uforutsette behov i Den norske kirke",0
-571,6,"",768200000
-572,6,"",-279900000
-575,6,"Ressurskrevende tjenester",214000000
-719,21,"Styrking av helsesøstertjenesten.",159391000
-732,7,"Diverse rus-relaterte tiltak innenfor helseforetakene.",150000000
-732,72,"Utvidelse av ordningen med fritt sykehusvalg",49927655000
-732,73,"",17575779000
-732,74,"",13260424000
-732,75,"",11788843000
-763,71,"Tilskudd til frivillige organisasjoner som driver oppfølging, omsorg og rehabilitering av personer med rusproblemer",196013000
-764,6,"Psykisk helsearbeid i kommunene",100000000
-764,72,"Tilskudd til lavterskeltilbud til mennesker med omfattende psykiske helseproblemer.",410615000
-920,5,"Næringsrettet forskning",200000000
-920,51,"Ressursforskning havbruk m.m.",20000000
-928,72,"Nofima: Senter for bærekraftig akvakultur",10000000
-1301,72,"Transnova",137200000
-1301,75,"Garantiordning for Nord-Norge-linjen",25000000
-1320,23,"Halvering av ekstrabevilgninger til veivedlikehold",9347000000
-1320,3,"Halvering av ekstrabevilgninger til tunnel-oppgradering, bompengereduksjon m.m.",0
-1320,36,"E6 Filefjell",0
-1330,61,"Belønningsordning, kollektivtransport",640600000
-1330,63,"Belønningsordning, sykkel",-100000000
-1350,23,"Jernbane. Drift og vedlikehold ",3556900000
-1350,3,"Planlegging InterCity, Bergensbanen, Kongsvingerbanen og Stavanger-Egersund",-150000000
-1351,7,"Sørlandsbanen",-8000000
-1355,96,"InterCity AS",0
-1360,1,"Oljevernberedskap",-30000000
-1360,3,"Videreføring av tilskudd til fiskerihavner og farleder",0
-1370,7,"Kjøp av «ulønnsomme» posttjenester",200000000
-1400,7,"Videreføring av støtte til frivillige miljøorganisasjoner",0
-1400,76,"Reversering av kutt, ymse miljøtiltak",36050000
-1400,77,"Deltakelse i EUs LIFE-program",100000000
-1407,21,"Videreføre tilskuddsordning til DiFi om miljøhensyn i offentlige innkjøp",10000000
-1420,22,"Oppfølging av Vanndirektivet",224700000
-1420,31,"Tiltak i verneområder",70693000
-1420,8,"Pant for båter, campingvogner og tyngre kjøretøy (lastebiler og busser)",60000000
-1420,81,"Kulturlandskap",34100000
-1420,82,"Rødlistearter",38089000
-1481,22,"Mindre kjøp av klimakvoter",-520000000
-1618,1,"Mindrebehov hos Skatteetaten som følge av avvikling av arveavgiften.",4584000000
-1810,21,"Kartlegging, petroleumsaktivitet Jan Mayen ",95100000
-1815,7,"Utgiftene knyttes til Petoro AS flyttes «under streken» og blir en del av SDØEs kontantstrøm.",307000000
-1815,71,"",0
-1815,72,"",7000000
-1815,73,"",0
-1820,73,"Tilskudd til utjevning av overføringstariff",180000000
-1825,95,"Energifondet (Fornybarfondet)",10000000000
-2309,1,"Innføre ordning med momsnøytrale innkjøp i staten m.m.",10760000000
-2410,5,"2 000 flere studieplasser",27400000
-2410,72,"",960773000
-2410,7,"",-33700000
-2410,9,"2000 flere studieplasser",-83000000
-2440,3,"SDØE",2000000000
-2440,7,"Petoro, Administrasjon",307000000
-2440,71,"",24000000
-2440,72,"",3500000
-2440,73,"",6500000
-2751,7,"Redusert apotekavanse 1 prosentpoeng",-68000000
-2752,7,"Økning i egenandelstak 1 med 200 kr for alle.",152000000
-4638,1,"Skrote klimakvoter",269800000
-5309,29,"Salg av statlig eiendom",250000000
-5500,71,"Hevet trygdeavgift, lønnsmottakere til 8,3 prosent",4850000000
-5501,72,"Økt minstefradrag lønnsinntekt til 93 500 og økt prosentsats til 47 pst.",219714000000
-5501,7,"Økt bunnfradrag i formuesskatten til 1 150 000,- Et slikt forslag innebærer at anslagsvis 90 000 færre betaler formuesskatt",-35000000
-5506,7,"Fjerne hele arveavgiften",-430000000
-5511,7,"Toll- og kvotefri adgang for Vietnam, Nigeria og Pakistan",-40000000
-5521,7,"Omlegging av matmomsen: Null moms på frukt og grønt og økologiske matvarer. Full moms på all øvrig mat, men den generelle mva.-satsen reduseres fra 25 til 24 prosent.",NaN
-5531,7,"Heve alle tobakksavgifter med ca 10 pst.",-1635000000
-5536,71,"Gå mot Stoltenberg-regjeringens forslag om å redusere omregistreringsavgiften",20850000000
-5538,7,"Økt bensinavgift",-470000000
-5538,71,"Økt autodieselavgift",10090000000
-5541,7,"Økt el-avgift  2,5 øre",1020000000
-5542,7,"Øke grunnavgiften i fyringsolje med 1 kr literen. ",1140000000
-5543,7,"Økt CO2-avgift på mineralske produkter med 20 øre literen for de anvendelser som ikke er berørt av Stoltenberg-regjeringens forslag (bensin og autodiesel)",880000000
-5543,71,"Økt svovelavgift, 5 øre liter",52000000
-5548,7,"Økt miljøavgift på HFK og PFK, ca. 10 pst",29000000
-5549,7,"Økt NOx-avgift, ca. 10 pst",8000000
-5559,71,"10 pst økning av miljøavgiftene på drikkevareemballasje",78000000
-5559,72,"",27000000
-5559,73,"",67000000
-5559,74,"",93000000
-5560,70,"Miljøavgift på plastposer, kr 1,00 pr pose",800000000
-5560,8,"Ny miljøavgift på flyreiser etter tysk modell",2000000000
-5622,85,"Redusert utbytte Avinor > -5 pst Regjeringen foreslår 50 pst utbytte",526000000
-5656,85,"Økt utbytte Statkraft. Utbyttegrunnlag med utgangspunkt i samlet egenkapital = det samme som Stoltenberg-regjeringen gjør med Entra.",10403453000
-5700,71,"Heve nedre grense for å betale trygdeavgift (fribeløpet) til 49 600,- (dvs. teknisk 50 000,-)",116141500000
-5700,72,"",165533500000
 1,1,"Apanasje ",10453000
 2,1,"Apanasje ",8700000
 20,1,"Driftsutgifter ",95600000
@@ -140,6 +25,7 @@ chapterNo,postNo,text,amount
 200,1,"Driftsutgifter ",253967000
 220,1,"Driftsutgifter ",258822000
 221,1,"Driftsutgifter ",14548000
+222,1,"Driftsutgifter ",89274000
 224,1,"Driftsutgifter ",58798000
 225,1,"Driftsutgifter ",21382000
 229,1,"Driftsutgifter ",22778000
@@ -291,6 +177,7 @@ chapterNo,postNo,text,amount
 1602,1,"Driftsutgifter ",327500000
 1605,1,"Driftsutgifter ",338200000
 1610,1,"Driftsutgifter ",1507500000
+1618,1,"Driftsutgifter ",4584000000
 1620,1,"Driftsutgifter ",527400000
 1634,1,"Driftsutgifter ",284500000
 1638,1,"Driftsutgifter, kan overføres",9200000
@@ -316,6 +203,7 @@ chapterNo,postNo,text,amount
 1800,1,"Driftsutgifter ",165959000
 1810,1,"Driftsutgifter ",247100000
 1820,1,"Driftsutgifter ",487000000
+2309,1,"Driftsutgifter ",10760000000
 2410,1,"Driftsutgifter, kan nyttes under post 45",334991000
 2412,1,"Driftsutgifter ",335000000
 24,21,"Spesielle driftsutgifter ",17500000
@@ -325,12 +213,14 @@ chapterNo,postNo,text,amount
 220,21,"Spesielle driftsutgifter, kan nyttes under post 70",153231000
 224,21,"Spesielle driftsutgifter ",32866000
 225,21,"Spesielle driftsutgifter ",89773000
+226,21,"Spesielle driftsutgifter, kan overføres",1057129000
 230,21,"Spesielle driftsutgifter ",58410000
 231,21,"Spesielle driftsutgifter, kan overføres, kan nyttes under post 51",210513000
 256,21,"Spesielle driftsutgifter ",16521000
 257,21,"Spesielle driftsutgifter, kan overføres, kan nyttes under post 70",5511000
 258,21,"Spesielle driftsutgifter, kan nyttes under post 1",54658000
 280,21,"Spesielle driftsutgifter ",10000
+287,21,"Spesielle driftsutgifter, kan overføres, kan nyttes under post 71",-9197000
 288,21,"Spesielle driftsutgifter ",6707000
 300,21,"Spesielle driftsutgifter ",2589000
 314,21,"Spesielle driftsutgifter ",2200000
@@ -370,6 +260,7 @@ chapterNo,postNo,text,amount
 711,21,"Spesielle driftsutgifter, kan overføres, kan nyttes under post 70",36488000
 715,21,"Spesielle driftsutgifter ",35332000
 718,21,"Spesielle driftsutgifter ",86875000
+719,21,"Spesielle driftsutgifter, kan overføres, kan nyttes under post 79",159391000
 720,21,"Spesielle driftsutgifter ",20402000
 732,21,"Spesielle driftsutgifter, kan overføres",9202000
 733,21,"Spesielle driftsutgifter, kan nyttes under post 79",13252000
@@ -414,6 +305,7 @@ chapterNo,postNo,text,amount
 1354,21,"Spesielle driftsutgifter - tilsyn med tau- og kabelbaner og tivoli og fornøyelsesparker ",19200000
 1400,21,"Spesielle driftsutgifter ",130875000
 1406,21,"Spesielle driftsutgifter ",4132000
+1407,21,"Spesielle driftsutgifter ",10000000
 1410,21,"Miljøovervåking og miljødata ",182171000
 1420,21,"Spesielle driftsutgifter ",163224000
 1425,21,"Spesielle driftsutgifter ",30600000
@@ -436,6 +328,7 @@ chapterNo,postNo,text,amount
 1725,21,"Spesielle driftsutgifter, kan overføres",135875000
 1735,21,"Spesielle driftsutgifter ",1145733000
 1800,21,"Spesielle driftsutgifter, kan overføres, kan nyttes under postene 70 og 72",30845000
+1810,21,"Spesielle driftsutgifter, kan overføres",95100000
 1820,21,"Spesielle driftsutgifter, kan overføres",79000000
 1840,21,"Spesielle driftsutgifter, kan overføres",15000000
 2412,21,"Spesielle driftsutgifter ",13100000
@@ -450,6 +343,7 @@ chapterNo,postNo,text,amount
 858,22,"Reguleringspremie til KLP og fylkeskommunale pensjonskasser ",33181000
 904,22,"Forvaltning av Altinn-løsningen, kan overføres",230200000
 1115,22,"Reguleringspremie til kommunale og fylkeskommunale pensjonskasser ",12600000
+1420,22,"Statlige vannmiljøtiltak ",224700000
 1500,22,"Forskning, kan overføres",21792000
 1520,22,"Fellesutgifter for departementene og Statsministerens kontor ",129962000
 1560,22,"Betaling av elektronisk ID og digital post til private leverandører ",5560000
@@ -462,6 +356,8 @@ chapterNo,postNo,text,amount
 440,23,"Sideutgifter i forbindelse med sivile gjøremål ",77142000
 490,23,"Spesielle driftsutgifter, kunnskapsutvikling, kan overføres",7471000
 841,23,"Refusjon av utgifter til DNA-analyser, overslagsbevilgning",7096000
+1320,23,"Drift og vedlikehold av riksveger, trafikant- og kjøretøytilsyn m.m., kan overføres, kan nyttes under post 29, post 30, post 31 og post 72",9347000000
+1350,23,"Drift og vedlikehold, kan overføres, kan nyttes under post 30",3556900000
 1550,23,"Klagenemnda for offentlige anskaffelser ",10310000
 1560,23,"Elektronisk ID og digital post, kan overføres",116263000
 2445,24,"Driftsresultat: ",0
@@ -488,6 +384,7 @@ chapterNo,postNo,text,amount
 906,31,"Miljøtiltak Løkken, kan overføres",35000000
 1320,31,"Skredsikring riksveger, kan overføres, kan nyttes under post 30",1150000000
 1350,31,"Nytt dobbeltspor Oslo-Ski, kan overføres",1349000000
+1420,31,"Tiltak i verneområder, kan overføres",70693000
 1580,31,"Igangsetting av byggeprosjekter, kan overføres",80000000
 2445,31,"Igangsetting av ordinære byggeprosjekter, kan overføres",111500000
 2445,32,"Prosjektering og igangsetting av kurantprosjekter, kan overføres",166000000
@@ -497,6 +394,7 @@ chapterNo,postNo,text,amount
 2445,34,"Videreføring av kurantprosjekter, kan overføres",593790000
 1320,35,"Vegutbygging i Bjørvika, kan overføres",18000000
 1420,35,"Statlige erverv, nytt skogvern, kan overføres",331091000
+1320,36,"E16 over Filefjell, kan overføres",0
 1580,36,"Kunstnerisk utsmykking, kan overføres",13840000
 1320,37,"E6 vest for Alta, kan overføres",380000000
 1420,39,"Oppryddingstiltak, kan overføres, kan nyttes under postene 69 og 79",19558000
@@ -510,6 +408,7 @@ chapterNo,postNo,text,amount
 222,45,"Større utstyrsanskaffelser og vedlikehold, kan overføres",1411000
 229,45,"Større utstyrsanskaffelser og vedlikehold, kan overføres",1096000
 230,45,"Større utstyrsanskaffelser og vedlikehold, kan overføres",8400000
+281,45,"Større utstyrsanskaffelser og vedlikehold, kan overføres",-63477000
 326,45,"Større utstyrsanskaffelser og vedlikehold, kan overføres",25303000
 329,45,"Større utstyrsanskaffelser og vedlikehold, kan overføres",10344000
 430,45,"Større utstyrsanskaffelser og vedlikehold, kan overføres",31608000
@@ -615,10 +514,12 @@ chapterNo,postNo,text,amount
 1410,51,"Forskningsprogrammer m.m. ",214718000
 1534,51,"Divvun ",5609000
 1716,51,"Tilskudd til Forsvarets forskningsinstitutt ",180600000
+285,52,"Forskningsformål ",1344725000
 320,52,"Norges forskningsråd ",5250000
 1023,52,"Basisbevilgning forskningsinstitutter ",126890000
 1112,52,"Støtte til fagsentrene, Bioforsk ",17873000
 1141,52,"Kunnskapsutvikling og kunnskapsformidling om arealressurser, skog og landskap ",101888000
+285,53,"Overordnede forskningspolitiske prioriteringer ",903605000
 287,53,"NUPI ",4494000
 320,53,"Sametinget ",77202000
 1137,53,"Omstillingsmidler instituttsektoren mv. ",4379000
@@ -685,6 +586,7 @@ chapterNo,postNo,text,amount
 854,61,"Utvikling i kommunene ",29219000
 857,61,"Nasjonal tilskuddsordning mot barnefattigdom ",96000000
 1320,61,"Rentekompensasjon for transporttiltak i fylkene ",176700000
+1330,61,"Belønningsordningen for bedre kollektivtransport mv. i byområdene, kan overføres",640600000
 1400,61,"Framtidens byer og bærekraftig byutvikling, kan overføres",37000000
 1632,61,"Tilskudd til kommuner og fylkeskommuner, overslagsbevilgning",19800000000
 225,62,"Tilskudd til de kommunale sameskolene i Snåsa og Målselv ",22290000
@@ -880,6 +782,7 @@ chapterNo,postNo,text,amount
 225,71,"Tilskudd til utvikling av musikk- og kultur- skolene ",17876000
 226,71,"Tilskudd til vitensentre ",41090000
 227,71,"Tilskudd til internatdriften ved Krokeide videregående skole ",24615000
+228,71,"Private videregående skoler, overslagsbevilgning",1420820000
 253,71,"Tilskudd til Folkehøgskolerådet ",4533000
 254,71,"Tilskudd til nettskoler ",15700000
 255,71,"Falstadsenteret ",17064000
@@ -904,6 +807,7 @@ chapterNo,postNo,text,amount
 734,71,"Tvungen omsorg for psykisk utviklingshemmede ",74394000
 761,71,"Frivillig arbeid mv. ",24839000
 762,71,"Frivillig arbeid mv. ",6373000
+763,71,"Frivillig arbeid mv., kan overføres, kan nyttes under post 21",196013000
 821,71,"Tilskudd til innvandrerorganisasjoner og annen frivillig virksomhet ",51582000
 847,71,"Tiltak for økt tilgjengelighet og universell utforming, kan overføres, kan nyttes under post 21",18937000
 854,71,"Utvikling og opplysningsarbeid mv., kan nyttes under post 21",30149000
@@ -933,6 +837,7 @@ chapterNo,postNo,text,amount
 1590,71,"Tilskudd til kirkelige formål ",82035000
 1719,71,"Overføringer til andre, kan overføres",71865000
 1800,71,"Tilskudd til Norsk Oljemuseum ",12000000
+1815,71,"Unitisering, kan overføres",0
 1830,71,"Tilskudd til forsvaltningsrettet forskning og utvikling, kan overføres, kan nyttes under post 22",4000000
 1840,71,"Forskningstjenester, TCM DA, kan overføres",1877000000
 2410,71,"Andre stipend, overslagsbevilgning",745268000
@@ -988,10 +893,12 @@ chapterNo,postNo,text,amount
 552,72,"Nasjonale tiltak for regional utvikling, kan overføres",587300000
 601,72,"Tilskudd til Senter for seniorpolitikk m.m. ",14510000
 646,72,"Tilskudd, kan overføres",3200000
+732,72,"Basisbevilgning Helse Sør-Øst RHF, kan overføres",49927655000
 733,72,"Kjøp av opptrening mv., kan overføres",4978000
 734,72,"Utviklingsområder innen psykisk helsevern og rus ",16497000
 761,72,"Landsbystiftelsen ",70150000
 763,72,"Kompetansesentra mv. ",94092000
+764,72,"Utviklingstiltak, kan overføres",410615000
 821,72,"Statsautorisasjonsordningen for tolker m.m. ",2611000
 846,72,"Tiltak for lesbiske og homofile ",10411000
 847,72,"Tilskudd ",14490000
@@ -1004,6 +911,7 @@ chapterNo,postNo,text,amount
 1149,72,"Tilskudd til økt bruk av tre, kan overføres",28980000
 1151,72,"Tilskudd til organisasjonsarbeid ",6100000
 1300,72,"Tilskudd til samferdselsberedskap ",2800000
+1301,72,"Tilskudd til miljøvennlig transport, Transnova-prosjektet, kan overføres",137200000
 1320,72,"Kjøp av riksvegferjetjenester, kan overføres, kan nyttes under post 23 og post 30",516100000
 1410,72,"Tilskudd til GenØk - Senter for biosikkerhet ",13900000
 1420,72,"Erstatning for beitedyr tatt av rovvilt, overslagsbevilgning",150755000
@@ -1013,9 +921,11 @@ chapterNo,postNo,text,amount
 1632,72,"Tilskudd til private og ideelle virksomheter, overslagsbevilgning",1690000000
 1795,72,"Overføringer til andre ",2412000
 1800,72,"Tilskudd til olje- og energiformål, kan overføres, kan nyttes under post 21",2000000
+1815,72,"Administrasjon, Petoro Iceland AS ",7000000
 1820,72,"Tilskudd til flom- og skredforebygging, kan overføres, kan nyttes under postene 22 og 60",2000000
 1830,72,"Tilskudd til INTSOK ",16500000
 1840,72,"Lån, TCM DA, kan overføres",150000000
+2410,72,"Rentestøtte, overslagsbevilgning",960773000
 2412,72,"Rentestøtte ",10800000
 2421,72,"Forsknings- og utviklingskontrakter, kan overføres",285000000
 2530,72,"Feriepenger av foreldrepenger, overslagsbevilgning",440000000
@@ -1037,6 +947,7 @@ chapterNo,postNo,text,amount
 170,73,"Verdens matvareprogram (WFP), kan overføres",195000000
 225,73,"Tilskudd til studieopphold i utlandet ",10726000
 227,73,"Tilskudd til opplæring i Kenya ",1309000
+228,73,"Private grunnskoler i utlandet, overslagsbevilgning",111013000
 254,73,"Tilskudd til voksenopplæringsorganisasjoner ",12006000
 255,73,"Nansen Fredssenter ",5682000
 280,73,"Tilskudd til NORDUnet, kan overføres",23905000
@@ -1054,6 +965,7 @@ chapterNo,postNo,text,amount
 471,73,"Stortingets rettferdsvederlagsordning ",60000000
 490,73,"Beskyttelse til flyktninger utenfor Norge mv., støttetiltak, kan nyttes under kap. 821 post 60",6977000
 719,73,"Fysisk aktivitet, kan overføres",35385000
+732,73,"Basisbevilgning Helse Vest RHF, kan overføres",17575779000
 761,73,"Særlige omsorgsbehov ",21497000
 762,73,"Forebygging uønskede svangerskap og abort, kan overføres",26309000
 764,73,"Vold og traumatisk stress, kan overføres",124244000
@@ -1072,6 +984,8 @@ chapterNo,postNo,text,amount
 1530,73,"Tilskudd til de politiske partiers fylkesorganisasjoner ",72353000
 1561,73,"Tilskudd til digital kompetanse ",3182000
 1700,73,"Forskning og utvikling, kan overføres",31174000
+1815,73,"Statlig deltakelse i petroleumsvirksomhet på islandsk kontinentalsokkel, kan overføres",0
+1820,73,"Tilskudd til utjevning av overføringstariffer, kan overføres",180000000
 1830,73,"Tilskudd til INTPOW ",4000000
 1840,73,"Fullskala CO2-håndtering på Mongstad, kan overføres, kan nyttes under post 70",28000000
 2410,73,"Avskrivninger, overslagsbevilgning",488349000
@@ -1085,6 +999,7 @@ chapterNo,postNo,text,amount
 170,74,"FNs Høykommissær for flyktninger (UNHCR) ",300000000
 225,74,"Tilskudd til organisasjoner ",23214000
 227,74,"Tilskudd til Signo og Briskeby ",38649000
+228,74,"Private videregående skoler i utlandet, overslagsbevilgning",25658000
 255,74,"Narviksenteret, kan overføres",70048000
 270,74,"Tilskudd til velferdsarbeid ",77436000
 288,74,"Det europeiske instituttet for innovasjon og teknologi, kan overføres",11511000
@@ -1096,6 +1011,7 @@ chapterNo,postNo,text,amount
 581,74,"Tilskudd til bolig-, by- og områdeutvikling, kan overføres",55000000
 621,74,"Tilskudd til pensjonistenes organisasjoner mv. ",10890000
 711,74,"Skolefrukt, kan overføres",18948000
+732,74,"Basisbevilgning Helse Midt-Norge RHF, kan overføres",13260424000
 762,74,"Stiftelsen Amathea ",16223000
 922,74,"Nasjonal infrastruktur og tekniske aktiviteter, kan overføres",19100000
 1023,74,"Tilskudd marin bioteknologi mv., kan overføres",27000000
@@ -1115,7 +1031,9 @@ chapterNo,postNo,text,amount
 161,75,"NORFUND - tapsavsetting ",295000000
 170,75,"FNs organisasjon for palestinske flyktninger (UNRWA) ",150000000
 227,75,"Tilskudd til opplæring i rusinstitusjoner ",10000000
+228,75,"Private skoler for funksjonshemmede elever, overslagsbevilgning",224605000
 255,75,"Det europeiske Wergelandsenteret ",7623000
+270,75,"Tilskudd til bygging av studentboliger, kan overføres",148981000
 288,75,"UNESCO-kontingent ",18909000
 310,75,"Tilskudd til private kirkebygg, kan overføres",9622000
 320,75,"EUs program for kultur og audiovisuell sektor m.m., kan overføres",11136000
@@ -1126,6 +1044,7 @@ chapterNo,postNo,text,amount
 335,75,"Tilskudd til samiske aviser ",24983000
 490,75,"Reiseutgifter for flyktninger til og fra utlandet, kan overføres",18497000
 581,75,"Tilskudd til etablering i egen bolig ",366000000
+732,75,"Basisbevilgning Helse Nord RHF, kan overføres",11788843000
 761,75,"Andre kompetansetiltak ",9418000
 900,75,"Tilskudd til særskilte prosjekter, kan overføres",20100000
 1023,75,"Tilskudd Akvariet i Bergen ",3860000
@@ -1150,12 +1069,15 @@ chapterNo,postNo,text,amount
 117,76,"Den norske finansieringsordningen 2009-2014, kan overføres",1520000000
 118,76,"Tilskudd til internasjonale klima- og miljøtiltak, kan overføres",36248000
 170,76,"Tilleggsmidler via FN-systemet mv., kan over-føres",882800000
+228,76,"Andre private skoler, overslagsbevilgning",45172000
+255,76,"Raftostiftelsen ",-95000
 288,76,"UNESCO-formål ",3105000
 326,76,"Ibsenpris m.m. ",5592000
 335,76,"Tilskudd til minoritetsspråklige publikasjoner ",875000
 581,76,"Tilskudd til utleieboliger, kan overføres",495300000
 634,76,"Tiltak for arbeidssøkere, kan overføres",6310330000
 732,76,"Innsatsstyrt finansiering, overslagsbevilgning",17344415000
+1400,76,"Støtte til nasjonale og internasjonale miljøtiltak, kan overføres",36050000
 1420,76,"Refusjonsordninger, overslagsbevilgning",57000000
 1530,76,"Tilskudd til de politiske partiers sentrale ungdomsorganisasjoner ",7684000
 2410,76,"Startstipend for kvotestudenter, overslagsbevilgning",8860000
@@ -1232,11 +1154,13 @@ chapterNo,postNo,text,amount
 170,81,"Tilskudd til internasjonal landbruksforskning, kan overføres",150000000
 228,81,"Elevutveksling til utlandet ",1780000
 1400,81,"Byutvikling, lokalt miljøvern og universell utforming, kan overføres",12557000
+1420,81,"Verdensarvområder, kulturlandskap og verdiskaping naturarv, kan overføres, kan nyttes under post 21",34100000
 170,82,"FNs organisasjon for kvinners rettigheter og likestilling (UN Women), kan overføres",95000000
 315,82,"Merverdiavgiftskompensasjon ved bygging av idrettsanlegg ",55777000
 320,82,"Nobels fredssenter ",29537000
 732,82,"Investeringslån, kan overføres",1592794000
 1147,82,"Radioaktivitetstiltak, kan overføres",2500000
+1420,82,"Tilskudd til prioriterte arter og utvalgte naturtyper, kan overføres, kan nyttes under post 21",38089000
 732,83,"Opptrekksrenter for lån fom. 2008, overslags- bevilgning",142000000
 315,84,"Ungdoms-OL ",40003000
 1420,84,"Internasjonalt samarbeid ",1434000
@@ -1254,6 +1178,7 @@ chapterNo,postNo,text,amount
 2429,90,"Utlån ",19500000000
 732,91,"Opptrekksrenter for lån tom. 2007, overslags-bevilgning",2500000
 161,95,"NORFUND - grunnfondskapital ved investeringer i utviklingsland ",885000000
+1825,95,"Kapitalinnskudd ",10000000000
 3021,1,"Leieinntekter ",300000
 3024,1,"Erstatning for utgifter i rettssaker ",13900000
 3041,1,"Salgsinntekter ",7600000
@@ -1327,6 +1252,7 @@ chapterNo,postNo,text,amount
 4610,1,"Særskilt vederlag for tolltjenester ",6200000
 4618,1,"Refunderte utleggs- og tinglysingsgebyr ",82000000
 4620,1,"Salgsinntekter ",300000
+4638,1,"Salgsinntekter ",269800000
 4700,1,"Driftsinntekter ",2246000
 4710,1,"Driftsinntekter ",3882404000
 4719,1,"Driftsinntekter ",750000
@@ -1499,6 +1425,7 @@ chapterNo,postNo,text,amount
 4471,21,"Inntekter, Antarktis ",12358000
 4030,22,"Inntekter ordningen fiskeforsøk og veiledning ",7790000
 5440,24,"Driftsresultat: ",0
+5309,29,"Ymse ",250000000
 5310,29,"Termingebyr ",30420000
 4112,30,"Husleie, Bioforsk ",19180000
 5440,30,"Avskrivninger ",22800000000
@@ -1559,27 +1486,37 @@ chapterNo,postNo,text,amount
 5460,71,"Tilbakeføring fra Gammel alminnelig ordning ",13300000
 5507,71,"Ordinær skatt på formue og inntekt ",67800000000
 5511,71,"Auksjonsinntekter fra tollkvoter ",195000000
+5536,71,"Engangsavgift ",21350000000
 5537,71,"Avgift på båtmotorer ",166000000
+5538,71,"Veibruksavgift på autodiesel ",12110000000
 5542,71,"Avgift på smøreolje mv. ",123000000
+5543,71,"Svovelavgift ",16000000
 5547,71,"Tetrakloreten (PER) ",1000000
 5551,71,"Avgift knyttet til undersøkelses- og utvinningsrett av mineraler etter mineralloven ",10000000
+5559,71,"Miljøavgift på kartong ",64000000
 5568,71,"Årsavgift-stiftelser ",22364000
 5574,71,"Avgifter immaterielle rettigheter ",150000000
 5576,71,"Totalisatoravgift ",125000000
 5578,71,"Jeger- og fellingsavgifter ",75200000
 5582,71,"Konsesjonsavgifter fra vannkraftutbygging ",149000000
+5700,71,"Trygdeavgift ",116658500000
 5701,71,"Refusjon ved yrkesskade ",844000000
+5501,72,"Fellesskatt ",219714000000
 5507,72,"Særskatt på oljeinntekter ",111900000000
 5536,72,"Årsavgift ",10060000000
+5559,72,"Miljøavgift på plast ",23000000
 5568,72,"Vederlag TV2 ",10509000
 5572,72,"Avgift utsalgssteder utenom apotek ",4900000
 5578,72,"Fiskeravgifter ",18000000
+5700,72,"Arbeidsgiveravgift ",165466500000
 5536,73,"Vektårsavgift ",372000000
+5559,73,"Miljøavgift på metall ",43000000
 5568,73,"Refusjon - Norsk Rikstoto og Norsk Tipping AS ",36887000
 5572,73,"Legemiddelkontrollavgift ",75322000
 5575,73,"Årsavgift Merkeregisteret ",9550000
 5701,73,"Refusjon fra bidragspliktige ",305000000
 5507,74,"Arealavgift mv. ",1900000000
+5559,74,"Miljøavgift på glass ",69000000
 5568,74,"Avgift-forhåndskontroll av kinofilm ",5500000
 5575,74,"Sektoravgifter Kystverket ",773453000
 5536,75,"Omregistreringsavgift ",1850000000
@@ -1620,10 +1557,12 @@ chapterNo,postNo,text,amount
 5611,85,"Utbytte ",225000000
 5616,85,"Aksjeutbytte ",357000000
 5618,85,"Utbytte ",188000000
+5622,85,"Utbytte ",430000000
 5625,85,"Utbytte, lavrisikolåneordningen ",17400000
 5631,85,"Statens overskuddsandel ",30000000
 5651,85,"Utbytte ",5000000
 5652,85,"Utbytte ",121000000
+5656,85,"Utbytte ",10263453000
 5685,85,"Utbytte ",14421000000
 5692,85,"Utbytte ",77200000
 5693,85,"Utbytte fra Folketrygdfondet ",1100000
@@ -1662,3 +1601,100 @@ chapterNo,postNo,text,amount
 5341,95,"Avdrag på lån til andre stater ",300000
 3950,96,"Salg av aksjer ",25000000
 3950,97,"Salg av EWOS ",1800000000
+226,22,"Kompetansehevingstiltak lærere (inkl. ikke-kvalifiserte lærere)",-550000000
+226,23,"Prøveprosjekter: PhD-lærere/nye karriereveier",-50000000
+226,76,"Leksehjelp",-175000000
+228,7,"Avvikling av gratis frukt og grønt i ungdomsskolen",12100000
+253,7,"Folkehøyskoler",-2500000
+254,7,"Studieforbund/voksenopplæring",-5000000
+257,7,"Styrking av program for basiskompetanse i arbeidslivet",-15000000
+260,5,"2000 flere studieplasser",-471600000
+260,7,"",-15000000
+281,5,"50 nye Nærings-PhD",-7800000
+310,7,"Tilskudd til tros- og livssynssamfunn",22300000
+324,7,"Stavanger Domkirke",25000000
+340,1,"Trosopplæring",-3000000
+340,75,"",65000000
+340,79,"Reversering av forslag om ny tilskuddspost «til disp. for uforutsette behov i Den norske kirke",0
+571,6,"",768200000
+572,6,"",-279900000
+575,6,"Ressurskrevende tjenester",214000000
+732,7,"Diverse rus-relaterte tiltak innenfor helseforetakene.",150000000
+764,6,"Psykisk helsearbeid i kommunene",100000000
+920,5,"Næringsrettet forskning",200000000
+920,51,"Ressursforskning havbruk m.m.",20000000
+928,72,"Nofima: Senter for bærekraftig akvakultur",10000000
+1301,75,"Garantiordning for Nord-Norge-linjen",25000000
+1320,3,"Halvering av ekstrabevilgninger til tunnel-oppgradering, bompengereduksjon m.m.",0
+1330,63,"Belønningsordning, sykkel",-100000000
+1350,3,"Planlegging InterCity, Bergensbanen, Kongsvingerbanen og Stavanger-Egersund",-150000000
+1351,7,"Sørlandsbanen",-8000000
+1355,96,"InterCity AS",0
+1360,1,"Oljevernberedskap",-30000000
+1360,3,"Videreføring av tilskudd til fiskerihavner og farleder",0
+1370,7,"Kjøp av «ulønnsomme» posttjenester",200000000
+1400,7,"Videreføring av støtte til frivillige miljøorganisasjoner",0
+1400,77,"Deltakelse i EUs LIFE-program",100000000
+1420,8,"Pant for båter, campingvogner og tyngre kjøretøy (lastebiler og busser)",60000000
+1481,22,"Mindre kjøp av klimakvoter",-520000000
+1815,7,"Utgiftene knyttes til Petoro AS flyttes «under streken» og blir en del av SDØEs kontantstrøm.",307000000
+2410,5,"2 000 flere studieplasser",27400000
+2410,7,"",-33700000
+2410,9,"2000 flere studieplasser",-83000000
+2440,3,"SDØE",2000000000
+2440,7,"Petoro, Administrasjon",307000000
+2440,71,"",24000000
+2440,72,"",3500000
+2440,73,"",6500000
+2751,7,"Redusert apotekavanse 1 prosentpoeng",-68000000
+2752,7,"Økning i egenandelstak 1 med 200 kr for alle.",152000000
+5500,71,"Hevet trygdeavgift, lønnsmottakere til 8,3 prosent",4850000000
+5501,7,"Økt bunnfradrag i formuesskatten til 1 150 000,- Et slikt forslag innebærer at anslagsvis 90 000 færre betaler formuesskatt",-35000000
+5506,7,"Fjerne hele arveavgiften",-430000000
+5511,7,"Toll- og kvotefri adgang for Vietnam, Nigeria og Pakistan",-40000000
+5521,7,"Omlegging av matmomsen: Null moms på frukt og grønt og økologiske matvarer. Full moms på all øvrig mat, men den generelle mva.-satsen reduseres fra 25 til 24 prosent.",1217000000
+5531,7,"Heve alle tobakksavgifter med ca 10 pst.",1635000000
+5538,7,"Økt bensinavgift",470000000
+5541,7,"Økt el-avgift  2,5 øre",-1020000000
+5542,7,"Øke grunnavgiften i fyringsolje med 1 kr literen. ",-1140000000
+5543,7,"Økt CO2-avgift på mineralske produkter med 20 øre literen for de anvendelser som ikke er berørt av Stoltenberg-regjeringens forslag (bensin og autodiesel)",-880000000
+5548,7,"Økt miljøavgift på HFK og PFK, ca. 10 pst",-29000000
+5549,7,"Økt NOx-avgift, ca. 10 pst",-8000000
+5560,70,"Miljøavgift på plastposer, kr 1,00 pr pose",-800000000
+5560,8,"Ny miljøavgift på flyreiser etter tysk modell",-2000000000
+0,1,"Merforbruk kvoteflyktninger",82300000
+0,78,"Regionbevilgning Afrika",87000000
+0,70,"Sivil samfunn",765000000
+0,71,"Tilskudd til opplysningsarbeid",251000000
+0,73,"Kultur",-1408800000
+0,72,"Utvikling og nedrusting",-111200000
+0,76,"Tilleggsmidler via FN-systemet",75000000
+0,55,"Scenekunstformål",0
+0,56,"",0
+0,45,"",96000000
+0,0,"Tilskuddsordning til overnattingstilbud og humanitære tilbud for tiggere/arbeidssøkere fra Sør-Europa. ",-10000000
+0,50,"Omprioritere fra svovelrensing til CCS på kullkraft",106000000
+0,75,"",-50000000
+0,21,"Mindrekostnader, asylmottak som følge av økte bevilgninger til økt saksbehandling i UDI og raskere retur",68700000
+0,60,"Tilskudd til fylkeskommuner for regional utvikling",-70000000
+0,62,"Nasjonale tiltak for lokal samfunnsutvikling",-65000000
+0,22,"Direktoratet for byggkvalitet",20100000
+0,63,"Tiltak for vanskeligstilte grupper på arbeidsmarkedet",-20000000
+0,77,"",-214800000
+0,61,"",0
+0,65,"Videreføre refusjonsordningen til kommunene til barnevernstiltak knyttet til enslige mindreårige asylsøkere",0
+0,23,"Etablering og drift av norsk Regelråd",40000000
+0,52,"Bioforsk",4000000
+0,51,"Nytt såkornfond TTO-er/ inkubatorer, fornybar energi",59500000
+0,53,"",30000000
+0,95,"Egenkapital nytt såkornfond, TTO-er/ inkubatorer",200000000
+0,96,"Tilbakeføring av egenkapital, Investinor",-2500000000
+0,91,"Norsk Fornybar AS, investeringskapital",-3000000000
+0,33,"Videreføring av ordinære byggeprosjekt, Statsbygg",100000000
+0,49,"Kjøp av eiendom Statsbygg",-70000000
+0,74,"Innstramming i ordningen «støtte til bil», gruppe 1-bil ",-75000000
+0,2,"Reversering av økt gebyr, familiegjenforeningssaker",0
+0,6,"Reversering av økt gebyr, familiegjenforeningssaker",0
+0,3,"500 flere kvoteflyktninger. Reversering av regjeringens kuttforslag",5000000
+0,4,"",4000000
+0,47,"Salg av forsvarseiendom",-117700000

@@ -3,12 +3,12 @@
     "name": "Statsbudsjettet 2014",
     "year": 2014,
     "government": true,
-    "parties": ["H", "FrP"],
+    "parties": ["AP, "],
     "structure": "/data/2014/structure.csv",
     "posts": ["/data/2014/main.csv"]
   },
   {
-    "name": "MDG Alternativ Statsbudsjettet 2014",
+    "name": "MDG Alternativt Statsbudsjett 2014",
     "year": 2014,
     "government": false,
     "parties": ["MDG"],
@@ -16,7 +16,7 @@
     "posts": ["/data/2014/mdg-main.csv"]
   },
   {
-    "name": "Venstre Alternativ Statsbudsjettet 2014",
+    "name": "Venstre Alternativt Statsbudsjett 2014",
     "year": 2014,
     "government": false,
     "parties": ["V"],
