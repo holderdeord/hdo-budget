@@ -1146,10 +1146,19 @@ table.budget tbody [colspan] {
 table.budget tbody [colspan] [colspan] {
   background: #aaa;
 }
-table.budget tbody [colspan] [colspan] tr td {
+table.budget tbody [colspan] [colspan] [colspan] {
+  background: #888;
+}
+table.budget tbody [colspan] [colspan] [colspan] tr td {
+  border-bottom: dotted 1px #555;
+}
+table.budget tbody [colspan] [colspan] [colspan] tr:last-child td {
+  border-bottom: 0;
+}
+table.budget tbody [colspan] [colspan] [colspan] tbody {
   border-bottom: dotted 1px #888;
 }
-table.budget tbody [colspan] [colspan] tr:last-child td {
+table.budget tbody [colspan] [colspan] [colspan] tbody:last-child {
   border-bottom: 0;
 }
 table.budget tbody [colspan] tbody {

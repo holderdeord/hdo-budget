@@ -63,36 +63,64 @@
             <td colspan="8">
               <table>
                 <tbody ng-repeat="chapter in frame.chaptersLoaded">
-                <tr hdo-toggle entity="chapter" key="posts">
-                  <td class="no">{{chapter.no}}</td>
-                  <td class="name">{{chapter.name}}</td>
-                  <td class="revenue main">{{m(chapter.revenue)}}</td>
-                  <td class="revenue" ng-show="selectedAlternative">{{m(chapter.alternative.revenue)}}</td>
-                  <td class="revenue diff" ng-show="selectedAlternative">{{m(dr(chapter, chapter.alternative))}}</td>
-                  <td class="cost main">{{m(chapter.cost)}}</td>
-                  <td class="cost" ng-show="selectedAlternative">{{m(chapter.alternative.cost)}}</td>
-                  <td class="cost diff" ng-show="selectedAlternative">{{m(dc(chapter, chapter.alternative))}}</td>
-                </tr>
-                <tr>
-                  <td colspan="8">
-                    <table>
-                      <tr ng-repeat="post in chapter.posts">
-                        <td class="no">{{post.no}}</td>
-                        <td class="name">{{post.text}}</td>
-                        <td class="revenue main">
-                          <span ng-show="post.revenue > 0">{{m(post.revenue)}}</span>
-                        </td>
-                        <td class="revenue" ng-show="selectedAlternative">{{m(post.alternative.revenue)}}</td>
-                        <td class="revenue diff" ng-show="selectedAlternative">{{m(dr(post, post.alternative))}}</td>
-                        <td class="cost main">{{m(post.cost)}}</td>
-                        <td class="cost" ng-show="selectedAlternative">
-                          <span ng-show="post.cost > 0">{{m(post.alternative.cost)}}</span>
-                        </td>
-                        <td class="cost diff" ng-show="selectedAlternative">{{m(dc(post, post.alternative))}}</td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
+                  <tr hdo-toggle entity="chapter" key="posts">
+                    <td class="no">{{chapter.no}}</td>
+                    <td class="name">{{chapter.name}}</td>
+                    <td class="revenue main">{{m(chapter.revenue)}}</td>
+                    <td class="revenue" ng-show="selectedAlternative">{{m(chapter.alternative.revenue)}}</td>
+                    <td class="revenue diff" ng-show="selectedAlternative">{{m(dr(chapter, chapter.alternative))}}</td>
+                    <td class="cost main">{{m(chapter.cost)}}</td>
+                    <td class="cost" ng-show="selectedAlternative">{{m(chapter.alternative.cost)}}</td>
+                    <td class="cost diff" ng-show="selectedAlternative">{{m(dc(chapter, chapter.alternative))}}</td>
+                  </tr>
+                  <tr>
+                    <td colspan="8">
+                      <table>
+                        <tbody ng-repeat="post in chapter.postsLoaded">
+                          <tr hdo-toggle entity="post" key="lines">
+                            <td class="no">{{post.no}}</td>
+                            <td class="name">{{post.text}}</td>
+                            <td class="revenue main">
+                              <span ng-show="post.revenue > 0">{{m(post.revenue)}}</span>
+                            </td>
+                            <td class="revenue" ng-show="selectedAlternative">{{m(post.alternative.revenue)}}</td>
+                            <td class="revenue diff" ng-show="selectedAlternative">{{m(dr(post, post.alternative))}}</td>
+                            <td class="cost main">
+                              <span ng-show="post.cost > 0">{{m(post.cost)}}</span>
+                            </td>
+                            <td class="cost" ng-show="selectedAlternative">{{m(post.alternative.cost)}}</td>
+                            <td class="cost diff" ng-show="selectedAlternative">{{m(dc(post, post.alternative))}}</td>
+                          </tr>
+                          <tr>
+                            <td colspan="8">
+                              <table>
+                                <tr ng-repeat="line in post.lines">
+                                  <td class="no">{{post.no}}</td>
+                                  <td class="name">{{line.text}}</td>
+                                  <td class="revenue main">{{m(line.revenue * -1)}}</td>
+                                  <td class="revenue" ng-show="selectedAlternative">&nbsp;</td>
+                                  <td class="revenue diff" ng-show="selectedAlternative">&nbsp;</td>
+                                  <td class="cost main">{{m(line.cost)}}</td>
+                                  <td class="cost" ng-show="selectedAlternative">&nbsp;</td>
+                                  <td class="cost diff" ng-show="selectedAlternative">&nbsp;</td>
+                                </tr>
+                                <tr ng-repeat="line in post.alternative.lines">
+                                  <td class="no">{{post.no}}</td>
+                                  <td class="name">{{line.text}}</td>
+                                  <td class="revenue main">&nbsp;</td>
+                                  <td class="revenue" ng-show="selectedAlternative">{{m(line.revenue * -1)}}</td>
+                                  <td class="revenue diff" ng-show="selectedAlternative">&nbsp;</td>
+                                  <td class="cost main">&nbsp;</td>
+                                  <td class="cost" ng-show="selectedAlternative">{{m(line.cost)}}</td>
+                                  <td class="cost diff" ng-show="selectedAlternative">&nbsp;</td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
                 </tbody>
               </table>
             </td>
