@@ -69,8 +69,8 @@
                   <td class="revenue main">{{m(chapter.revenue)}}</td>
                   <td class="revenue" ng-show="selectedAlternative">{{m(chapter.alternative.revenue)}}</td>
                   <td class="revenue diff" ng-show="selectedAlternative">{{m(dr(chapter, chapter.alternative))}}</td>
-                  <td class="cost main">{{m(chapter.alternative.cost)}}</td>
-                  <td class="cost" ng-show="selectedAlternative">{{m(chapter.cost)}}</td>
+                  <td class="cost main">{{m(chapter.cost)}}</td>
+                  <td class="cost" ng-show="selectedAlternative">{{m(chapter.alternative.cost)}}</td>
                   <td class="cost diff" ng-show="selectedAlternative">{{m(dc(chapter, chapter.alternative))}}</td>
                 </tr>
                 <tr>
@@ -84,9 +84,9 @@
                         </td>
                         <td class="revenue" ng-show="selectedAlternative">{{m(post.alternative.revenue)}}</td>
                         <td class="revenue diff" ng-show="selectedAlternative">{{m(dr(post, post.alternative))}}</td>
-                        <td class="cost main">{{m(post.alternative.cost)}}</td>
+                        <td class="cost main">{{m(post.cost)}}</td>
                         <td class="cost" ng-show="selectedAlternative">
-                          <span ng-show="post.cost > 0">{{m(post.cost)}}</span>
+                          <span ng-show="post.cost > 0">{{m(post.alternative.cost)}}</span>
                         </td>
                         <td class="cost diff" ng-show="selectedAlternative">{{m(dc(post, post.alternative))}}</td>
                       </tr>
@@ -105,8 +105,8 @@
             <td class="revenue main">{{m(budget.meta.revenue)}}</td>
             <td class="revenue" ng-show="selectedAlternative">{{m(budget.alternative.revenue)}}</td>
             <td class="revenue diff" ng-show="selectedAlternative">{{m(dr(budget.meta, budget.alternative))}}</td>
-            <td class="cost main">{{m(budget.alternative.cost)}}</td>
-            <td class="cost" ng-show="selectedAlternative">{{m(budget.meta.cost)}}</td>
+            <td class="cost main">{{m(budget.meta.cost)}}</td>
+            <td class="cost" ng-show="selectedAlternative">{{m(budget.alternative.cost)}}</td>
             <td class="cost diff" ng-show="selectedAlternative">{{m(dc(budget.meta, budget.alternative))}}</td>
           </tr>
         </tfoot>

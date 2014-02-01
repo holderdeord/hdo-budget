@@ -1136,12 +1136,21 @@ table.budget table {
   border-spacing: 0;
   width: 100%;
 }
+table.budget tbody {
+  border-bottom: dotted 1px #ccc;
+}
 table.budget tbody [colspan] {
   background: #ccc;
   padding: 0;
 }
 table.budget tbody [colspan] [colspan] {
   background: #aaa;
+}
+table.budget tbody [colspan] [colspan] tr td {
+  border-bottom: dotted 1px #888;
+}
+table.budget tbody [colspan] tbody {
+  border-bottom: dotted 1px #aaa;
 }
 table.budget td,
 table.budget th {
@@ -1150,6 +1159,9 @@ table.budget th {
 table.budget td.cost,
 table.budget td.revenue {
   width: 13%;
+}
+table.budget td.no {
+  width: 3%;
 }
 table.budget th.cost,
 table.budget th.revenue {

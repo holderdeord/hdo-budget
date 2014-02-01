@@ -12,11 +12,18 @@ table.budget {
     width: 100%;
   }
   tbody {
+    border-bottom: dotted 1px #ccc;
     [colspan] {
       background: #ccc;
       padding: 0;
       [colspan] {
         background: #aaa;
+        tr td {
+          border-bottom: dotted 1px #888;
+        }
+      }
+      tbody {
+        border-bottom: dotted 1px #aaa;
       }
     }
   }
@@ -28,6 +35,9 @@ table.budget {
     &.cost,
     &.revenue {
       width: 13%;
+    }
+    &.no {
+      width: 3%;
     }
   }
   th {
