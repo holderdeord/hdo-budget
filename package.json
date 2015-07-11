@@ -4,14 +4,19 @@
   "description": "Explore the Norwegian state budgets",
   "license": "BSD-3-Clause",
   "scripts": {
-    "dev": "./node_modules/.bin/webpack-dev-server"
+    "dev": "webpack-dev-server",
+    "test": "eslint -c .eslintrc src",
+    "echo": "echo $PATH"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/holderdeord/hdo-budget.git"
   },
   "devDependencies": {
+    "babel-eslint": "^3.1.23",
     "css-loader": "^0.15.2",
+    "eslint": "^0.24.1",
+    "eslint-plugin-react": "^2.7.0",
     "node-libs-browser": "^0.5.2",
     "node-sass": "^3.2.0",
     "react-hot-loader": "^1.2.8",
