@@ -5,7 +5,7 @@
     "government": true,
     "parties": ["AP, "],
     "structure": "/data/2014/structure.csv",
-    "posts": ["/data/2014/main.csv"]
+    "posts": "/data/2014/main.csv"
   },
   {
     "name": "MDG Alternativt Statsbudsjett 2014",
@@ -13,7 +13,7 @@
     "government": false,
     "parties": ["MDG"],
     "structure": "/data/2014/structure.csv",
-    "posts": ["/data/2014/mdg-main.csv"]
+    "posts": "/data/2014/mdg-main.csv"
   },
   {
     "name": "Venstre Alternativt Statsbudsjett 2014",
@@ -21,6 +21,6 @@
     "government": false,
     "parties": ["V"],
     "structure": "/data/2014/structure.csv",
-    "posts": ["/data/2014/venstre.csv"]
+    "posts": "/data/2014/venstre.csv"
   }
 ]

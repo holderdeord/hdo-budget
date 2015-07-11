@@ -51,7 +51,10 @@ if (process.env.NODE_ENV !== 'production') {
         contentBase: path.resolve(__dirname, './public'),
         hot: true,
         inline: true,
-        historyApiFallback: true
+        historyApiFallback: true,
+        headers: {
+            'Access-Control-Allow-Origin': '*'
+        }
     };
 
     config.devtool = 'eval-source-map';
