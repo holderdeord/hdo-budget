@@ -9,7 +9,6 @@ import {
         GraphQLInt,
 } from 'graphql';
 
-
 /*
     interface BudgetCreator {
         id: String!
@@ -69,9 +68,9 @@ export function getSchema(db) {
             }
         }),
         resolveType: (obj) => {
-                throw new Error('not implemented: BudgetCreatorType.resolveType');
+            throw new Error(`not implemented: BudgetCreatorType.resolveType(${obj})`);
         }
-    })
+    });
 
     const partyType = new GraphQLObjectType({
         name: 'Party',
@@ -135,7 +134,7 @@ export function getSchema(db) {
                 description: 'The amount of the post.'
             }
         }),
-    })
+    });
 
     const budgetChapterType = new GraphQLObjectType({
         name: 'BudgetChapter',
@@ -157,7 +156,7 @@ export function getSchema(db) {
                 description: 'The posts in this frame.'
             }
         }),
-    })
+    });
 
     const budgetFrameType = new GraphQLObjectType({
         name: 'BudgetFrame',
@@ -179,8 +178,7 @@ export function getSchema(db) {
                 description: 'The chapters in this frame.'
             }
         }),
-    })
-
+    });
 
     const budgetType = new GraphQLObjectType({
         name: 'Budget',
@@ -207,7 +205,7 @@ export function getSchema(db) {
                 description: 'The frames in the budget.'
             }
         })
-    })
+    });
 
     const queryType = new GraphQLObjectType({
         name: 'Query',
@@ -228,7 +226,7 @@ export function getSchema(db) {
                 resolve: (root, {id}) => db.getBudgetById(id)
             }
         })
-    })
+    });
 
     return new GraphQLSchema({ query: queryType });
 }

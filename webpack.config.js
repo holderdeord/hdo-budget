@@ -1,6 +1,5 @@
 var path = require('path');
 var fs = require('fs');
-var webpack = require('webpack');
 
 var config = {
     entry: [path.join(__dirname, 'src/js/main.js')],
@@ -15,20 +14,19 @@ var config = {
         loaders: [
             {
                 test: /\.jsx?/,
-                exclude: /node_modules/,
+                include: path.join(__dirname, 'src/js'),
                 loader: 'babel?optional[]=runtime&stage=0'
             },
 
             {
                test: /\.scss$/,
+               include: path.join(__dirname, 'src/css'),
                loader: 'style!css!sass?sourceMap'
             }
         ]
     },
 
     plugins: [
-        new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoErrorsPlugin(),
         function() {
             this.plugin('done', function(stats) {
                 fs.writeFile(path.resolve(__dirname, 'webpack.hash'), stats.hash);
@@ -40,26 +38,5 @@ var config = {
       extensions: ['', '.js', '.jsx']
     },
 };
-
-if (process.env.NODE_ENV !== 'production') {
-    config.entry = [
-        'webpack-dev-server/client?http://localhost:8080',
-        'webpack/hot/only-dev-server',
-    ].concat(config.entry);
-
-    config.devServer = {
-        contentBase: path.resolve(__dirname, './public'),
-        hot: true,
-        inline: true,
-        historyApiFallback: true,
-        headers: {
-            'Access-Control-Allow-Origin': '*'
-        }
-    };
-
-    config.devtool = 'eval-source-map';
-}
-
-console.log(config);
 
 module.exports = config;

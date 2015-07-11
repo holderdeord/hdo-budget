@@ -1,12 +1,9 @@
 import '../css/main.scss';
-import React, { Component } from 'react';
+import React from 'react';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+import App from './components/App';
 
-class App extends Component {
-    render() {
-        return (
-            <h1>Hei budsjett!</h1>
-        );
-    }
-}
+// can be removed after react 1.0
+injectTapEventPlugin();
 
 React.render(<App />, document.getElementById('root'));
