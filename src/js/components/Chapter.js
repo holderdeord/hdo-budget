@@ -66,8 +66,6 @@ export default class Chapter extends Component {
     }
 
     renderTable() {
-        console.log('Chapter.state', this.state);
-
         return (
             <table className="mdl-data-table mdl-js-data-table">
                 <thead>
