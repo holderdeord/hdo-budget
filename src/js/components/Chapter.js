@@ -83,7 +83,7 @@ export default class Chapter extends Component {
                         <tr key={i}>
                             <td>{post.id}</td>
                             <td>{post.description}</td>
-                            <td>{post.amount}</td>
+                            <td>{format.number(post.amount)}</td>
                         </tr>
                     ))}
                 </tbody>

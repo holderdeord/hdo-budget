@@ -36,7 +36,10 @@ const initialState = {};
 const store = createStore(
     composeReducers({
         router: routerStateReducer,
-        test: (state, action) => { console.log('action', action); return state; },
+        test: (state, action) => {
+            console.log('action', action);
+            return state;
+        },
         ...reducers}),
     initialState,
     ({ getState }) => [ promiseMiddleware(getState) ]

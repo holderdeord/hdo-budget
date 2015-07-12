@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import fetch from '../utils/fetch';
 import Errors from './Errors';
-import { Link } from 'react-router';
 import * as format from '../utils/format';
 
 export default class Budget extends Component {
