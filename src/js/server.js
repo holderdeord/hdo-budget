@@ -6,7 +6,6 @@ import bodyParser from 'body-parser';
 import Database from './Database';
 import createWebpackDevServer from './createWebpackDevServer';
 import path from 'path';
-import serveStatic from 'serve-static';
 
 Database.get()
     .then(db => getSchema(db))
@@ -14,7 +13,7 @@ Database.get()
         const log = debug('hdo-budget:app');
         const app = express();
 
-        app.use(bodyParser.text({type: 'application/graphql'}))
+        app.use(bodyParser.text({type: 'application/x-graphql'}));
         app.get('/', (req, res) => {
             res.sendFile(path.resolve(__dirname, '../../public/index.html'));
         });
@@ -29,8 +28,9 @@ Database.get()
         const host = '0.0.0.0';
         const port = process.env.HTTP_PORT || 3000;
 
-
         if (process.env.NODE_ENV !== 'production') {
+            app.set('json spaces', 2);
+
             const piping = require('piping');
 
             if (piping()) {
@@ -44,13 +44,12 @@ Database.get()
                     .listen(wpPort, host, () => {
                         log('webpack dev server listening on http://localhost:%d',
                             wpPort);
-                    })
+                    });
             }
         } else {
             const server = app.listen(port, host, () => {
                 log('server listening on http://%s:%d',
                         server.address().address, server.address().port);
             });
-
         }
     });

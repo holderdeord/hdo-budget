@@ -20,14 +20,12 @@ export default function createWebpackDevServer(host, port) {
     config.devtool = 'eval-source-map';
     config.output.publicPath = `${contentBase}${config.output.publicPath}`;
 
-    console.log(JSON.stringify(config, null, 2));
-
     return new WebpackDevServer(webpack(config), {
         contentBase: contentBase,
         hot: true,
         inline: true,
-        // lazy: false,
-        // historyApiFallback: true,
+        lazy: false,
+        historyApiFallback: true,
         publicPath: config.output.publicPath,
         headers: {'Access-Control-Allow-Origin': '*'},
         stats: {colors: true}

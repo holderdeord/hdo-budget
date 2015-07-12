@@ -30,20 +30,27 @@ export default class Database {
             loadCsv(raw.structure),
             loadCsv(raw.posts)
         ).then(([structure, posts]) => {
-            console.log({structure: structure.length, posts: posts.length});
-
             const frameMap = {};
-            const chapterMap = {}
+            const chapterMap = {};
 
             structure.forEach(r => {
-                let frame = frameMap[r.frameNo] = frameMap[r.frameNo] || {id: r.frameNo, name: r.frameName, chapters: []}
+                let frame = frameMap[r.frameNo] = frameMap[r.frameNo] || {
+                        id: r.frameNo,
+                        name: r.frameName,
+                        chapters: [],
+                        revenue: 0,
+                        cost: 0
+                    };
+
                 let chapter = {
                     id: r.chapterNo,
                     name: r.chapterName,
+                    revenue: 0,
+                    cost: 0,
                     posts: []
                 };
 
-                frame.chapters.push(chapter)
+                frame.chapters.push(chapter);
 
                 frameMap[frame.id] = frame;
                 chapterMap[chapter.id] = chapter;
@@ -53,14 +60,34 @@ export default class Database {
                 let chapter = chapterMap[p.chapterNo];
 
                 if (chapter) {
-                    chapter.posts.push({
+                    let post = {
                         id: p.postNo,
                         description: p.text,
                         amount: +p.amount
-                    });
+                    };
+
+                    // FIXME: don't trust this logic
+                    if (+chapter.id <= 2800) {
+                        chapter.cost += Math.abs(post.amount);
+                    } else if (+chapter.id > 3000) {
+                        chapter.revenue += Math.abs(post.amount);
+                    } else {
+                        log(`warning: not sure if chapter ${chapter.id} is cost or revenue`);
+                    }
+
+                    chapter.posts.push(post);
                 } else {
                     log(`warning: could not find chapter ${p.chapterNo} in ${raw.name}`);
                 }
+            });
+
+            const frames = Object.values(frameMap);
+
+            frames.forEach(frame => {
+                frame.chapters.forEach(chapter => {
+                    frame.revenue += chapter.revenue;
+                    frame.cost += chapter.cost;
+                });
             });
 
             return {
@@ -71,14 +98,14 @@ export default class Database {
                     id: slugify('Stoltenberg II'),
                     name: 'Stoltenberg II'
                 },
-                frames: Object.keys(frameMap).map(id => frameMap[id])
+                frames: frames
             };
         });
     }
 
     constructor(budgets) {
         this.budgets = budgets;
-        this.budgetsById = {}
+        this.budgetsById = {};
 
         budgets.forEach(b => this.budgetsById[b.id] = b);
     }
@@ -89,6 +116,17 @@ export default class Database {
 
     getBudgetById(id) {
         return this.budgetsById[id];
+    }
+
+    getBudgetFrameByIds(budgetId, frameId) {
+        const budget = this.getBudgetById(budgetId);
+
+        if (!budget.framesById) {
+            budget.framesById = {};
+            budget.frames.forEach(f => budget.framesById[f.id] = f);
+        }
+
+        return budget.framesById[frameId];
     }
 }
 

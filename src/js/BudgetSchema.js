@@ -1,5 +1,4 @@
 import {
-        graphql,
         GraphQLSchema,
         GraphQLObjectType,
         GraphQLInterfaceType,
@@ -7,7 +6,11 @@ import {
         GraphQLNonNull,
         GraphQLList,
         GraphQLInt,
+        GraphQLBool,
 } from 'graphql';
+
+import debug from 'debug';
+const log = debug('hdo-budget:schema'); // eslint-disable-line
 
 /*
     interface BudgetCreator {
@@ -90,7 +93,7 @@ export function getSchema(db) {
         interfaces: [budgetCreatorInterface]
     });
 
-    const governmentType = new GraphQLObjectType({
+    const governmentType = new GraphQLObjectType({ // eslint-disable-line
         name: 'Government',
         description: 'A government consisting of one or more parties.',
 
@@ -129,6 +132,11 @@ export function getSchema(db) {
                 description: 'A description of the post.'
             },
 
+            isRevenue: {
+                type: GraphQLBool,
+                description: 'Whether or not this post is a revenue post.',
+            },
+
             amount: {
                 type: GraphQLInt,
                 description: 'The amount of the post.'
@@ -153,7 +161,17 @@ export function getSchema(db) {
 
             posts: {
                 type: new GraphQLList(budgetPostType),
-                description: 'The posts in this frame.'
+                description: 'The posts in this chapter.'
+            },
+
+            revenue: {
+                type: GraphQLInt,
+                description: 'The sum of all the revenue in this chapter.',
+            },
+
+            cost: {
+                type: GraphQLInt,
+                description: 'The sum of all the cost in this chapter.'
             }
         }),
     });
@@ -176,6 +194,22 @@ export function getSchema(db) {
             chapters: {
                 type: new GraphQLList(budgetChapterType),
                 description: 'The chapters in this frame.'
+            },
+
+            chapter: {
+                type: budgetChapterType,
+                args: { id: { name: 'id', type: new GraphQLNonNull(GraphQLString) } },
+                resolve: (frame, {id}) => frame.chapters.find(c => c.id === id)
+            },
+
+            revenue: {
+                type: GraphQLInt,
+                description: 'The sum of all the revenue in this frame',
+            },
+
+            cost: {
+                type: GraphQLInt,
+                description: 'The sum of all the cost in this frame'
             }
         }),
     });
@@ -203,6 +237,11 @@ export function getSchema(db) {
             frames: {
                 type: new GraphQLList(budgetFrameType),
                 description: 'The frames in the budget.'
+            },
+            frame: {
+                type: budgetFrameType,
+                args: { id: { name: 'id', type: new GraphQLNonNull(GraphQLString) } },
+                resolve: (root, {id}) => db.getBudgetFrameByIds(root.id, id)
             }
         })
     });

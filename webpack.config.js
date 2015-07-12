@@ -22,6 +22,11 @@ var config = {
                test: /\.scss$/,
                include: path.join(__dirname, 'src/css'),
                loader: 'style!css!sass?sourceMap'
+            },
+
+            {
+               test: /\.css$/,
+               loader: 'style!css'
             }
         ]
     },

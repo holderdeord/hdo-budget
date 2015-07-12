@@ -1,4 +1,7 @@
+import 'material-design-lite/material.css';
+import 'material-design-lite/material.js';
 import '../css/main.scss';
+
 import React from 'react';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import App from './components/App';

@@ -1,17 +1,8 @@
 import React, { Component, PropTypes } from 'react';
-import mui from 'material-ui';
-import superagent from 'superagent';
-
-const {
-    AppBar,
-    Avatar,
-    Card,
-    CardHeader,
-    LeftNav,
-    MenuItem,
-    Styles,
-} = mui;
-const ThemeManager = new Styles.ThemeManager();
+import fetch from '../utils/fetch';
+import Budget from './Budget';
+import Logo from './Logo';
+import Errors from './Errors';
 
 export default class App extends Component {
     static childContextTypes = {
@@ -19,82 +10,44 @@ export default class App extends Component {
     }
 
     state = {
-        budgets: [],
-        query: `budgets { name }`,
-        data: { hello: 'world' }
-    }
-
-    getChildContext() {
-        return { muiTheme: ThemeManager.getCurrentTheme() };
+        data: { budgets: [] },
     }
 
     componentDidMount() {
+        fetch(`{
+            budgets {
+                id
+                name
+            }
+        }`).then(::this.setState);
     }
 
     render() {
-        let menuItems = [
-            { type: MenuItem.Types.SUBHEADER, text: 'Budsjetter' },
-        ].concat(this.state.budgets.map(({id, name}) => ({ route: id, text: name })));
-
         return (
             <div>
-                <div>
-                    <AppBar
-                      title="Budsjetter"
-                      iconClassNameRight="muidocs-icon-navigation-expand-more"
-                      onLeftIconButtonTouchTap={::this.handleMenuToggle} />
+                <div className="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+                    <div className="mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+                        <div style={{paddingTop: '1rem'}}><Logo height={60} width={200} /></div>
+                        <nav className="mdl-navigation">
+                            {this.state.data.budgets.map(b =>
+                                <a key={b.id} className="mdl-navigation__link" onClick={this.handleSelectBudget.bind(this, b)} href="">{b.name}</a>
+                            )}
+                        </nav>
+                    </div>
 
-                     <LeftNav ref="leftNav" docked={false} menuItems={menuItems} />
-                 </div>
-
-                 <div>
-                    <Card>
-                        <CardHeader
-                              title="GraphQL"
-                              subtitle="Query"
-                              avatar={<Avatar>Q</Avatar>}/>
-
-                        <div style={{padding: '2rem'}}>
-                            <textarea
-                                style={{fontFamily: 'Consolas, monospace', fontSize: '1rem', height: '500px', width: '48%'}}
-                                value={this.state.query}
-                                onChange={::this.handleQueryChange}
-                                onKeyUp={::this.handleKeyPress} />
-
-                            <div style={{padding: '2rem'}}>
-                                <pre>{JSON.stringify(this.state.data, null, 2)}</pre>
-                            </div>
+                    <main className="mdl-layout__content">
+                        <div className="page-content">
+                            {this.state.errors && <Errors errors={this.state.errors} />}
+                            {this.state.selectedBudget ? <Budget budgetId={this.state.selectedBudget.id}/> : null}
                         </div>
-
-                    </Card>
-                 </div>
+                    </main>
+                </div>
             </div>
         );
     }
 
-    handleQueryChange(e) {
-        this.setState({query: e.target.value });
-    }
-
-    handleKeyPress(e) {
-        if (e.ctrlKey && e.keyCode === 13) {
-            e.preventDefault();
-
-            superagent
-                .post(`/query`)
-                .send(this.state.query)
-                .set('Content-Type', 'application/graphql')
-                .end((err, res) => {
-                    if (err) {
-                        throw err;
-                    } else {
-                        this.setState({data: res.body});
-                    }
-                });
-        }
-    }
-
-    handleMenuToggle() {
-        this.refs.leftNav.toggle();
+    handleSelectBudget(budget, event) {
+        event.preventDefault();
+        this.setState({selectedBudget: budget});
     }
 }
