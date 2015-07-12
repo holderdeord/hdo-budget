@@ -4,11 +4,12 @@ import fetch from '../utils/fetch';
 import Errors from './Errors';
 import * as format from '../utils/format';
 
-export default class Frame extends Component {
+export default class Chapter extends Component {
     static propTypes = {
         params: PropTypes.shape({
             budgetId: PropTypes.string.isRequired,
             frameId: PropTypes.string.isRequired,
+            chapterId: PropTypes.string.isRequired,
         })
     }
 
@@ -37,13 +38,25 @@ export default class Frame extends Component {
             return null;
         }
 
+        const data = this.state.data;
+
         return (
             <div style={{padding: '1rem'}}>
                 <div>
                     <h5>
-                        <Link to={`/budgets/${this.state.data.budget.id}`}>
-                            {this.state.data.budget.name}
-                        </Link> - {this.state.data.budget.frame.name}
+                        <Link to={`/budgets/${data.budget.id}`}>
+                            {data.budget.name}
+                        </Link>
+
+                        <span> - </span>
+
+                        <Link to={`/budgets/${data.budget.id}/frames/${data.budget.frame.id}`}>
+                            {data.budget.frame.name}
+                        </Link>
+
+                        <span> - </span>
+
+                        {data.budget.frame.chapter.name}
                     </h5>
                 </div>
 
@@ -53,24 +66,24 @@ export default class Frame extends Component {
     }
 
     renderTable() {
+        console.log('Chapter.state', this.state);
+
         return (
             <table className="mdl-data-table mdl-js-data-table">
                 <thead>
                     <tr>
-                        <th>Kapittel</th>
+                        <th>Post</th>
                         <th className="'mdl-data-table__cell--non-numeric'">Navn</th>
-                        <th>Inntekter</th>
-                        <th>Utgifter</th>
+                        <th>Beløp</th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    {this.state.data.budget.frame.chapters.map((chapter, i) => (
-                        <tr key={i} onClick={this.handleChapterClick.bind(this, chapter)}>
-                            <td>{chapter.id}</td>
-                            <td>{chapter.name}</td>
-                            <td>{format.number(chapter.revenue)}</td>
-                            <td>{format.number(chapter.cost)}</td>
+                    {this.state.data.budget.frame.chapter.posts.map((post, i) => (
+                        <tr key={i}>
+                            <td>{post.id}</td>
+                            <td>{post.description}</td>
+                            <td>{post.amount}</td>
                         </tr>
                     ))}
                 </tbody>
@@ -80,7 +93,8 @@ export default class Frame extends Component {
 
     fetchData() {
         fetch(`
-            query frameQuery($budgetId: String!, $frameId: String!) {
+            query chapterQuery($budgetId: String!, $frameId: String!, $chapterId: String!) {
+
                 budget(id: $budgetId) {
                     id
                     name
@@ -89,11 +103,14 @@ export default class Frame extends Component {
                         id
                         name
 
-                        chapters {
+                        chapter(id: $chapterId) {
                             id
                             name
-                            revenue
-                            cost
+                            posts {
+                                id
+                                description
+                                amount
+                            }
                         }
                     }
                 }

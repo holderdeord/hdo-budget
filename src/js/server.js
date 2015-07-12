@@ -7,19 +7,20 @@ import Database from './Database';
 import createWebpackDevServer from './createWebpackDevServer';
 import path from 'path';
 
+const log = debug('hdo-budget:server');
+
 Database.get()
     .then(db => getSchema(db))
     .then(schema => {
-        const log = debug('hdo-budget:app');
         const app = express();
 
-        app.use(bodyParser.text({type: 'application/x-graphql'}));
-        app.get('/', (req, res) => {
+        app.use(bodyParser.json());
+        app.get('/*', (req, res) => {
             res.sendFile(path.resolve(__dirname, '../../public/index.html'));
         });
 
         app.post('/query', (req, res) => {
-            graphql(schema, req.body).then(
+            graphql(schema, req.body.query, null, req.body.params).then(
                 result => res.json(result),
                 err    => res.status(500).json(err)
             );

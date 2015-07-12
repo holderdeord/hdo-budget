@@ -37,7 +37,9 @@
     "graphql": "^0.1.3",
     "material-design-lite": "^1.0.0-3",
     "react": "^0.13.3",
-    "react-tap-event-plugin": "^0.1.7",
+    "react-router": "^1.0.0-beta1",
+    "redux": "^1.0.0-alpha",
+    "redux-react-router": "^0.1.1",
     "serve-static": "^1.10.0",
     "slug": "^0.9.1",
     "superagent": "^1.2.0"
