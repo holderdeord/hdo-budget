@@ -14,7 +14,7 @@ export default class Drawer extends Component {
         return (
             <div className="mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
                 <div style={{paddingTop: '1rem'}}>
-                    <Logo height={60} width={200} />
+                    <Link to="/"><Logo height={60} width={200} /></Link>
                 </div>
 
                 <nav className="mdl-navigation">

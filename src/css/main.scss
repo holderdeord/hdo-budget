@@ -4,3 +4,8 @@
 html, body {
   font-family: 'Lato', 'Helvetica', sans-serif;
 }
+
+main {
+    // apparently necessary to see the drawer when main is empty
+    min-height: 500px;
+}
