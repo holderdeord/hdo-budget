@@ -11,6 +11,8 @@ export default class Drawer extends Component {
     }
 
     render() {
+        console.log(this.props.budgets);
+
         return (
             <div className="mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
                 <div style={{paddingTop: '1rem'}}>

@@ -1,6 +1,6 @@
 import express from 'express';
-import { graphql } from 'graphql';
 import { getSchema } from './BudgetSchema';
+import graphQLHTTP from 'express-graphql';
 import debug from 'debug';
 import bodyParser from 'body-parser';
 import Database from './Database';
@@ -19,12 +19,10 @@ Database.get()
             res.sendFile(path.resolve(__dirname, '../../public/index.html'));
         });
 
-        app.post('/query', (req, res) => {
-            graphql(schema, req.body.query, null, req.body.params).then(
-                result => res.json(result),
-                err    => res.status(500).json(err)
-            );
-        });
+        app.use('/graphql', graphQLHTTP({
+            schema,
+            pretty: process.env.NODE_ENV !== 'production'
+        }));
 
         const host = '0.0.0.0';
         const port = process.env.HTTP_PORT || 3000;

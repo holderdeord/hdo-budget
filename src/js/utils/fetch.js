@@ -1,12 +1,22 @@
-import superagent from 'superagent';
+import fetch from 'isomorphic-fetch';
 
-export default function fetch(query, params = {}) {
-    return new Promise((resolve, reject) => {
-        superagent
-                .post('/query')
-                .send({query: query, params: params})
-                .set('Content-Type', 'application/json')
-                .set('Accept', 'application/json')
-                .end((err, res) => err ? reject(err) : resolve(res.body));
-    });
+function checkError(res) {
+    if (res.status !== 200) {
+        throw new Error(res.statusText);
+    } else {
+        return res;
+    }
+}
+
+export default function(query, variables = {}) {
+    return fetch('/graphql', {
+        method: 'post',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({query, variables})
+    })
+        .then(checkError)
+        .then(res => res.json());
 }

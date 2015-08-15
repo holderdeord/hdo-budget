@@ -15,7 +15,7 @@ var config = {
             {
                 test: /\.jsx?/,
                 include: path.join(__dirname, 'src/js'),
-                loader: 'babel?optional[]=runtime&stage=0'
+                loader: 'babel?stage=0&plugins[]=./src/js/utils/BabelRelayPlugin',
             },
 
             {

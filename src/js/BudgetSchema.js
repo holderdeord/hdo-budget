@@ -1,12 +1,12 @@
 import {
-        GraphQLSchema,
-        GraphQLObjectType,
-        GraphQLInterfaceType,
-        GraphQLString,
-        GraphQLNonNull,
-        GraphQLList,
-        GraphQLInt,
-        GraphQLBool,
+    GraphQLSchema,
+    GraphQLObjectType,
+    GraphQLInterfaceType,
+    GraphQLString,
+    GraphQLNonNull,
+    GraphQLList,
+    GraphQLInt,
+    GraphQLBoolean,
 } from 'graphql';
 
 import debug from 'debug';
@@ -66,7 +66,7 @@ export function getSchema(db) {
                 description: 'The id of the budget creator.'
             },
             name: {
-                type: GraphQLString,
+                type: new GraphQLNonNull(GraphQLString),
                 description: 'The name of the budget creator.'
             }
         }),
@@ -133,7 +133,7 @@ export function getSchema(db) {
             },
 
             isRevenue: {
-                type: GraphQLBool,
+                type: GraphQLBoolean,
                 description: 'Whether or not this post is a revenue post.',
             },
 
