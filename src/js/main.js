@@ -1,4 +1,3 @@
-import 'material-design-lite/material.css';
 import '../css/main.scss';
 
 import React from 'react';

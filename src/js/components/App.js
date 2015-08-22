@@ -18,11 +18,11 @@ export default class App extends Component {
 
     render() {
         return (
-            <div>
-                <div className="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
+            <div className="container">
+                <div>
                     <Drawer budgets={this.state.data.budgets} />
 
-                    <main className="mdl-layout__content">
+                    <main className="">
                         <div className="page-content">
                             {this.state.errors && <Errors errors={this.state.errors} />}
                             {this.props.children &&

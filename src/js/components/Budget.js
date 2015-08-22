@@ -48,11 +48,11 @@ export default class Budget extends Component {
 
     renderTable() {
         return (
-            <table className="mdl-data-table mdl-js-data-table">
+            <table className="table table-hover">
                 <thead>
                     <tr>
                         <th>Rammeområde</th>
-                        <th className="'mdl-data-table__cell--non-numeric'">Navn</th>
+                        <th>Navn</th>
                         <th>Inntekter</th>
                         <th>Utgifter</th>
                     </tr>

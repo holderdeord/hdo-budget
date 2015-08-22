@@ -67,11 +67,11 @@ export default class Chapter extends Component {
 
     renderTable() {
         return (
-            <table className="mdl-data-table mdl-js-data-table">
+            <table className="table table-hover">
                 <thead>
                     <tr>
                         <th>Post</th>
-                        <th className="'mdl-data-table__cell--non-numeric'">Navn</th>
+                        <th>Navn</th>
                         <th>Beløp</th>
                     </tr>
                 </thead>

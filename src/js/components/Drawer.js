@@ -14,22 +14,23 @@ export default class Drawer extends Component {
         console.log(this.props.budgets);
 
         return (
-            <div className="mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+            <div>
                 <div style={{paddingTop: '1rem'}}>
-                    <Link to="/"><Logo height={60} width={200} /></Link>
+                    <Link to="/">
+                        <Logo height={60} width={200} color="black" />
+                    </Link>
                 </div>
 
-                <nav className="mdl-navigation">
+                <ul className="list-inline">
                     {this.props.budgets.map(budget =>
-                        <Link
-                            key={budget.id}
-                            className="mdl-navigation__link"
-                            activeClassName="mdl-navigation__link--current"
-                            to={`/budgets/${budget.id}`}>
-                                {budget.name}
-                        </Link>
+                        <li key={budget.id}>
+                            <Link
+                                to={`/budgets/${budget.id}`}>
+                                    {budget.name}
+                            </Link>
+                        </li>
                     )}
-                </nav>
+                </ul>
             </div>
         );
     }
