@@ -1,5 +1,6 @@
 class Post {
-  constructor(postNo, text, amount) {
+  constructor(chapter, postNo, text, amount) {
+  	this.chapter = chapter;
   	this.no = postNo;
     this.text = text;
     this.amount = amount;
