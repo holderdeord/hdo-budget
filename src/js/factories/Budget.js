@@ -1,5 +1,6 @@
 import Promise from 'bluebird';
 import fs from 'fs';
+import streamToPromise from '../utils/streamToPromise';
 
 // models
 import Budget from '../models/Budget';
@@ -37,10 +38,3 @@ class BudgetFactory {
 const budgetFactory = new BudgetFactory();
 
 export default budgetFactory;
-
-function streamToPromise(stream) {
-    return new Promise((resolve, reject) => {
-        stream.on("end", resolve);
-        stream.on("error", reject);
-    });
-}

@@ -4,7 +4,7 @@
   "description": "Explore the Norwegian state budgets",
   "license": "BSD-3-Clause",
   "scripts": {
-    "test": "eslint -c .eslintrc src",
+    "lint": "eslint -c .eslintrc src",
     "write-schema": "babel-node src/js/utils/writeSchema.js",
     "start": "NODE_ENV=production babel-node src/js/server.js",
     "dev": "DEBUG=hdo-budget:* NODE_ENV=development babel-node src/js/server.js"
