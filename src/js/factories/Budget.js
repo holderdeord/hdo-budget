@@ -8,30 +8,26 @@ import Frame from '../models/Frame';
 var parse = require('csv-parse');
 
 class BudgetFactory {
-  constructor() {
-
-  }
-
   loadStructureExplicitly(budgetName, structureFile, postFiles) {
     var budget = new Budget(budgetName);
     var chapterMap = {};
     return streamToPromise(fs.createReadStream(structureFile).pipe(parse({
       columns: true
-    }, function (err, chapters) {
-      chapters.forEach(function (chapter) {
+    }, (err, chapters) => {
+      chapters.forEach(chapter => {
         var frame = budget.addFrame(chapter.frameNo, chapter.frameName);
         chapterMap[chapter.chapterNo] = frame.addChapter(chapter.chapterNo, chapter.chapterName);
       });
-    }))).then(function () {
-      return Promise.map(postFiles, function (postFile) {
+    }))).then(() => {
+      return Promise.map(postFiles, postFile => {
         return streamToPromise(fs.createReadStream(postFile).pipe(parse({
           columns: true
-        }, function (err, posts) {
-          posts.forEach(function (post) {
+        }, (err, posts) => {
+          posts.forEach(post => {
             chapterMap[post.chapterNo].addPost(post.postNo, post.text, post.amount);
           });
         })));
-      }).then(function () {
+      }).then(() => {
         return budget;
       });
     });
@@ -43,7 +39,7 @@ const budgetFactory = new BudgetFactory();
 export default budgetFactory;
 
 function streamToPromise(stream) {
-    return new Promise(function(resolve, reject) {
+    return new Promise((resolve, reject) => {
         stream.on("end", resolve);
         stream.on("error", reject);
     });
