@@ -2,17 +2,23 @@ module.exports = function(config) {
   config.set({
     frameworks: ["jasmine"],
     files: [
-      // "src/**/*.js",
-      "test/**/*.js"
+      { pattern: 'test/test-context.js', watched: false }
     ],
     preprocessors: {
-      // "src/**/*.js": ["babel"],
-      "test/**/*.js": ["babel"]
+      "test/test-context.js": ["webpack"]
     },
-    "babelPreprocessor": {
-      // options go here
+    webpack: {
+      module: {
+        loaders: [
+          { test: /\.js/, exclude: /node_modules/, loader: 'babel-loader' }
+        ]
+      },
+      watch: true
     },
-    browsers: ['PhantomJS'],
-    reporters: ['progress'],
+    webpackServer: {
+      noInfo: true
+    },
+    browsers: ['Chrome'],
+    reporters: ['dots'],
   });
 };

@@ -1,5 +1,13 @@
+import Budget from '../../src/js/models/Budget';
+
 describe('Model: Budget', function () {
-  it('should fail', function () {
-    expect(true).toBe(true);
+  var budget;
+
+  beforeEach(function () {
+    budget = new Budget('test');
+  });
+
+  it('should set up basic', function () {
+    expect(budget.name).toEqual('test');
   });
 });
