@@ -2,37 +2,36 @@ import Budget from '../../src/js/models/Budget';
 import Frame from '../../src/js/models/Frame';
 import Chapter from '../../src/js/models/Chapter';
 
-describe('Model: Budget', function () {
-  var budget;
+describe('Model: Frame', function () {
+  var frame;
 
   beforeEach(function () {
-    budget = new Budget('test');
+    frame = new Frame('test');
   });
 
   it('should set up basic', function () {
-    expect(Object.keys(budget.framesMap).length).toBe(0);
+    expect(Object.keys(frame.chaptersMap).length).toBe(0);
   });
 
   describe('Adding content', function () {
-    var frame, chapter, post;
+    var chapter, post;
 
     beforeEach(function () {
-      frame = budget.addFrame(1, 'foo');
       chapter = frame.addChapter(1337, 'foz');
       post = chapter.addPost(1, 'fob', 42);
     });
 
-    it('can add frames', function () {
-      expect(Object.keys(budget.framesMap).length).toBe(1);
-      expect(budget.addFrame(2, 'bar')).toEqual(new Frame(2, 'bar'));
+    it('can add chapters', function () {
+      expect(Object.keys(frame.chaptersMap).length).toBe(1);
+      expect(frame.addChapter(1338, 'bar')).toEqual(new Chapter(frame, 1338, 'bar'));
     });
 
     it('caches single entries of frames by number', function () {
-      expect(frame).toBe(budget.addFrame(1, 'bar'));
+      expect(chapter).toBe(frame.addChapter(1337, 'bar'));
     });
 
     it('can get posts', function () {
-      expect(budget.getPosts()).toEqual([post]);
+      expect(frame.getPosts()).toEqual([post]);
     });
   });
 });
