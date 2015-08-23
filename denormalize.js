@@ -19,7 +19,7 @@ BudgetFactory.loadStructureExplicitly('denormalize', structureFile, program.args
 
 function outputAsCsv(posts) {
   return posts.reduce((memo, post) => {
-    return memo + `${post.chapter.frame.no},${post.chapter.frame.name},${post.chapter.no},${post.chapter.name},${post.no},${post.text},${post.amount}\n`;
+    return memo + `${post.chapter.frame.no},"${post.chapter.frame.name}",${post.chapter.no},"${post.chapter.name}",${post.no},"${post.text}",${post.amount}\n`;
   }, 'frameNo,frameName,chapterNo,chapterName,postNo,postName,amount\n');
 }
 
